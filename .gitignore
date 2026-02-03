@@ -1,0 +1,27 @@
+# Ambientes Virtuais (Essencial!)
+venv/
+.venv/
+env/
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Modelos e Pesos (Arquivos pesados gerados pelo treino)
+# Se você quiser que outras pessoas treinem o próprio modelo, ignore estes:
+backend/modelos/
+logica/modelos/
+*.keras
+*.h5
+
+# Arquivos de dados e vocabulário
+*.pkl
+
+# Configurações do VS Code ou Editores
+.vscode/
+.idea/
+
+# Arquivos do Windows
+Thumbs.db
+desktop.ini
