@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnamneseApp</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="phone">
+
+  <!-- ══════════ SCREEN 1 – Lista de Pacientes ══════════ -->
+  <div id="screen1" class="screen active">
+    <div class="topbar">
+      <span class="topbar-icon">🩺</span>
+      <span class="topbar-title">AnamneseApp</span>
+    </div>
+    <div class="content">
+      <div class="welcome-card">
+        <strong>Bem-vindo, estudante! 👋</strong>
+        <p>Aqui você treina os conceitos vistos em sala de aula. Escolha um paciente e faça o diagnóstico corretamente.</p>
+      </div>
+      <div class="section-label">Selecione um paciente</div>
+      <div class="patients-grid" id="patientsGrid">
+        <!-- Preenchido via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ SCREEN 2 – Chat ══════════ -->
+  <div id="screen2" class="screen">
+    <div class="topbar">
+      <button class="back-btn" onclick="goTo(1)">←</button>
+      <span class="topbar-title" id="chatTitle">Chat</span>
+    </div>
+    <div class="patient-header">
+      <div class="ph-left">
+        <div class="ph-avatar" id="chatAvatar"></div>
+        <div>
+          <div class="ph-name" id="chatName"></div>
+          <div class="ph-status">● Online</div>
+        </div>
+      </div>
+      <button class="btn-exam" onclick="goTo(3)">🔍 Exame Físico</button>
+    </div>
+    <div class="symptoms-wrap" id="symptomsWrap">
+      <!-- Chips de sintomas inseridos via JavaScript -->
+    </div>
+    <div class="chat-area" id="chatArea">
+      <!-- Mensagens inseridas via JavaScript -->
+    </div>
+    <div class="quick-options" id="quickOptions">
+      <!-- Botões de perguntas rápidas inseridos via JavaScript -->
+    </div>
+    <div class="diagnosis-bar">
+      <label>⚕️ Seu diagnóstico</label>
+      <div class="diagnosis-row">
+        <select class="diagnosis-select" id="diagnosisSelect">
+          <option value="">Selecione a doença...</option>
+          <option value="pti">Púrpura Trombocitopênica Imune (PTI)</option>
+          <option value="anemia_b12">Anemia carencial (B12 / ác. fólico / ferro)</option>
+          <option value="acantocitose">Acantocitose Hereditária</option>
+          <option value="hnp">Hemoglobinúria Paroxística Noturna</option>
+          <option value="anemia_aplasica">Anemia Aplásica Adquirida</option>
+          <option value="lpa">Leucemia Promielocítica Aguda</option>
+          <option value="poems">Síndrome POEMS</option>
+          <option value="lnh_hiv">Linfoma não Hodgkin associado ao HIV</option>
+          <option value="rfnh">Reação Febril Não Hemolítica</option>
+          <option value="taco">Sobrecarga Circulatória (TACO)</option>
+        </select>
+        <button class="confirm-btn" onclick="checkDiagnosis()">Confirmar</button>
+      </div>
+    </div>
+    <div class="chat-input-bar">
+      <input
+        class="chat-input"
+        id="chatInput"
+        placeholder="Pergunte ao paciente..."
+        onkeydown="if(event.key==='Enter') sendMsg()"
+      >
+      <button class="send-btn" onclick="sendMsg()">
+        <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ══════════ SCREEN 3 – Avaliação Física ══════════ -->
+  <div id="screen3" class="screen">
+    <div class="topbar">
+      <button class="back-btn" onclick="goTo(2)">←</button>
+      <span class="topbar-title">Avaliação Física</span>
+    </div>
+    <div class="content">
+      <div class="exam-hint">Toque nas regiões destacadas para obter informações do exame físico</div>
+
+      <div class="body-container" id="bodyContainer">
+        <!-- SVG silhueta humana -->
+        <svg class="body-svg" viewBox="0 0 200 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="100" cy="42"  rx="32" ry="38" fill="#2d4a52"/>
+          <rect x="88"  y="76"  width="24" height="20" rx="4"  fill="#2d4a52"/>
+          <rect x="60"  y="93"  width="80" height="100" rx="14" fill="#2d4a52"/>
+          <rect x="30"  y="93"  width="28" height="90"  rx="12" fill="#2d4a52"/>
+          <rect x="142" y="93"  width="28" height="90"  rx="12" fill="#2d4a52"/>
+          <ellipse cx="44"  cy="192" rx="14" ry="18" fill="#2d4a52"/>
+          <ellipse cx="156" cy="192" rx="14" ry="18" fill="#2d4a52"/>
+          <rect x="64"  y="188" width="72" height="40" rx="10" fill="#2d4a52"/>
+          <rect x="65"  y="224" width="32" height="90" rx="12" fill="#2d4a52"/>
+          <rect x="103" y="224" width="32" height="90" rx="12" fill="#2d4a52"/>
+          <ellipse cx="81"  cy="318" rx="18" ry="14" fill="#2d4a52"/>
+          <ellipse cx="119" cy="318" rx="18" ry="14" fill="#2d4a52"/>
+          <rect x="67"  y="328" width="28" height="80" rx="10" fill="#2d4a52"/>
+          <rect x="105" y="328" width="28" height="80" rx="10" fill="#2d4a52"/>
+          <ellipse cx="81"  cy="416" rx="18" ry="12" fill="#2d4a52"/>
+          <ellipse cx="119" cy="416" rx="18" ry="12" fill="#2d4a52"/>
+        </svg>
+
+        <!-- Hotspots clicáveis -->
+        <div class="hotspot" id="hs-head"    onclick="showExam('head')"></div>
+        <div class="hotspot" id="hs-chest"   onclick="showExam('chest')"></div>
+        <div class="hotspot" id="hs-abdomen" onclick="showExam('abdomen')"></div>
+        <div class="hotspot" id="hs-arm-r"   onclick="showExam('arm')"></div>
+        <div class="hotspot" id="hs-arm-l"   onclick="showExam('arm')"></div>
+        <div class="hotspot" id="hs-knee"    onclick="showExam('knee')"></div>
+        <div class="hotspot" id="hs-ankle"   onclick="showExam('ankle')"></div>
+      </div>
+
+      <div class="exam-panel" id="examPanel">
+        <h4>Selecione uma região</h4>
+        <p>Toque nos círculos destacados no corpo para ver os achados do exame físico dessa região.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Toast de feedback -->
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

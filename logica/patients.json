@@ -1,0 +1,366 @@
+[
+  {
+    "id": 1,
+    "name": "Mariana Souza",
+    "age": 28,
+    "gender": "F",
+    "color": "#FF6B6B",
+    "emoji": "👩",
+    "disease": "pti",
+    "disease_label": "Púrpura Trombocitopênica Imune (PTI)",
+    "intro": "Olá, doutor. Tenho notado manchas roxas pelo corpo há uns 10 dias e minha gengiva sangrou muito ao escovar os dentes hoje de manhã.",
+    "symptoms": ["petéquias", "equimoses espontâneas", "sangramento gengival", "menorragia", "sem febre", "sem hepatoesplenomegalia"],
+    "lab": {
+      "hemograma": "Plaquetas: 18.000/µL. Hemoglobina: 11,8 g/dL. Leucócitos normais.",
+      "esfregaco": "Plaquetas raras, sem esquizócitos.",
+      "coagulograma": "TP e TTPA normais.",
+      "outros": "Anticorpos antiplaquetários positivos."
+    },
+    "exam": {
+      "head": "Petéquias palatinas. Sem linfadenopatia cervical.",
+      "chest": "Ausculta cardiorrespiratória normal. Sem linfadenopatia axilar.",
+      "abdomen": "Baço não palpável. Fígado normal.",
+      "arm": "Equimoses em diferentes estágios nos antebraços. Petéquias puntiformes.",
+      "knee": "Sem artralgia ou artrite.",
+      "ankle": "Sem edema."
+    },
+    "responses": {
+      "febre": "Não tenho febre, só essas manchas e o sangramento.",
+      "dor": "Não tenho dor, só fico preocupada com as manchas.",
+      "manchas": "As manchas apareceram do nada, sem nenhum trauma. Ficam no braço e nas pernas.",
+      "sangramento": "Sangrei bastante pela gengiva ao escovar os dentes hoje cedo. Semana passada minha menstruação foi muito mais intensa que o normal.",
+      "historico": "Não tenho doenças prévias. Tomei amoxicilina há 3 semanas por uma infecção de garganta.",
+      "remedios": "Só a amoxicilina que terminei há 2 semanas. Nenhum outro medicamento.",
+      "familia": "Minha mãe tem hipotireoidismo, mas ninguém com problema parecido ao meu.",
+      "cansaco": "Fico um pouco cansada, mas nada demais.",
+      "default": "Pode me explicar melhor o que quer saber? Estou preocupada com essas manchas."
+    }
+  },
+  {
+    "id": 2,
+    "name": "Antônio Ferreira",
+    "age": 67,
+    "gender": "M",
+    "color": "#4ECDC4",
+    "emoji": "👴",
+    "disease": "anemia_b12",
+    "disease_label": "Anemia carencial por deficiência de B12, ácido fólico e ferro",
+    "intro": "Bom dia, doutor. Estou muito cansado faz uns 4 meses, fico sem fôlego até ao subir escadas, e minha esposa diz que estou bem pálido.",
+    "symptoms": ["fadiga intensa", "dispneia aos esforços", "palidez", "glossite", "parestesias em membros", "perda de memória leve"],
+    "lab": {
+      "hemograma": "Hb: 7,2 g/dL. VCM: 112 fL (macrocitose). Leucócitos: 3.800/µL. Plaquetas: 120.000/µL.",
+      "esfregaco": "Neutrófilos hipersegmentados. Macro-ovalócitos.",
+      "outros": "Vitamina B12: 89 pg/mL (↓). Ácido fólico: 2,1 ng/mL (↓). Ferritina: 8 ng/mL (↓). LDH elevado."
+    },
+    "exam": {
+      "head": "Palidez conjuntival intensa. Glossite (língua avermelhada e lisa). Icterícia leve.",
+      "chest": "Taquicardia leve. Sopro sistólico funcional.",
+      "abdomen": "Baço palpável 2 cm abaixo do rebordo costal.",
+      "arm": "Parestesias em luva bilaterais.",
+      "knee": "Reflexos patelares diminuídos.",
+      "ankle": "Leve edema maleolar bilateral."
+    },
+    "responses": {
+      "febre": "Não tenho febre não.",
+      "dor": "Às vezes sinto formigamento nas mãos e nos pés, como se dormissem.",
+      "alimentacao": "Sou vegetariano há 15 anos. Como bem pouca carne, praticamente nenhuma.",
+      "cansaco": "Estou exausto doutor, não consigo mais fazer minha caminhada diária. Qualquer esforço me deixa sem ar.",
+      "memoria": "Minha memória está falhando muito, esqueço coisas simples do dia a dia.",
+      "historico": "Tenho gastrite e faço uso de omeprazol há anos. Nunca tive problema de sangue antes.",
+      "remedios": "Omeprazol 20mg todo dia, há uns 8 anos.",
+      "familia": "Meu irmão tem anemia, mas não sei de qual tipo.",
+      "default": "Estou muito cansado mesmo, doutor. Pode ser algo grave?"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Rafael Moreira",
+    "age": 19,
+    "gender": "M",
+    "color": "#A78BFA",
+    "emoji": "👦",
+    "disease": "acantocitose",
+    "disease_label": "Acantocitose Hereditária",
+    "intro": "Minha mãe me trouxe porque o médico do colégio viu umas alterações no meu sangue e pediu que eu viesse ao hematologista.",
+    "symptoms": ["anemia hemolítica leve", "acantócitos no esfregaço", "neuropatia progressiva", "movimentos involuntários", "fraqueza muscular progressiva"],
+    "lab": {
+      "hemograma": "Hb: 10,4 g/dL. VCM: 78 fL. Reticulócitos: 4,8%.",
+      "esfregaco": "Acantócitos representando >20% das hemácias (hemácias espiculadas irregularmente).",
+      "outros": "LDH elevado. Bilirrubina indireta: 2,1 mg/dL. Ausência de betalipoproteínas no lipidograma."
+    },
+    "exam": {
+      "head": "Disartria leve. Movimentos oculares lentos. Sem linfadenopatia.",
+      "chest": "Ausculta normal.",
+      "abdomen": "Sem hepatoesplenomegalia.",
+      "arm": "Fraqueza muscular distal. Reflexos diminuídos. Acantócitos visíveis na lâmina.",
+      "knee": "Arreflexia patelar bilateral.",
+      "ankle": "Arreflexia aquiliana. Marcha levemente atáxica."
+    },
+    "responses": {
+      "febre": "Não, não tenho febre.",
+      "dor": "Às vezes tenho cãibras nas pernas.",
+      "movimentos": "Sim, ultimamente tenho notado uns movimentos involuntários nos braços que não consigo controlar.",
+      "familia": "Meu pai tem um problema parecido, sempre foi anêmico e tem dificuldade de andar.",
+      "historico": "Desde criança sou um pouco anêmico, mas nunca tratei direito.",
+      "neurologico": "Tenho tido dificuldade para falar às vezes, as palavras saem embaralhadas.",
+      "remedios": "Não tomo nenhum remédio regularmente.",
+      "alimentacao": "Como normal, sem restrições.",
+      "default": "O médico disse que tem algo diferente nas minhas células do sangue. O que pode ser?"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Cláudia Mendes",
+    "age": 42,
+    "gender": "F",
+    "color": "#34D399",
+    "emoji": "👩",
+    "disease": "hnp",
+    "disease_label": "Hemoglobinúria Paroxística Noturna",
+    "intro": "Doutor, estou apavorada. Hoje de manhã minha urina estava cor de coca-cola escura. Isso já aconteceu algumas vezes.",
+    "symptoms": ["hemoglobinúria", "urina escura ao acordar", "fadiga", "trombose venosa", "dor abdominal", "disfagia"],
+    "lab": {
+      "hemograma": "Hb: 8,1 g/dL. Leucopenia leve. Plaquetas: 95.000/µL (pancitopenia leve).",
+      "esfregaco": "Sem esquizócitos. Reticulocitose.",
+      "outros": "LDH muito elevado: 1.240 U/L. Teste de Ham positivo. Citometria de fluxo: clone GPI-deficiente >50% (CD55 e CD59 ausentes)."
+    },
+    "exam": {
+      "head": "Palidez conjuntival moderada. Escleróticas levemente ictéricas.",
+      "chest": "Ausculta normal.",
+      "abdomen": "Dor à palpação em flanco esquerdo (esplenomegalia leve).",
+      "arm": "Sem alterações cutâneas.",
+      "knee": "Sem alterações.",
+      "ankle": "Sem edema."
+    },
+    "responses": {
+      "urina": "Acontece principalmente de manhã ao acordar, doutor. A urina sai bem escura, quase marrom, e depois clareia ao longo do dia.",
+      "febre": "Às vezes tenho febre baixa, principalmente quando a urina fica mais escura.",
+      "dor": "Tenho dores abdominais em cólica às vezes. Uma vez tive muita dor no peito.",
+      "cansaco": "Muito cansada, sem energia pra nada há meses.",
+      "historico": "Tive uma trombose na veia hepática há 6 meses. Fiz exames mas ninguém chegou a um diagnóstico.",
+      "remedios": "Warfarina por causa da trombose.",
+      "engolir": "Às vezes sinto dificuldade de engolir, uma sensação estranha na garganta.",
+      "familia": "Ninguém na família com problema parecido.",
+      "default": "Essa urina escura me apavora muito, doutor. O que pode estar causando isso?"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Jorge Nascimento",
+    "age": 55,
+    "gender": "M",
+    "color": "#FBBF24",
+    "emoji": "👨",
+    "disease": "anemia_aplasica",
+    "disease_label": "Anemia Aplásica Adquirida",
+    "intro": "Doutor, estou com muito cansaço, tive febre alta essa semana e apareceram umas manchas roxas no corpo. Está tudo piorando junto.",
+    "symptoms": ["pancitopenia", "fadiga severa", "febre", "infecções recorrentes", "sangramentos", "sem hepatoesplenomegalia"],
+    "lab": {
+      "hemograma": "Hb: 6,8 g/dL. Leucócitos: 1.200/µL (neutrófilos: 400/µL). Plaquetas: 12.000/µL. Pancitopenia grave.",
+      "esfregaco": "Sem blastos. Sem esquizócitos. Células normais em número reduzido.",
+      "outros": "Biópsia de medula óssea: hipocelularidade >90% (medula aplásica). Eritropoetina elevada."
+    },
+    "exam": {
+      "head": "Palidez intensa. Petéquias na mucosa oral.",
+      "chest": "Foco de crepitação em base direita (infecção pulmonar).",
+      "abdomen": "Sem hepatoesplenomegalia. Sem linfadenopatia.",
+      "arm": "Equimoses e petéquias em membros superiores.",
+      "knee": "Sem artralgia.",
+      "ankle": "Sem edema."
+    },
+    "responses": {
+      "febre": "Sim, febre de quase 39 essa semana, com calafrios.",
+      "dor": "Tenho dor de cabeça forte e dores pelo corpo.",
+      "manchas": "Apareceram manchas roxas nos braços e pernas sem nenhum motivo.",
+      "cansaco": "Estou exausto, doutor. Não consigo nem levantar da cama direito.",
+      "historico": "Tomei um remédio para reumatismo há 4 meses, cloranfenicol. Parei quando comecei a me sentir mal.",
+      "remedios": "Parei todos os remédios quando fiquei assim. Antes tomava cloranfenicol.",
+      "infeccoes": "Já tive 3 infecções esse mês, amigdalite, pneumonia leve e agora isso.",
+      "familia": "Ninguém com problema parecido.",
+      "default": "Estou muito mal, doutor. Nunca me senti assim tão fraco e doente ao mesmo tempo."
+    }
+  },
+  {
+    "id": 6,
+    "name": "Beatriz Cavalcanti",
+    "age": 38,
+    "gender": "F",
+    "color": "#60A5FA",
+    "emoji": "👩",
+    "disease": "lpa",
+    "disease_label": "Leucemia Promielocítica Aguda",
+    "intro": "Doutor, comecei a sangrar sem parar de um corte pequeno, estou com hematomas por todo o corpo e me sinto muito mal há uma semana.",
+    "symptoms": ["sangramentos graves", "equimoses extensas", "CID associada", "febre", "fadiga", "blastos no esfregaço"],
+    "lab": {
+      "hemograma": "Hb: 7,4 g/dL. Leucócitos: 2.800/µL com 60% de promielócitos anômalos. Plaquetas: 22.000/µL.",
+      "esfregaco": "Promielócitos com grânulos azurófilos abundantes e bastões de Auer. Células de Faggot presentes.",
+      "coagulograma": "TP alargado. Fibrinogênio: 80 mg/dL (↓↓). D-dímero muito elevado. CIVD instalada.",
+      "citogenetica": "t(15;17) confirmada. Fusão PML-RARα positiva."
+    },
+    "exam": {
+      "head": "Equimoses periorbitárias. Petéquias no palato. Sangramento gengival ativo.",
+      "chest": "Hematoma extenso em parede torácica anterior.",
+      "abdomen": "Dor à palpação difusa. Sem organomegalias.",
+      "arm": "Equimoses confluentes bilaterais. Sangramento prolongado no local de punção venosa.",
+      "knee": "Hemartrose leve no joelho direito.",
+      "ankle": "Petéquias em tornozelos."
+    },
+    "responses": {
+      "sangramento": "Cortei o dedo lavando louça e sangrei por mais de uma hora, doutor. Nunca aconteceu isso antes.",
+      "febre": "Sim, febre de 38,5 há 5 dias.",
+      "dor": "Dor de cabeça intensa e dores nas juntas.",
+      "manchas": "Tenho hematomas enormes pelo corpo inteiro, sem me machucar.",
+      "cansaco": "Exausta, sem forças pra nada.",
+      "historico": "Saudável até há 2 semanas. Nunca tive problema de coagulação.",
+      "remedios": "Não tomo nenhum remédio.",
+      "familia": "Ninguém com leucemia ou problema de sangue.",
+      "default": "Estou com muito medo, doutor. Esse sangramento não para e estou cada vez mais fraca."
+    }
+  },
+  {
+    "id": 7,
+    "name": "Henrique Barros",
+    "age": 61,
+    "gender": "M",
+    "color": "#F472B6",
+    "emoji": "👨",
+    "disease": "poems",
+    "disease_label": "Síndrome POEMS",
+    "intro": "Doutor, tenho sentido fraqueza progressiva nas pernas, minha barriga inchou muito e apareceram umas manchas escuras na pele.",
+    "symptoms": ["polineuropatia periférica", "organomegalia", "endocrinopatia", "proteína M", "alterações cutâneas", "edema"],
+    "lab": {
+      "hemograma": "Hb: 9,8 g/dL. Plaquetas: 620.000/µL (trombocitose). Leucócitos normais.",
+      "proteinas": "Proteína M (IgA lambda) em eletroforese. Imunofixação positiva para cadeia leve lambda.",
+      "hormonios": "TSH elevado. Testosterona baixa. Glicemia de jejum: 132 mg/dL.",
+      "outros": "VEGF sérico muito elevado. Biópsia de medula: plasmocitose focal."
+    },
+    "exam": {
+      "head": "Papiledema ao fundo de olho. Sem linfadenopatia cervical.",
+      "chest": "Derrame pleural leve à direita. Linfadenopatia axilar.",
+      "abdomen": "Hepatomegalia e esplenomegalia. Ascite moderada.",
+      "arm": "Fraqueza muscular distal. Hiperpigmentação cutânea. Pelos grossos (hipertricose).",
+      "knee": "Fraqueza muscular proximal. Reflexos diminuídos.",
+      "ankle": "Edema maleolar importante bilateral. Hipocratismo digital."
+    },
+    "responses": {
+      "fraqueza": "Comecei a sentir fraqueza nas pernas há 8 meses, foi piorando aos poucos. Agora tenho dificuldade de subir escadas.",
+      "barriga": "Minha barriga foi crescendo nos últimos meses. O médico disse que tem líquido.",
+      "pele": "Apareceram manchas escuras no corpo e os pelos ficaram mais grossos e escuros.",
+      "dor": "Tenho dor e formigamento nos pés e nas mãos, como agulhadas.",
+      "historico": "Tenho diabetes recém-diagnosticada e minha tireoide está alterada.",
+      "remedios": "Metformina há 3 meses. Levotiroxina há 2 meses.",
+      "visao": "Minha visão está embaçada ultimamente.",
+      "familia": "Ninguém com problema parecido.",
+      "default": "Tantas coisas acontecendo ao mesmo tempo, doutor. Não entendo o que está me acontecendo."
+    }
+  },
+  {
+    "id": 8,
+    "name": "Carlos Eduardo Lima",
+    "age": 34,
+    "gender": "M",
+    "color": "#FB923C",
+    "emoji": "👨",
+    "disease": "lnh_hiv",
+    "disease_label": "Linfoma não Hodgkin associado ao HIV",
+    "intro": "Doutor, emagreci 12 kg em 3 meses, tenho suores noturnos absurdos e esse caroço no pescoço que não para de crescer.",
+    "symptoms": ["linfadenopatia cervical", "perda de peso >10%", "sudorese noturna", "febre vespertina", "imunodeficiência", "hepatoesplenomegalia"],
+    "lab": {
+      "hemograma": "Hb: 9,2 g/dL. Leucócitos: 2.200/µL. Linfócitos CD4: 180 células/µL.",
+      "sorologias": "HIV positivo (Western blot confirmado). Carga viral: 85.000 cópias/mL.",
+      "ldh": "LDH: 890 U/L (muito elevado).",
+      "biopsia": "Biópsia do linfonodo: linfoma difuso de grandes células B (DLBCL). EBV positivo."
+    },
+    "exam": {
+      "head": "Linfadenopatia cervical bilateral, linfonodos endurecidos, maiores que 3 cm, indolores.",
+      "chest": "Linfadenopatia mediastinal ao exame. Derrame pleural pequeno.",
+      "abdomen": "Hepatoesplenomegalia. Linfadenopatia para-aórtica.",
+      "arm": "Emagrecimento visível. Lesões de sarcoma de Kaposi em antebraço.",
+      "knee": "Sem alterações articulares.",
+      "ankle": "Sem edema."
+    },
+    "responses": {
+      "carocos": "Sim, esse caroço no pescoço apareceu há 3 meses e foi crescendo. Agora tem um do outro lado também.",
+      "febre": "Tenho febre toda tarde, de 37,8 a 38,2. Mas o que me incomoda mesmo são os suores à noite, acordo encharcado.",
+      "emagrecimento": "Emagreci 12 quilos em 3 meses sem fazer dieta. Perdi completamente o apetite.",
+      "hiv": "Sim, sou HIV positivo há 6 anos. Mas parei o tratamento há 1 ano porque estava me sentindo bem.",
+      "historico": "HIV diagnosticado há 6 anos. Fazia uso de antirretroviral mas parei.",
+      "remedios": "Parei os antirretrovirais há um ano.",
+      "dor": "Tenho dores pelo corpo e a barriga está um pouco inchada.",
+      "familia": "Ninguém com linfoma.",
+      "default": "Estou com medo do que pode ser esse caroço, doutor. Pode ser câncer?"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Sandra Oliveira",
+    "age": 52,
+    "gender": "F",
+    "color": "#2DD4BF",
+    "emoji": "👩",
+    "disease": "rfnh",
+    "disease_label": "Reação Febril Não Hemolítica",
+    "intro": "Doutor, estive no hospital ontem para receber transfusão de sangue e durante o procedimento comecei a passar muito mal, com febre e calafrios.",
+    "symptoms": ["febre durante transfusão", "calafrios", "mal-estar", "sem hemólise", "início 1-6h após transfusão", "autolimitada"],
+    "lab": {
+      "hemograma": "Hb pré-transfusional: 7,8 g/dL. Sem queda após reação.",
+      "outros": "LDH normal. Bilirrubinas normais. Haptoglobina normal. Hemoglobinúria ausente. Teste de Coombs direto negativo.",
+      "urina": "Urina normal, sem hemoglobinúria."
+    },
+    "exam": {
+      "head": "Temperatura: 39,1°C (subiu 1,8°C durante a transfusão). Fácies de desconforto.",
+      "chest": "Taquicardia: 108 bpm. Sem dispneia. Ausculta limpa.",
+      "abdomen": "Sem alterações.",
+      "arm": "Local de punção sem sinais de extravasamento.",
+      "knee": "Sem alterações.",
+      "ankle": "Sem edema."
+    },
+    "responses": {
+      "transfusao": "Estava recebendo a transfusão há cerca de 2 horas quando comecei a sentir calafrios e logo depois febre alta.",
+      "febre": "A febre foi de 39 graus, veio rápido, junto com muito calafrio e tremores.",
+      "urina": "Não percebi nada diferente na urina, estava normal.",
+      "historico": "Tenho anemia falciforme e já recebi várias transfusões antes. Isso nunca tinha acontecido assim.",
+      "remedios": "Hidroxiureia e ácido fólico.",
+      "alergia": "Não tenho alergias conhecidas a medicamentos.",
+      "melhora": "Depois que pararam a transfusão e me deram dipirona, a febre foi cedendo em umas 2 horas.",
+      "dor": "Dor de cabeça leve durante a febre, mas passou.",
+      "default": "Foi assustador, doutor. Estava me sentindo bem e de repente fiquei assim durante a transfusão."
+    }
+  },
+  {
+    "id": 10,
+    "name": "Paulo Roberto Santos",
+    "age": 70,
+    "gender": "M",
+    "color": "#818CF8",
+    "emoji": "👴",
+    "disease": "taco",
+    "disease_label": "Sobrecarga Circulatória (TACO)",
+    "intro": "Doutor, meu marido recebeu uma transfusão ontem e logo depois começou com falta de ar intensa, ficou agitado e a pressão subiu muito.",
+    "symptoms": ["dispneia aguda", "hipertensão", "taquicardia", "edema pulmonar", "durante ou até 6h após transfusão", "piora com volume"],
+    "lab": {
+      "hemograma": "Sem alterações hemolíticas.",
+      "outros": "BNP: 1.840 pg/mL (muito elevado). Radiografia: congestão pulmonar bilateral, cardiomegalia.",
+      "gasometria": "PaO2: 58 mmHg. Saturação: 88% em ar ambiente."
+    },
+    "exam": {
+      "head": "Agitação. Sudorese fria. Cianose labial.",
+      "chest": "Estertores crepitantes bilaterais. Taquicardia: 118 bpm. PA: 178/110 mmHg. Saturação O2: 88%.",
+      "abdomen": "Sem alterações.",
+      "arm": "Extremidades frias. Tempo de enchimento capilar aumentado.",
+      "knee": "Sem alterações.",
+      "ankle": "Edema importante bilateral, cacifo +++."
+    },
+    "responses": {
+      "transfusao": "Ele recebeu 2 bolsas de sangue seguidas ontem à tarde, sem pausa entre elas.",
+      "falta_ar": "A falta de ar começou durante a segunda bolsa, foi rápido. Ele ficou desesperado, não conseguia respirar.",
+      "pressao": "Sim, a pressão dele subiu muito, o médico disse que estava 178 por 110.",
+      "historico": "Ele tem insuficiência cardíaca e hipertensão há anos. Está sempre com os tornozelos inchados.",
+      "remedios": "Furosemida, carvedilol, enalapril e espironolactona.",
+      "urina": "A urina estava normal, sem cor diferente.",
+      "melhora": "Melhorou depois que deram furosemida venosa e oxigênio. A transfusão foi interrompida imediatamente.",
+      "febre": "Não teve febre, só a falta de ar e a pressão alta.",
+      "default": "Foi muito assustador, doutor. Ele ficou roxo e sem ar logo após a transfusão."
+    }
+  }
+]
