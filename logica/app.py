@@ -54,8 +54,8 @@ except Exception as e:
 @app.route("/api/patients", methods=["GET"])
 def get_patients():
     """Retorna a lista de pacientes (sem dados sensíveis de resposta)."""
-    safe_fields = ["id", "name", "age", "gender", "color", "emoji",
-                   "disease_label", "intro", "symptoms"]
+   # Adicione "lab_display" no final da lista
+    safe_fields = ["id", "name", "age", "gender", "color", "emoji", "disease_label", "intro", "signs", "lab_display"]
     result = [{k: p[k] for k in safe_fields} for p in PATIENTS]
     return jsonify(result)
 
@@ -67,8 +67,8 @@ def get_patient(patient_id: int):
     if not patient:
         return jsonify({"error": "Paciente não encontrado."}), 404
 
-    safe_fields = ["id", "name", "age", "gender", "color", "emoji",
-                   "disease_label", "intro", "symptoms"]
+    # Adicione "lab_display" no final da lista
+    safe_fields = ["id", "name", "age", "gender", "color", "emoji", "disease_label", "intro", "signs", "lab_display"]
     return jsonify({k: patient[k] for k in safe_fields})
 
 

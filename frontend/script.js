@@ -15,7 +15,7 @@ const EXAM_LABELS = {
   ankle:   "Tornozelos",
 };
 
-/* Perguntas rápidas exibidas no chat */
+/* Perguntas rápidas exibidas no chat
 const QUICK_QUESTIONS = [
   "O paciente tem febre?",
   "Tem alguma dor?",
@@ -24,7 +24,7 @@ const QUICK_QUESTIONS = [
   "Faz uso de algum remédio?",
   "Tem histórico de doenças?",
   "Histórico familiar relevante?",
-];
+]; */
 
 /* ── Estado ── */
 let currentPatient = null;
@@ -107,7 +107,7 @@ function openChat(patient) {
   document.getElementById("chatArea").innerHTML = "";
   addMessage("patient", patient.intro);
 
-  /* Perguntas rápidas */
+  /* Perguntas rápidas 
   const qo = document.getElementById("quickOptions");
   qo.innerHTML = "";
   QUICK_QUESTIONS.forEach((q) => {
@@ -119,7 +119,7 @@ function openChat(patient) {
       sendMsg();
     };
     qo.appendChild(btn);
-  });
+  });*/
 
   goTo(2);
 }
@@ -303,6 +303,67 @@ function showToast(message, type) {
   t.textContent = message;
   t.className   = "toast show " + type;
   setTimeout(() => { t.className = "toast"; }, 2800);
+}
+
+/* parte de exame laboratorial*/
+
+function openLabModal() {
+  if (!currentPatient) {
+    showToast("Selecione um paciente primeiro.", "wrong");
+    return;
+  }
+
+  const modalBody = document.getElementById("labModalBody");
+  
+  if (!currentPatient.lab_display || currentPatient.lab_display.length === 0) {
+    modalBody.innerHTML = "<p>Nenhum exame laboratorial disponível para este paciente.</p>";
+  } else {
+    let html = "";
+    
+    currentPatient.lab_display.forEach(categoria => {
+      html += `
+        <div class="lab-category">
+          <h4>${categoria.categoria}</h4>
+          <table class="lab-table">
+            <thead>
+              <tr>
+                <th>Exame</th>
+                <th>Resultado</th>
+                <th>Referência</th>
+              </tr>
+            </thead>
+            <tbody>
+      `;
+      
+      categoria.exames.forEach(exame => {
+        const valorClass = exame.alterado ? "lab-alert" : "";
+        
+        html += `
+              <tr>
+                <td>${exame.nome}</td>
+                <td class="${valorClass}">${exame.valor}</td>
+                <td><small>${exame.referencia}</small></td>
+              </tr>
+        `;
+      });
+
+      html += `
+            </tbody>
+          </table>
+        </div>
+      `;
+    });
+
+    modalBody.innerHTML = html;
+  }
+
+  // Mostra o modal
+  document.getElementById("labModal").classList.add("active");
+}
+
+function closeLabModal() {
+  // Esconde o modal
+  document.getElementById("labModal").classList.remove("active");
 }
 
 /* ── Start ── */

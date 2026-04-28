@@ -43,17 +43,21 @@
           <div class="ph-status">● Online</div>
         </div>
       </div>
-      <button class="btn-exam" onclick="goTo(3)">🔍 Exame Físico</button>
+      <div class="header-actions">
+        <button class="btn-action btn-lab"  onclick="openLabModal()">🧪 Exames Lab.</button>
+        <button class="btn-action btn-exam" onclick="goTo(3)">🔍 Exame Físico</button>
+      </div>
     </div>
+
     <div class="symptoms-wrap" id="symptomsWrap">
       <!-- Chips de sintomas inseridos via JavaScript -->
     </div>
     <div class="chat-area" id="chatArea">
       <!-- Mensagens inseridas via JavaScript -->
     </div>
-    <div class="quick-options" id="quickOptions">
-      <!-- Botões de perguntas rápidas inseridos via JavaScript -->
-    </div>
+   <!-- <div class="quick-options" id="quickOptions"> -->
+      <!-- Botões de perguntas rápidas inseridos via JavaScript 
+    </div>-->
     <div class="diagnosis-bar">
       <label>⚕️ Seu diagnóstico</label>
       <div class="diagnosis-row">
@@ -133,6 +137,17 @@
     </div>
   </div>
 
+</div>
+
+<div id="labModal" class="modal-overlay">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>🧪 Exames Laboratoriais</h3>
+      <button class="close-btn" onclick="closeLabModal()">←</button>
+    </div>
+    <div class="modal-body" id="labModalBody">
+      </div>
+  </div>
 </div>
 
 <!-- Toast de feedback -->

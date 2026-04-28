@@ -303,10 +303,16 @@ body {
   color: var(--primary);
 }
 
-.btn-exam {
+.header-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-exam,.btn-lab {
   background: var(--primary);
   color: #fff;
-  border: none;
+  border: white;
   border-radius: var(--radius-sm);
   padding: 8px 12px;
   font-size: 11.5px;
@@ -320,6 +326,8 @@ body {
 .btn-exam:hover {
   background: var(--primary-dark);
 }
+
+.btn-lab:hover { background: var(--primary-dark);}
 
 /* Área de mensagens */
 .chat-area {
@@ -627,6 +635,56 @@ body {
 .toast.show    { opacity: 1; transform: translateX(-50%) translateY(0); }
 .toast.correct { background: var(--primary-dark); }
 .toast.wrong   { background: var(--accent); }
+
+/*exame lab*/
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-content {
+  background: #fff;
+  width: 90%;
+  max-width: 400px;
+  border-radius: var(--radius-md, 12px);
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.modal-header {
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 { margin: 0; font-size: 1.1rem; }
+.close-btn { background: none; border: none; font-size: 1.2rem; cursor: pointer; }
+
+.modal-body {
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.lab-category { margin-bottom: 20px; }
+.lab-category h4 { margin: 0 0 10px 0; color: #2d4a52; border-bottom: 2px solid #eee; padding-bottom: 4px;}
+.lab-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.lab-table th, .lab-table td { padding: 8px; text-align: left; border-bottom: 1px solid #eee; }
+.lab-table th { color: #666; font-weight: 600; }
+.lab-alert { color: #e11d48; font-weight: bold; }
+
 
 /* ══════════════════════════════════════
    RESPONSIVIDADE
