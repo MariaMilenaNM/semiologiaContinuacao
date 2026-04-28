@@ -27,7 +27,7 @@ SAVE_DIR   = os.path.join(os.path.dirname(os.path.abspath(__file__)), "saved_mod
 MODEL_PATH = os.path.join(SAVE_DIR, "intent_model.keras")
 VECT_PATH  = os.path.join(SAVE_DIR, "vectorizer.pkl")
 LABELS_PATH= os.path.join(SAVE_DIR, "labels.json")
-EPOCHS     = 120
+EPOCHS     = 200
 BATCH_SIZE = 8
 
 os.makedirs(SAVE_DIR, exist_ok=True)

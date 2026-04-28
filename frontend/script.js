@@ -62,7 +62,9 @@ function renderPatients() {
     div.className = "patient-card";
 
     div.innerHTML = `
-      <div class="patient-avatar" style="background:${p.color}">${p.emoji}</div>
+      <div class="patient-avatar" style="background:${p.color}">
+        <img src = "${p.emoji}" alt="${p.name}">
+      </div>
       <div class="patient-name">${p.name}</div>
       <div class="patient-tag">${p.age} anos</div>
     `;
@@ -91,14 +93,14 @@ function openChat(patient) {
   /* Cabeçalho */
   document.getElementById("chatTitle").textContent        = patient.name;
   document.getElementById("chatName").textContent         = patient.name;
-  document.getElementById("chatAvatar").textContent       = patient.emoji;
+  document.getElementById("chatAvatar").innerHTML         = `<img src="${patient.emoji}" alt="${patient.name}">`;
   document.getElementById("chatAvatar").style.background  = patient.color;
   document.getElementById("diagnosisSelect").value        = "";
 
   /* Sintomas como chips */
   const symptomsWrap = document.getElementById("symptomsWrap");
-  if (symptomsWrap && patient.symptoms) {
-    symptomsWrap.innerHTML = patient.symptoms
+  if (symptomsWrap && patient.signs) {
+    symptomsWrap.innerHTML = patient.signs
       .map((s) => `<span class="symptom-chip">${s}</span>`)
       .join("");
   }
@@ -134,7 +136,7 @@ function addMessage(role, text) {
   avatarEl.className = "msg-avatar";
 
   if (role === "patient") {
-    avatarEl.textContent        = currentPatient.emoji;
+    avatarEl.innerHTML          = `<img src="${currentPatient.emoji}" alt="${currentPatient.name}">`;;
     avatarEl.style.background   = currentPatient.color;
   } else {
     avatarEl.textContent        = "🎓";
@@ -160,7 +162,7 @@ function showTyping() {
 
   const avatarEl = document.createElement("div");
   avatarEl.className        = "msg-avatar";
-  avatarEl.textContent      = currentPatient.emoji;
+  avatarEl.innerHTML        = `<img src="${currentPatient.emoji}" alt="Digitando">`;;
   avatarEl.style.background = currentPatient.color;
 
   const bubble = document.createElement("div");

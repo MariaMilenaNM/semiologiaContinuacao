@@ -685,6 +685,23 @@ body {
 .lab-table th { color: #666; font-weight: 600; }
 .lab-alert { color: #e11d48; font-weight: bold; }
 
+/*Paciente imagens */
+.patient-avatar img,
+.ph-avatar img,
+.msg-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  border-radius: 50%; 
+}
+
+/* Opcional: remover o overflow das divs originais para a borda arredondada ficar perfeita */
+.patient-avatar,
+.ph-avatar,
+.msg-avatar {
+  overflow: hidden; 
+}
+
 
 /* ══════════════════════════════════════
    RESPONSIVIDADE
