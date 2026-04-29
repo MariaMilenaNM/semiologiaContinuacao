@@ -368,5 +368,13 @@ function closeLabModal() {
   document.getElementById("labModal").classList.remove("active");
 }
 
+function openAboutModal() {
+  document.getElementById("aboutModal").classList.add("active");
+}
+
+function closeAboutModal() {
+  document.getElementById("aboutModal").classList.remove("active");
+}
+
 /* ── Start ── */
 init();

@@ -11,11 +11,33 @@
 
 <div class="phone">
 
+ <div id="screen0" class="screen active">
+    <div class="tela-inicial">
+      
+      <div class="logo-container">
+        <div class="logo-placeholder">
+          <img src = "assets/logoHemoPocket.jpg"/>
+        </div>   
+        
+        <h1 class="app-title">HemPocket</h1>
+        <p class="app-subtitle">Um consultório no seu bolso.</p>
+        <p class="app-desc">Plataforma para Aprendizagem Baseada em Simulação com Inteligência Artificial</p>
+      </div>
+      
+      <div class="start-actions">
+        <button class="btn-primary-large" onclick="goTo(1)">Iniciar o atendimento</button>
+        <button class="btn-secondary-large" onclick="openAboutModal()">Saiba mais</button>
+      </div>
+
+    </div>
+  </div>
+
+
   <!-- ══════════ SCREEN 1 – Lista de Pacientes ══════════ -->
-  <div id="screen1" class="screen active">
+  <div id="screen1" class="screen">
     <div class="topbar">
-      <span class="topbar-icon">🩺</span>
-      <span class="topbar-title">AnamneseApp</span>
+      <button class="back-btn" onclick="goTo(0)">←</button>
+      <span class="topbar-title">Sala de Espera</span>
     </div>
     <div class="content">
       <div class="welcome-card">
@@ -149,6 +171,37 @@
       </div>
   </div>
 </div>
+
+<!--saiba mais-->
+<div id="aboutModal" class="modal-overlay">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>ℹ️ Sobre o HemPocket</h3>
+      <button class="close-btn" onclick="closeAboutModal()">←</button>
+    </div>
+    <div class="modal-body" style="color: var(--text2); font-size: 14px; line-height: 1.6;">
+      
+      <h4 style="color: var(--text); margin-bottom: 8px;">Como funciona?</h4>
+      <ul style="padding-left: 20px; margin-bottom: 20px;">
+        <li><strong>Passo 1:</strong> Converse com a IA para fazer a anamnese do paciente.</li>
+        <li><strong>Passo 2:</strong> Explore a silhueta interativa no Exame Físico.</li>
+        <li><strong>Passo 3:</strong> Analise os Exames Laboratoriais.</li>
+        <li><strong>Passo 4:</strong> Formule e valide o seu diagnóstico.</li>
+      </ul>
+
+      <h4 style="color: var(--text); margin-bottom: 8px;">Sobre o Projeto</h4>
+      <p style="margin-bottom: 20px;">
+        Plataforma acadêmica de simulação clínica desenvolvida para treinar o raciocínio diagnóstico utilizando Inteligência Artificial. Ideal para fixar conceitos vistos em sala de aula através da prática.
+      </p>
+
+      <div class="exam-badge alert" style="display: block; text-align: center; white-space: normal; padding: 10px;">
+         <strong>Aviso:</strong> O HemPocket é uma ferramenta estritamente educacional e não fornece ou substitui diagnósticos médicos reais.
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
 <!-- Toast de feedback -->
 <div class="toast" id="toast"></div>

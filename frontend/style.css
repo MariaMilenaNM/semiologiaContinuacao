@@ -123,6 +123,80 @@ body {
   background: rgba(255,255,255,0.38);
 }
 
+.tela-inicial {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  padding: 60px 24px 40px;
+  background: linear-gradient(180deg, var(--surface) 0%, var(--surface2) 100%);
+  text-align: center;
+}
+
+.logo-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.logo-placeholder img {
+  max-width: 180px;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.app-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -1px;
+  margin-bottom: 4px;
+}
+
+.app-subtitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.app-desc {
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.5;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.start-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.btn-primary-large, .btn-secondary-large {
+  width: 100%;
+  padding: 16px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  background: var(--primary); 
+  color: #fff;
+}
+
+.btn-primary-large:hover, .btn-secondary-large:hover {
+  background: var(--primary-dark);
+}
+
 /* ══════════════════════════════════════
    SCREEN 1 – Lista de Pacientes
 ══════════════════════════════════════ */
