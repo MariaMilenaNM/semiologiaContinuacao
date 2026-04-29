@@ -91,7 +91,7 @@ function openChat(patient) {
   currentPatient = patient;
 
   /* Cabeçalho */
-  document.getElementById("chatTitle").textContent        = patient.name;
+  //document.getElementById("chatTitle").textContent        = patient.name;
   document.getElementById("chatName").textContent         = patient.name;
   document.getElementById("chatAvatar").innerHTML         = `<img src="${patient.emoji}" alt="${patient.name}">`;
   document.getElementById("chatAvatar").style.background  = patient.color;
