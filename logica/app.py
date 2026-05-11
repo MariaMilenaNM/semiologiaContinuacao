@@ -207,5 +207,5 @@ def get_exam(patient_id: int, region: str):
 # Este bloco só executa quando você roda `python app.py` localmente.
 if __name__ == "__main__":
     debug = os.getenv("FLASK_DEBUG", "0") == "1"
-    port  = int(os.getenv("PORT", "5000"))
+    port  = int(os.getenv("PORT", "5050"))
     app.run(debug=debug, host="0.0.0.0", port=port)

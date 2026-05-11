@@ -4,7 +4,7 @@
 ══════════════════════════════════════ */
 
 const API = location.hostname === "localhost" || location.hostname === "127.0.0.1"
-  ? "http://localhost:5000/api"
+  ? "http://localhost:5050/api"
   : "https://fikani-semiologiacontinuacao.hf.space/api";
 
 /* Regiões do exame físico */
