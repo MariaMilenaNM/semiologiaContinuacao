@@ -140,6 +140,53 @@ A primeira request leva ~30–60s pra acordar; as próximas voltam ao normal.
 
 ---
 
+## 💤 Mantendo o Space acordado (UptimeRobot)
+
+O HF Spaces no plano gratuito **coloca o Space pra dormir após 48 horas sem nenhuma
+request**. A primeira request depois disso leva ~30–60 segundos pra acordar (cold start),
+o que dá uma sensação de "site quebrado" pro usuário.
+
+A solução é configurar um serviço externo que faça um ping no Space de tempos em tempos,
+mantendo o contador de inatividade sempre zerado. O **UptimeRobot** faz isso de graça.
+
+### Setup (uma vez, ~3 min)
+
+1. Cria conta grátis em https://uptimerobot.com (plano free, até 50 monitores).
+
+2. **+ Add New Monitor**. Configura assim:
+
+   | Campo | Valor |
+   |---|---|
+   | **Monitor Type** | `HTTP(s)` |
+   | **Friendly Name** | algo identificável (ex: `HemPocket backend`) |
+   | **URL (or IP)** | `https://<HF_USER>-<SPACE_NAME>.hf.space/api/patients` |
+   | **Monitoring Interval** | `Every 12 hours` |
+
+3. **Create Monitor**.
+
+Pronto. O UptimeRobot vai bater na sua URL a cada 12 horas, indefinidamente.
+O contador de 48h nunca chega no fim, o Space nunca dorme, primeiro acesso é sempre rápido.
+
+### Por que 12 horas (e não 5 minutos)?
+
+- O sleep do HF é **48h** — a cada 12h sobra muita folga.
+- Intervalos curtos (5min é o mínimo do plano free) geram **8.640 requests/mês**
+  no seu Space, polui os logs e métricas.
+- 12h = **60 requests/mês** — praticamente invisível.
+
+### Qual endpoint usar?
+
+Use um **endpoint leve**, ideal `/api/patients` (só lê JSON em memória, não invoca o modelo).
+Evite `/api/chat` — cada ping rodaria o classificador à toa.
+
+### Bonus: alerta por email se cair de verdade
+
+O UptimeRobot manda email pra você automaticamente se o ping falhar (HTTP 5xx, timeout,
+erro de DNS). Útil pra descobrir que o Space crashou *antes* dos usuários reclamarem.
+Configurável em **My Settings → Alert Contacts**.
+
+---
+
 ## 📦 O que foi adicionado/modificado para funcionar no HF
 
 Se você for olhar o histórico do projeto, perceberá que o backend original (Flask + Keras)
