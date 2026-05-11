@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "target": "anamnese",
+    "public": "frontend",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

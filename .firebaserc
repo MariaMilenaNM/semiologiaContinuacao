@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "res-server"
+  },
+  "targets": {
+    "res-server": {
+      "hosting": {
+        "anamnese": [
+          "semiologia"
+        ]
+      }
+    }
+  }
+}
