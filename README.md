@@ -140,6 +140,54 @@ A primeira request leva ~30–60s pra acordar; as próximas voltam ao normal.
 
 ---
 
+## 📦 O que foi adicionado/modificado para funcionar no HF
+
+Se você for olhar o histórico do projeto, perceberá que o backend original (Flask + Keras)
+não tinha nada relacionado a Docker ou Hugging Face. Os arquivos abaixo foram **adicionados**
+ou **modificados** especificamente para o deploy no Space funcionar.
+
+### Arquivos novos em `logica/`
+
+| Arquivo | Pra que serve |
+|---|---|
+| `Dockerfile` | Receita do container. Usa `python:3.11-slim`, cria usuário não-root, instala dependências, **roda `python train.py` no build** (treina o modelo dentro da imagem) e sobe o `gunicorn` na porta 7860. |
+| `requirements.txt` | Dependências Python (Flask, flask-cors, TensorFlow, scikit-learn, gunicorn). Sem isso o HF não sabe o que instalar. |
+| `README.md` (do Space) | Tem um **frontmatter YAML** no topo (`sdk: docker`, `app_port: 7860`, etc) que diz para o HF: "isso aqui é um Docker Space, escuta na porta 7860". É **obrigatório** pelo HF. |
+| `.dockerignore` | Impede que o modelo treinado localmente (`saved_model/*.keras`, `*.pkl`) seja copiado pro container — assim o `train.py` no build sempre gera um modelo fresco. |
+
+### Modificações em `logica/app.py`
+
+| Antes | Depois | Por quê |
+|---|---|---|
+| `CORS(app)` (libera tudo) | `CORS(app, origins=[FRONTEND_ORIGIN])` lendo de env var | Permitir restringir em produção pra só o domínio do frontend |
+| `app.run(debug=True, port=5000)` hardcoded | Lê `FLASK_DEBUG` e `PORT` de env var, default `debug=False` | `debug=True` em produção é falha grave de segurança (expõe console Python). O HF injeta `PORT` no container — o app precisa respeitar |
+
+### Modificações em `frontend/script.js`
+
+| Antes | Depois |
+|---|---|
+| `const API = "http://localhost:5000/api"` (fixo) | Detecta automaticamente: `localhost` → Flask local; senão → URL pública do HF Space |
+
+Assim o mesmo `script.js` funciona em dev e em prod sem mexer no código.
+
+### Arquivos na raiz do repositório
+
+| Arquivo | Pra que serve |
+|---|---|
+| `docker-compose.yml` | Orquestra **backend + frontend (nginx)** localmente, simulando o ambiente do HF. Apenas para desenvolvimento — o HF não usa este arquivo. |
+
+### Variáveis de ambiente que o backend respeita
+
+Configurar no painel **Settings → Variables and secrets** do Space:
+
+| Variável | Default | Para que |
+|---|---|---|
+| `PORT` | `7860` | Porta HTTP onde o gunicorn escuta (o HF normalmente já injeta isso) |
+| `FRONTEND_ORIGIN` | `*` | Origin permitido no CORS. Em produção, defina como a URL do frontend |
+| `FLASK_DEBUG` | `0` | **NUNCA** ligar em produção |
+
+---
+
 ## 🧠 Por que `git subtree` em vez de só `git push`?
 
 O HF Space é **outro repositório git**, com layout próprio: ele espera
