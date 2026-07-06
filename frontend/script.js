@@ -5,7 +5,6 @@
 
 const API = "http://localhost:5000/api";
 
-/* Regiões do exame físico */
 const EXAM_LABELS = {
   head:    "Cabeça / Face",
   chest:   "Tórax / Pulmões",
@@ -15,23 +14,11 @@ const EXAM_LABELS = {
   ankle:   "Tornozelos",
 };
 
-/* Perguntas rápidas exibidas no chat
-const QUICK_QUESTIONS = [
-  "O paciente tem febre?",
-  "Tem alguma dor?",
-  "Está cansado ou com fadiga?",
-  "Tem manchas ou sangramentos?",
-  "Faz uso de algum remédio?",
-  "Tem histórico de doenças?",
-  "Histórico familiar relevante?",
-]; */
-
-/* ── Estado ── */
 let currentPatient = null;
-let patients       = [];       // carregado da API
+let patients       = [];       
 
 /* ══════════════════════════════════════
-   INICIALIZAÇÃO
+   INICIALIZAÇÃO E NAVEGAÇÃO
 ══════════════════════════════════════ */
 async function init() {
   showLoading(true);
@@ -50,83 +37,54 @@ async function init() {
   }
 }
 
-/* ══════════════════════════════════════
-   SCREEN 1 – Lista de Pacientes
-══════════════════════════════════════ */
 function renderPatients() {
   const grid = document.getElementById("patientsGrid");
   grid.innerHTML = "";
-
   patients.forEach((p) => {
     const div = document.createElement("div");
     div.className = "patient-card";
-
     div.innerHTML = `
       <div class="patient-avatar" style="background:${p.color}">
-        <img src = "${p.emoji}" alt="${p.name}">
+        <img src="${p.emoji}" alt="${p.name}">
       </div>
       <div class="patient-name">${p.name}</div>
       <div class="patient-tag">${p.age} anos</div>
     `;
-
     div.onclick = () => openChat(p);
     grid.appendChild(div);
   });
 }
 
-/* ══════════════════════════════════════
-   NAVEGAÇÃO ENTRE TELAS
-══════════════════════════════════════ */
 function goTo(screenNumber) {
-  document.querySelectorAll(".screen").forEach((s) =>
-    s.classList.remove("active")
-  );
+  document.querySelectorAll(".screen").forEach((s) => s.classList.remove("active"));
   document.getElementById("screen" + screenNumber).classList.add("active");
 }
 
 /* ══════════════════════════════════════
-   SCREEN 2 – Chat
+   SCREEN 2 – Chat / Anamnese
 ══════════════════════════════════════ */
 function openChat(patient) {
   currentPatient = patient;
 
-  /* Cabeçalho */
-  //document.getElementById("chatTitle").textContent        = patient.name;
   document.getElementById("chatName").textContent         = patient.name;
   document.getElementById("chatAvatar").innerHTML         = `<img src="${patient.emoji}" alt="${patient.name}">`;
   document.getElementById("chatAvatar").style.background  = patient.color;
+  
+  // Reseta estado da tela de diagnóstico (Screen 5)
   document.getElementById("diagnosisSelect").value        = "";
+  document.getElementById("diagnosisResult").style.display = "none";
+  document.getElementById("navToPlan").style.display = "none";
 
-  /* Sintomas como chips */
   const symptomsWrap = document.getElementById("symptomsWrap");
   if (symptomsWrap && patient.signs) {
-    symptomsWrap.innerHTML = patient.signs
-      .map((s) => `<span class="symptom-chip">${s}</span>`)
-      .join("");
+    symptomsWrap.innerHTML = patient.signs.map((s) => `<span class="symptom-chip">${s}</span>`).join("");
   }
 
-  /* Limpa mensagens e exibe intro */
   document.getElementById("chatArea").innerHTML = "";
   addMessage("patient", patient.intro);
-
-  /* Perguntas rápidas 
-  const qo = document.getElementById("quickOptions");
-  qo.innerHTML = "";
-  QUICK_QUESTIONS.forEach((q) => {
-    const btn = document.createElement("button");
-    btn.className   = "quick-btn";
-    btn.textContent = q;
-    btn.onclick = () => {
-      document.getElementById("chatInput").value = q;
-      sendMsg();
-    };
-    qo.appendChild(btn);
-  });*/
-
   goTo(2);
 }
 
-/* Adiciona bolha de mensagem na área de chat */
 function addMessage(role, text) {
   const area = document.getElementById("chatArea");
   const wrap = document.createElement("div");
@@ -136,7 +94,7 @@ function addMessage(role, text) {
   avatarEl.className = "msg-avatar";
 
   if (role === "patient") {
-    avatarEl.innerHTML          = `<img src="${currentPatient.emoji}" alt="${currentPatient.name}">`;;
+    avatarEl.innerHTML          = `<img src="${currentPatient.emoji}" alt="${currentPatient.name}">`;
     avatarEl.style.background   = currentPatient.color;
   } else {
     avatarEl.textContent        = "🎓";
@@ -153,7 +111,6 @@ function addMessage(role, text) {
   area.scrollTop = area.scrollHeight;
 }
 
-/* Indicador de "digitando..." */
 function showTyping() {
   const area = document.getElementById("chatArea");
   const wrap = document.createElement("div");
@@ -162,7 +119,7 @@ function showTyping() {
 
   const avatarEl = document.createElement("div");
   avatarEl.className        = "msg-avatar";
-  avatarEl.innerHTML        = `<img src="${currentPatient.emoji}" alt="Digitando">`;;
+  avatarEl.innerHTML        = `<img src="${currentPatient.emoji}" alt="Digitando">`;
   avatarEl.style.background = currentPatient.color;
 
   const bubble = document.createElement("div");
@@ -180,7 +137,6 @@ function removeTyping() {
   if (el) el.remove();
 }
 
-/* Envia mensagem → API → resposta do paciente */
 async function sendMsg() {
   const input = document.getElementById("chatInput");
   const text  = input.value.trim();
@@ -194,10 +150,7 @@ async function sendMsg() {
     const res  = await fetch(`${API}/chat`, {
       method:  "POST",
       headers: { "Content-Type": "application/json" },
-      body:    JSON.stringify({
-        patient_id: currentPatient.id,
-        message:    text,
-      }),
+      body:    JSON.stringify({ patient_id: currentPatient.id, message: text }),
     });
     const data = await res.json();
     removeTyping();
@@ -208,58 +161,22 @@ async function sendMsg() {
   }
 }
 
-/* Valida diagnóstico → API */
-async function checkDiagnosis() {
-  const val = document.getElementById("diagnosisSelect").value;
-  if (!val) { showToast("Selecione uma doença primeiro!", ""); return; }
-  if (!currentPatient)  { showToast("Nenhum paciente selecionado.", ""); return; }
-
-  try {
-    const res  = await fetch(`${API}/diagnosis`, {
-      method:  "POST",
-      headers: { "Content-Type": "application/json" },
-      body:    JSON.stringify({
-        patient_id: currentPatient.id,
-        diagnosis:  val,
-      }),
-    });
-    const data = await res.json();
-
-    if (data.correct) {
-      showToast("✅ Diagnóstico correto! Parabéns!", "correct");
-      addMessage("patient", `(Sistema) ${data.feedback}`);
-    } else {
-      showToast("❌ Diagnóstico incorreto. Tente novamente.", "wrong");
-      addMessage("patient", `(Sistema) ${data.feedback}`);
-    }
-  } catch (err) {
-    showToast("⚠️ Erro ao verificar diagnóstico.", "");
-  }
-}
-
 /* ══════════════════════════════════════
    SCREEN 3 – Avaliação Física
 ══════════════════════════════════════ */
 async function showExam(region) {
-  /* Remove destaques anteriores */
-  document.querySelectorAll(".hotspot").forEach((h) =>
-    h.classList.remove("active", "finding")
-  );
-
+  document.querySelectorAll(".hotspot").forEach((h) => h.classList.remove("active", "finding"));
   const panel = document.getElementById("examPanel");
   panel.innerHTML = `<h4>${EXAM_LABELS[region] || region}</h4><p>Carregando...</p>`;
 
   if (!currentPatient) {
-    panel.innerHTML = `
-      <h4>Sem paciente</h4>
-      <p>Volte e selecione um paciente primeiro.</p>`;
+    panel.innerHTML = `<h4>Sem paciente</h4><p>Volte e selecione um paciente primeiro.</p>`;
     return;
   }
 
   try {
     const res  = await fetch(`${API}/exam/${currentPatient.id}/${region}`);
     const data = await res.json();
-
     if (data.error) throw new Error(data.error);
 
     panel.innerHTML = `
@@ -269,60 +186,48 @@ async function showExam(region) {
         ${data.has_finding ? "⚠ Achado relevante" : "✓ Normal"}
       </span>`;
 
-    /* Ativa hotspots */
     document.querySelectorAll(".hotspot").forEach((h) => {
-      const match =
-        h.id === "hs-" + region ||
-        (region === "arm" && (h.id === "hs-arm-r" || h.id === "hs-arm-l"));
-
+      const match = h.id === "hs-" + region || (region === "arm" && (h.id === "hs-arm-r" || h.id === "hs-arm-l"));
       if (match) {
         h.classList.add("active");
         if (data.has_finding) h.classList.add("finding");
       }
     });
   } catch (err) {
-    panel.innerHTML = `
-      <h4>${EXAM_LABELS[region] || region}</h4>
-      <p style="color:var(--accent)">⚠️ Erro ao carregar achados: ${err.message}</p>`;
+    panel.innerHTML = `<h4>${EXAM_LABELS[region] || region}</h4><p style="color:var(--accent)">⚠️ Erro ao carregar achados: ${err.message}</p>`;
   }
 }
 
 /* ══════════════════════════════════════
-   UTILITÁRIOS
+   SCREEN 4 – Exames Laboratoriais
 ══════════════════════════════════════ */
-function showLoading(visible) {
-  const grid = document.getElementById("patientsGrid");
-  if (visible) {
-    grid.innerHTML =
-      `<div style="grid-column:1/-1;text-align:center;padding:32px;color:var(--text2)">
-        Carregando pacientes...
-       </div>`;
-  }
-}
-
-function showToast(message, type) {
-  const t   = document.getElementById("toast");
-  t.textContent = message;
-  t.className   = "toast show " + type;
-  setTimeout(() => { t.className = "toast"; }, 2800);
-}
-
-/* parte de exame laboratorial*/
-
-function openLabModal() {
+function goToLabScreen() {
   if (!currentPatient) {
     showToast("Selecione um paciente primeiro.", "wrong");
     return;
   }
 
-  const modalBody = document.getElementById("labModalBody");
+  const contentDiv = document.getElementById("labScreenContent");
   
   if (!currentPatient.lab_display || currentPatient.lab_display.length === 0) {
-    modalBody.innerHTML = "<p>Nenhum exame laboratorial disponível para este paciente.</p>";
+    contentDiv.innerHTML = "<div class='welcome-card'><p>Nenhum exame laboratorial disponível para este paciente.</p></div>";
   } else {
     let html = "";
     
-    currentPatient.lab_display.forEach(categoria => {
+    const getOrdemCategoria = (nome) => {
+      const n = nome.toLowerCase();
+      if (n.includes("hemograma")) return 1;
+      if (n.includes("esfregaço")) return 2;
+      if (n.includes("coagulograma")) return 3;
+      if (n.includes("imunologia")) return 3;
+      return 5;
+    };
+
+    const examesOrdenados = [...currentPatient.lab_display].sort((a, b) => {
+      return getOrdemCategoria(a.categoria) - getOrdemCategoria(b.categoria);
+    });
+
+    examesOrdenados.forEach(categoria => {
       html += `
         <div class="lab-category">
           <h4>${categoria.categoria}</h4>
@@ -336,10 +241,24 @@ function openLabModal() {
             </thead>
             <tbody>
       `;
+      let examesDaCategoria = [...categoria.exames];
       
-      categoria.exames.forEach(exame => {
-        const valorClass = exame.alterado ? "lab-alert" : "";
+      // Se a categoria for o Hemograma, aplicamos a ordenação interna
+      if (categoria.categoria.toLowerCase().includes("hemograma")) {
+        const getOrdemExameHemograma = (nome) => {
+          const n = nome.toLowerCase();
+          if (n.includes("hemoglobina")) return 1;
+          // Validamos com e sem acento para evitar bugs na API
+          if (n.includes("leucócitos") || n.includes("leucocitos")) return 2;
+          if (n.includes("plaquetas")) return 3;
+          return 4; // Outros exames (VCM, HCM, etc) vão para o final
+        };
         
+        examesDaCategoria.sort((a, b) => getOrdemExameHemograma(a.nome) - getOrdemExameHemograma(b.nome));
+      }
+
+      examesDaCategoria.forEach(exame => {
+        const valorClass = exame.alterado ? "lab-alert" : "";
         html += `
               <tr>
                 <td>${exame.nome}</td>
@@ -348,33 +267,72 @@ function openLabModal() {
               </tr>
         `;
       });
-
       html += `
             </tbody>
           </table>
         </div>
       `;
     });
-
-    modalBody.innerHTML = html;
+    contentDiv.innerHTML = html;
   }
-
-  // Mostra o modal
-  document.getElementById("labModal").classList.add("active");
+  goTo(4);
 }
 
-function closeLabModal() {
-  // Esconde o modal
-  document.getElementById("labModal").classList.remove("active");
+/* ══════════════════════════════════════
+   SCREEN 5 – Verificação do Diagnóstico
+══════════════════════════════════════ */
+async function checkDiagnosis() {
+  const val = document.getElementById("diagnosisSelect").value;
+  const resultDiv = document.getElementById("diagnosisResult");
+  const navToPlan = document.getElementById("navToPlan");
+
+  if (!val) { showToast("Selecione uma doença primeiro!", ""); return; }
+  if (!currentPatient) { showToast("Nenhum paciente selecionado.", ""); return; }
+
+  try {
+    const res  = await fetch(`${API}/diagnosis`, {
+      method:  "POST",
+      headers: { "Content-Type": "application/json" },
+      body:    JSON.stringify({ patient_id: currentPatient.id, diagnosis: val }),
+    });
+    const data = await res.json();
+
+    resultDiv.style.display = "block";
+    navToPlan.style.display = "flex";
+
+    if (data.correct) {
+      resultDiv.innerHTML = `<div style="background:#d4edda; color:#155724; padding:16px; border-radius:12px; border: 1px solid #c3e6cb;">
+        <strong>✅ Diagnóstico Correto!</strong><br><br>${data.feedback}
+      </div>`;
+    } else {
+      resultDiv.innerHTML = `<div style="background:#f8d7da; color:#721c24; padding:16px; border-radius:12px; border: 1px solid #f5c6cb;">
+        <strong>❌ Diagnóstico Incorreto.</strong><br><br>${data.feedback}
+      </div>`;
+    }
+  } catch (err) {
+    showToast("⚠️ Erro ao verificar diagnóstico.", "");
+  }
 }
 
-function openAboutModal() {
-  document.getElementById("aboutModal").classList.add("active");
+/* ══════════════════════════════════════
+   UTILITÁRIOS E MODAIS
+══════════════════════════════════════ */
+function showLoading(visible) {
+  const grid = document.getElementById("patientsGrid");
+  if (visible) {
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:32px;color:var(--text2)">Carregando pacientes...</div>`;
+  }
 }
 
-function closeAboutModal() {
-  document.getElementById("aboutModal").classList.remove("active");
+function showToast(message, type) {
+  const t = document.getElementById("toast");
+  t.textContent = message;
+  t.className   = "toast show " + type;
+  setTimeout(() => { t.className = "toast"; }, 2800);
 }
 
-/* ── Start ── */
+function openAboutModal() { document.getElementById("aboutModal").classList.add("active"); }
+function closeAboutModal() { document.getElementById("aboutModal").classList.remove("active"); }
+
+/* Start */
 init();

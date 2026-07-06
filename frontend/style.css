@@ -489,7 +489,7 @@ body {
   border-color: var(--primary);
 }
 
-/* Barra de diagnóstico */
+/* Barra de diagnóstico 
 .diagnosis-bar {
   padding: 12px 14px;
   background: #fffbe7;
@@ -534,6 +534,7 @@ body {
 .confirm-btn:hover {
   background: #e09010;
 }
+*/
 
 /* Input de chat */
 .chat-input-bar {
@@ -756,7 +757,7 @@ body {
 .lab-category h4 { margin: 0 0 10px 0; color: #2d4a52; border-bottom: 2px solid #eee; padding-bottom: 4px;}
 .lab-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
 .lab-table th, .lab-table td { padding: 8px; text-align: left; border-bottom: 1px solid #eee; }
-.lab-table th { color: #666; font-weight: 600; }
+.lab-table th { color: #665; font-weight: bold; }
 .lab-alert { color: #e11d48; font-weight: bold; }
 
 /*Paciente imagens */
@@ -776,6 +777,82 @@ body {
   overflow: hidden; 
 }
 
+/* ══════════════════════════════════════
+   Navegação Inferior Linear (Novidade)
+══════════════════════════════════════ */
+.bottom-nav {
+  padding: 16px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-shrink: 0;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.02);
+}
+
+/* ══════════════════════════════════════
+   Estilos Screen 5 (Diagnóstico) e Screen 6 (Plano)
+══════════════════════════════════════ */
+.diagnosis-screen-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.diagnosis-select-large {
+  width: 100%;
+  padding: 16px;
+  background: var(--surface);
+  border: 2px solid #f0c040;
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: var(--text);
+  outline: none;
+  margin-bottom: 16px;
+  transition: border-color 0.2s;
+  cursor: pointer;
+}
+
+.diagnosis-select-large:focus {
+  border-color: #e09010;
+}
+
+.confirm-btn-large {
+  background: #f5a623;
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+
+.confirm-btn-large:hover {
+  background: #e09010;
+}
+
+.portal-link {
+  display: inline-block;
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  padding: 12px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 10px;
+  word-break: break-all;
+  transition: background 0.2s;
+}
+
+.portal-link:hover {
+  background: var(--border);
+}
 
 /* ══════════════════════════════════════
    RESPONSIVIDADE
