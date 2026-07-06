@@ -1,0 +1,21 @@
+services:
+  backend:
+    build: ./logica
+    image: hempocket-backend
+    container_name: hempocket-backend
+    ports:
+      - "5050:7860"
+    environment:
+      FRONTEND_ORIGIN: "*"
+    restart: unless-stopped
+
+  frontend:
+    image: nginx:alpine
+    container_name: hempocket-frontend
+    ports:
+      - "8000:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html:ro
+    depends_on:
+      - backend
+    restart: unless-stopped

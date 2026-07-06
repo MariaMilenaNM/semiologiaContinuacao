@@ -25,7 +25,11 @@ from model import load_artifacts, predict_intent
 
 # ── App ─────────────────────────────────────────────────────────────────
 app = Flask(__name__)
-CORS(app)   # permite requisições do frontend (diferente porta)
+
+# CORS: em produção, defina FRONTEND_ORIGIN no painel do HF Space
+# Ex.: FRONTEND_ORIGIN=https://seu-usuario.github.io
+FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN", "*")
+CORS(app, origins=[FRONTEND_ORIGIN] if FRONTEND_ORIGIN != "*" else "*")
 
 BASE_DIR      = os.path.dirname(os.path.abspath(__file__))
 PATIENTS_PATH = os.path.join(BASE_DIR, "patients.json")
@@ -199,5 +203,9 @@ def get_exam(patient_id: int, region: str):
 
 
 # ── Dev server ──────────────────────────────────────────────────────────
+# Em produção (HF Spaces) o gunicorn é quem sobe a app (ver Dockerfile).
+# Este bloco só executa quando você roda `python app.py` localmente.
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    debug = os.getenv("FLASK_DEBUG", "0") == "1"
+    port  = int(os.getenv("PORT", "5050"))
+    app.run(debug=debug, host="0.0.0.0", port=port)

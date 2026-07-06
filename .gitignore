@@ -25,3 +25,12 @@ logica/modelos/
 # Arquivos do Windows
 Thumbs.db
 desktop.ini
+
+# Secrets locais (NUNCA commitar)
+.env
+.env.local
+.env.*.local
+
+# Cache do Firebase CLI
+.firebase/
+firebase-debug.log

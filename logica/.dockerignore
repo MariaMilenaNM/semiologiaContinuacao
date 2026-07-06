@@ -1,0 +1,10 @@
+saved_model/intent_model.keras
+saved_model/vectorizer.pkl
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+.git/
+.gitignore
+.DS_Store
