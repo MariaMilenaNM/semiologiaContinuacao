@@ -757,7 +757,7 @@ body {
 .lab-category h4 { margin: 0 0 10px 0; color: #2d4a52; border-bottom: 2px solid #eee; padding-bottom: 4px;}
 .lab-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
 .lab-table th, .lab-table td { padding: 8px; text-align: left; border-bottom: 1px solid #eee; }
-.lab-table th { color: #665; font-weight: bold; }
+.lab-table th { color: #666; font-weight: bold; }
 .lab-alert { color: #e11d48; font-weight: bold; }
 
 /*Paciente imagens */

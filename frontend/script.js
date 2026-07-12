@@ -1,11 +1,9 @@
-/* ══════════════════════════════════════
+/* 
    script.js – AnamneseApp
-   Consome a API Flask em http://localhost:5000
-══════════════════════════════════════ */
+   Consome a API Flask em http://localhost:5050
+*/
 
-const API = location.hostname === "localhost" || location.hostname === "127.0.0.1"
-  ? "http://localhost:5050/api"
-  : "https://fikani-semiologiacontinuacao.hf.space/api";
+const API = "http://localhost:5050/api";
 
 const EXAM_LABELS = {
   head:    "Cabeça / Face",
@@ -19,9 +17,9 @@ const EXAM_LABELS = {
 let currentPatient = null;
 let patients       = [];       
 
-/* ══════════════════════════════════════
+/* 
    INICIALIZAÇÃO E NAVEGAÇÃO
-══════════════════════════════════════ */
+ */
 async function init() {
   showLoading(true);
   try {
@@ -62,9 +60,9 @@ function goTo(screenNumber) {
   document.getElementById("screen" + screenNumber).classList.add("active");
 }
 
-/* ══════════════════════════════════════
-   SCREEN 2 – Chat / Anamnese
-══════════════════════════════════════ */
+ 
+//   SCREEN 2 – Chat / Anamnese
+
 function openChat(patient) {
   currentPatient = patient;
 
@@ -163,9 +161,9 @@ async function sendMsg() {
   }
 }
 
-/* ══════════════════════════════════════
-   SCREEN 3 – Avaliação Física
-══════════════════════════════════════ */
+
+ //  SCREEN 3 – Avaliação Física
+
 async function showExam(region) {
   document.querySelectorAll(".hotspot").forEach((h) => h.classList.remove("active", "finding"));
   const panel = document.getElementById("examPanel");
@@ -200,9 +198,9 @@ async function showExam(region) {
   }
 }
 
-/* ══════════════════════════════════════
-   SCREEN 4 – Exames Laboratoriais
-══════════════════════════════════════ */
+
+//   SCREEN 4 – Exames Laboratoriais
+
 function goToLabScreen() {
   if (!currentPatient) {
     showToast("Selecione um paciente primeiro.", "wrong");
@@ -216,15 +214,17 @@ function goToLabScreen() {
   } else {
     let html = "";
     
+    // Define o peso (ordem) de cada categoria
     const getOrdemCategoria = (nome) => {
       const n = nome.toLowerCase();
       if (n.includes("hemograma")) return 1;
       if (n.includes("esfregaço")) return 2;
       if (n.includes("coagulograma")) return 3;
-      if (n.includes("imunologia")) return 3;
-      return 5;
+      if (n.includes("imunologia")) return 4;
+      return 5; // Outras categorias ficam por último
     };
 
+    // Cria uma cópia do array e o ordena com base nos pesos definidos
     const examesOrdenados = [...currentPatient.lab_display].sort((a, b) => {
       return getOrdemCategoria(a.categoria) - getOrdemCategoria(b.categoria);
     });
@@ -243,23 +243,7 @@ function goToLabScreen() {
             </thead>
             <tbody>
       `;
-      let examesDaCategoria = [...categoria.exames];
-      
-      // Se a categoria for o Hemograma, aplicamos a ordenação interna
-      if (categoria.categoria.toLowerCase().includes("hemograma")) {
-        const getOrdemExameHemograma = (nome) => {
-          const n = nome.toLowerCase();
-          if (n.includes("hemoglobina")) return 1;
-          // Validamos com e sem acento para evitar bugs na API
-          if (n.includes("leucócitos") || n.includes("leucocitos")) return 2;
-          if (n.includes("plaquetas")) return 3;
-          return 4; // Outros exames (VCM, HCM, etc) vão para o final
-        };
-        
-        examesDaCategoria.sort((a, b) => getOrdemExameHemograma(a.nome) - getOrdemExameHemograma(b.nome));
-      }
-
-      examesDaCategoria.forEach(exame => {
+      categoria.exames.forEach(exame => {
         const valorClass = exame.alterado ? "lab-alert" : "";
         html += `
               <tr>
@@ -280,9 +264,9 @@ function goToLabScreen() {
   goTo(4);
 }
 
-/* ══════════════════════════════════════
-   SCREEN 5 – Verificação do Diagnóstico
-══════════════════════════════════════ */
+
+//   SCREEN 5 – Verificação do Diagnóstico
+
 async function checkDiagnosis() {
   const val = document.getElementById("diagnosisSelect").value;
   const resultDiv = document.getElementById("diagnosisResult");
@@ -316,9 +300,8 @@ async function checkDiagnosis() {
   }
 }
 
-/* ══════════════════════════════════════
-   UTILITÁRIOS E MODAIS
-══════════════════════════════════════ */
+// utilitários e modais
+
 function showLoading(visible) {
   const grid = document.getElementById("patientsGrid");
   if (visible) {
