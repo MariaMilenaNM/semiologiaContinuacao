@@ -121,4 +121,4 @@ with open(LABELS_PATH, "w", encoding="utf-8") as f:
     json.dump(label_names, f, ensure_ascii=False, indent=2)
 print(f"       Labels salvas em: {LABELS_PATH}")
 
-print("\n✅ Treinamento concluído! Execute: python app.py")
+print("\nTreinamento concluído! Execute: python app.py")
