@@ -3,11 +3,12 @@
    Consome a API Flask em http://localhost:5050
 */
 
-const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+//do jeito q hafif deixou
+//const API = location.hostname === "localhost" || location.hostname === "127.0.0.1"
+//  ? "http://localhost:5050/api"
+//  : "https://fikani-semiologiacontinuacao.hf.space/api";
 
-const API = isLocal 
-  ? "http://localhost:5050/api" 
-  : "https://fikani-semiologiacontinuacao.hf.space/api";
+const API = "http://localhost:5050/api";
 
 const EXAM_LABELS = {
   head:    "Cabeça / Face",

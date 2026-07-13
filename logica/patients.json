@@ -9,7 +9,14 @@
     "disease": "pti",
     "disease_label": "Púrpura Trombocitopênica Imune (PTI)",
     "intro": "Olá, doutor. Tenho notado manchas roxas pelo corpo há uns 10 dias e minha gengiva sangrou muito ao escovar os dentes hoje de manhã.",
-    "signs": ["petéquias", "equimoses espontâneas", "sangramento gengival", "menorragia", "sem febre", "sem hepatoesplenomegalia"],
+    "signs": [
+      "petéquias",
+      "equimoses espontâneas",
+      "sangramento gengival",
+      "menorragia",
+      "sem febre",
+      "sem hepatoesplenomegalia"
+    ],
     "lab": {
       "hemograma": "Plaquetas: 18.000/µL. Hemoglobina: 11,8 g/dL. Leucócitos normais.",
       "esfregaco": "Plaquetas raras, sem esquizócitos.",
@@ -17,127 +24,235 @@
       "outros": "Anticorpos antiplaquetários positivos."
     },
     "lab_display": [
-      { "categoria": "Hemograma", "exames": [
-        { "nome": "Plaquetas",    "valor": "18.000/µL",  "referencia": "150.000–400.000/µL", "alterado": true  },
-        { "nome": "Hemoglobina",  "valor": "11,8 g/dL",  "referencia": "12–16 g/dL",         "alterado": true  },
-        { "nome": "Leucócitos",   "valor": "6.800/µL",   "referencia": "4.000–11.000/µL",    "alterado": false }
-      ]},
-      { "categoria": "Coagulograma", "exames": [
-        { "nome": "TP",   "valor": "Normal", "referencia": "Normal", "alterado": false },
-        { "nome": "TTPA", "valor": "Normal", "referencia": "Normal", "alterado": false }
-      ]},
-      { "categoria": "Imunologia", "exames": [
-        { "nome": "Anticorpos antiplaquetários", "valor": "Positivo", "referencia": "Negativo", "alterado": true }
-      ]},
-      { "categoria": "Esfregaço", "exames": [
-        { "nome": "Morfologia", "valor": "Plaquetas raras, sem esquizócitos", "referencia": "Normal", "alterado": false }
-      ]}
+      {
+        "categoria": "Hemograma",
+        "exames": [
+          {
+            "nome": "Plaquetas",
+            "valor": "18.000/µL",
+            "referencia": "150.000–400.000/µL",
+            "alterado": true
+          },
+          {
+            "nome": "Hemoglobina",
+            "valor": "11,8 g/dL",
+            "referencia": "12–16 g/dL",
+            "alterado": true
+          },
+          {
+            "nome": "Leucócitos",
+            "valor": "6.800/µL",
+            "referencia": "4.000–11.000/µL",
+            "alterado": false
+          }
+        ]
+      },
+      {
+        "categoria": "Coagulograma",
+        "exames": [
+          {
+            "nome": "TP",
+            "valor": "Normal",
+            "referencia": "Normal",
+            "alterado": false
+          },
+          {
+            "nome": "TTPA",
+            "valor": "Normal",
+            "referencia": "Normal",
+            "alterado": false
+          }
+        ]
+      },
+      {
+        "categoria": "Imunologia",
+        "exames": [
+          {
+            "nome": "Anticorpos antiplaquetários",
+            "valor": "Positivo",
+            "referencia": "Negativo",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Esfregaço",
+        "exames": [
+          {
+            "nome": "Morfologia",
+            "valor": "Plaquetas raras, sem esquizócitos",
+            "referencia": "Normal",
+            "alterado": false
+          }
+        ]
+      }
     ],
     "exam": {
-      "head":    "Petéquias palatinas. Sem linfadenopatia cervical.",
-      "chest":   "Ausculta cardiorrespiratória normal. Sem linfadenopatia axilar.",
+      "head": "Petéquias palatinas. Sem linfadenopatia cervical.",
+      "chest": "Ausculta cardiorrespiratória normal. Sem linfadenopatia axilar.",
       "abdomen": "Baço não palpável. Fígado normal.",
-      "arm":     "Equimoses em diferentes estágios nos antebraços. Petéquias puntiformes.",
-      "knee":    "Sem artralgia ou artrite.",
-      "ankle":   "Sem edema."
+      "arm": "Equimoses em diferentes estágios nos antebraços. Petéquias puntiformes.",
+      "knee": "Sem artralgia ou artrite.",
+      "ankle": "Sem edema."
     },
     "responses": {
-      "nome":             "Mariana Souza.",
-      "idade":            "Tenho 28 anos.",
-      "naturalidade":     "Sou do Recife mesmo, nasci e cresci aqui.",
-      "QPD":              "Apareceram manchas roxas pelo corpo e minha gengiva sangrou muito ao escovar os dentes.",
-      "Inicio":           "As manchas apareceram há uns 10 dias. O sangramento da gengiva foi hoje cedo.",
-      "Detalhe":          "As manchas são roxas, aparecem sem nenhuma pancada. A gengiva sangrou por quase 20 minutos ao escovar.",
-      "Localizacao":      "As manchas estão nos braços e nas pernas, principalmente.",
-      "Irradiacao":       "Não, as manchas ficam onde aparecem, não se espalham.",
-      "Caracter":         "Não é exatamente uma dor, é mais um inchaço roxo na pele. Não dói ao tocar.",
-      "Fator_melhora":    "Não encontrei nada que melhore.",
-      "Fator_piora":      "Parece que aparecem mais quando bato em alguma coisa, mesmo sem força.",
+      "nome": "Mariana Souza.",
+      "idade": "Tenho 28 anos.",
+      "naturalidade": "Sou do Recife mesmo, nasci e cresci aqui.",
+      "QPD": "Apareceram manchas roxas pelo corpo e minha gengiva sangrou muito ao escovar os dentes.",
+      "Inicio": "As manchas apareceram há uns 10 dias. O sangramento da gengiva foi hoje cedo.",
+      "Detalhe": "As manchas são roxas, aparecem sem nenhuma pancada. A gengiva sangrou por quase 20 minutos ao escovar.",
+      "Localizacao": "As manchas estão nos braços e nas pernas, principalmente.",
+      "Irradiacao": "Não, as manchas ficam onde aparecem, não se espalham.",
+      "Caracter": "Não é exatamente uma dor, é mais um inchaço roxo na pele. Não dói ao tocar.",
+      "Fator_melhora": "Não encontrei nada que melhore.",
+      "Fator_piora": "Parece que aparecem mais quando bato em alguma coisa, mesmo sem força.",
       "Sintomas_associados": "A menstruação da semana passada foi muito mais intensa do que o normal.",
       "Sintomas_negados": "Não tenho febre, não perdi peso, não tenho tosse nem dor no peito.",
-      "febre":            "Não tenho febre, só essas manchas e o sangramento.",
-      "dor":              "Não tenho dor, só fico preocupada com as manchas.",
-      "manchas":          "As manchas aparecem do nada, sem trauma. Ficam no braço e nas pernas.",
-      "caracterizacao_sangramentos":      "Sangrei bastante pela gengiva ao escovar os dentes hoje cedo. Semana passada minha menstruação foi muito mais intensa.",
-      "antpessoais":        "Não tenho doenças prévias. Tomei amoxicilina há 3 semanas por uma infecção de garganta.",
-      "medicamentos":         "Só a amoxicilina que terminei há 2 semanas. Nenhum outro medicamento.",
-      "antfamiliares":          "Minha mãe tem hipotireoidismo, mas ninguém com problema parecido ao meu.",
-      "Caracterizacao_fadiga":          "Fico um pouco cansada, mas nada demais.",
-      "habitos":          "Não fumo, bebo socialmente raramente. Faço caminhada 3 vezes na semana.",
-      "vacinas":          "Acredito que estão em dia, mas não tenho a carteirinha comigo.",
-      "epidemiologia":    "Sou professora do ensino fundamental. Trabalho em escola pública.",
-      "cumprimento":      "Olá, doutor! Obrigada por me atender.",
-      "naosei":           "Isso não tem nada a ver com minha saúde, doutor!",
-      "default":          "Pode me explicar melhor o que quer saber? Estou preocupada com essas manchas."
+      "febre": "Não tenho febre, só essas manchas e o sangramento.",
+      "dor": "Não tenho dor, só fico preocupada com as manchas.",
+      "manchas": "As manchas aparecem do nada, sem trauma. Ficam no braço e nas pernas.",
+      "caracterizacao_sangramentos": "Sangrei bastante pela gengiva ao escovar os dentes hoje cedo. Semana passada minha menstruação foi muito mais intensa.",
+      "antpessoais": "Não tenho doenças prévias. Tomei amoxicilina há 3 semanas por uma infecção de garganta.",
+      "medicamentos": "Só a amoxicilina que terminei há 2 semanas. Nenhum outro medicamento.",
+      "antfamiliares": "Minha mãe tem hipotireoidismo, mas ninguém com problema parecido ao meu.",
+      "Caracterizacao_fadiga": "Fico um pouco cansada, mas nada demais.",
+      "habitos": "Não fumo, bebo socialmente raramente. Faço caminhada 3 vezes na semana.",
+      "vacinas": "Acredito que estão em dia, mas não tenho a carteirinha comigo.",
+      "epidemiologia": "Sou professora do ensino fundamental. Trabalho em escola pública.",
+      "cumprimento": "Olá, doutor! Obrigada por me atender.",
+      "naosei": "Isso não tem nada a ver com minha saúde, doutor!",
+      "default": "Pode me explicar melhor o que quer saber? Estou preocupada com essas manchas."
     }
   },
   {
     "id": 2,
     "name": "Antônio Ferreira",
-    "age": 10,
+    "age": 67,
     "gender": "M",
     "color": "#4ECDC4",
-    "emoji": "assets/pct1.jpg",
+    "emoji": "assets/pct1.png",
     "disease": "anemia_b12",
     "disease_label": "Anemia carencial por deficiência de B12, ácido fólico e ferro",
     "intro": "Bom dia, doutor. Estou muito cansado faz uns 4 meses, fico sem fôlego até ao subir escadas, e minha esposa diz que estou bem pálido.",
-    "signs": ["fadiga intensa", "dispneia aos esforços", "palidez", "glossite", "parestesias em membros", "perda de memória leve"],
+    "signs": [
+      "fadiga intensa",
+      "dispneia aos esforços",
+      "palidez",
+      "glossite",
+      "parestesias em membros",
+      "perda de memória leve"
+    ],
     "lab": {
       "hemograma": "Hb: 7,2 g/dL. VCM: 112 fL (macrocitose). Leucócitos: 3.800/µL. Plaquetas: 120.000/µL.",
       "esfregaco": "Neutrófilos hipersegmentados. Macro-ovalócitos.",
       "outros": "Vitamina B12: 89 pg/mL (↓). Ácido fólico: 2,1 ng/mL (↓). Ferritina: 8 ng/mL (↓). LDH elevado."
     },
     "lab_display": [
-      { "categoria": "Hemograma", "exames": [
-        { "nome": "Hemoglobina", "valor": "7,2 g/dL",    "referencia": "13–17 g/dL",     "alterado": true  },
-        { "nome": "VCM",         "valor": "112 fL",       "referencia": "80–100 fL",      "alterado": true  },
-        { "nome": "Leucócitos",  "valor": "3.800/µL",     "referencia": "4.000–11.000/µL","alterado": true  },
-        { "nome": "Plaquetas",   "valor": "120.000/µL",   "referencia": "150.000–400.000/µL","alterado": true }
-      ]},
-      { "categoria": "Dosagens", "exames": [
-        { "nome": "Vitamina B12",  "valor": "89 pg/mL",  "referencia": "200–900 pg/mL",  "alterado": true  },
-        { "nome": "Ácido fólico",  "valor": "2,1 ng/mL", "referencia": "3–17 ng/mL",     "alterado": true  },
-        { "nome": "Ferritina",     "valor": "8 ng/mL",   "referencia": "20–250 ng/mL",   "alterado": true  },
-        { "nome": "LDH",           "valor": "Elevado",   "referencia": "Normal",          "alterado": true  }
-      ]},
-      { "categoria": "Esfregaço", "exames": [
-        { "nome": "Morfologia", "valor": "Neutrófilos hipersegmentados, macro-ovalócitos", "referencia": "Normal", "alterado": true }
-      ]}
+      {
+        "categoria": "Hemograma",
+        "exames": [
+          {
+            "nome": "Hemoglobina",
+            "valor": "7,2 g/dL",
+            "referencia": "13–17 g/dL",
+            "alterado": true
+          },
+          {
+            "nome": "VCM",
+            "valor": "112 fL",
+            "referencia": "80–100 fL",
+            "alterado": true
+          },
+          {
+            "nome": "Leucócitos",
+            "valor": "3.800/µL",
+            "referencia": "4.000–11.000/µL",
+            "alterado": true
+          },
+          {
+            "nome": "Plaquetas",
+            "valor": "120.000/µL",
+            "referencia": "150.000–400.000/µL",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Dosagens",
+        "exames": [
+          {
+            "nome": "Vitamina B12",
+            "valor": "89 pg/mL",
+            "referencia": "200–900 pg/mL",
+            "alterado": true
+          },
+          {
+            "nome": "Ácido fólico",
+            "valor": "2,1 ng/mL",
+            "referencia": "3–17 ng/mL",
+            "alterado": true
+          },
+          {
+            "nome": "Ferritina",
+            "valor": "8 ng/mL",
+            "referencia": "20–250 ng/mL",
+            "alterado": true
+          },
+          {
+            "nome": "LDH",
+            "valor": "Elevado",
+            "referencia": "Normal",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Esfregaço",
+        "exames": [
+          {
+            "nome": "Morfologia",
+            "valor": "Neutrófilos hipersegmentados, macro-ovalócitos",
+            "referencia": "Normal",
+            "alterado": true
+          }
+        ]
+      }
     ],
     "exam": {
-      "head":    "Palidez conjuntival intensa. Glossite (língua avermelhada e lisa). Icterícia leve.",
-      "chest":   "Taquicardia leve. Sopro sistólico funcional.",
+      "head": "Palidez conjuntival intensa. Glossite (língua avermelhada e lisa). Icterícia leve.",
+      "chest": "Taquicardia leve. Sopro sistólico funcional.",
       "abdomen": "Baço palpável 2 cm abaixo do rebordo costal.",
-      "arm":     "Parestesias em luva bilaterais.",
-      "knee":    "Reflexos patelares diminuídos.",
-      "ankle":   "Leve edema maleolar bilateral."
+      "arm": "Parestesias em luva bilaterais.",
+      "knee": "Reflexos patelares diminuídos.",
+      "ankle": "Leve edema maleolar bilateral."
     },
     "responses": {
-      "nome":             "Antônio Ferreira.",
-      "idade":            "Tenho 67 anos.",
-      "naturalidade":     "Sou de Caruaru, mas moro no Recife há 30 anos.",
-      "QPD":              "Estou muito cansado, fico sem fôlego, e minha esposa diz que estou pálido.",
-      "Inicio":           "Isso começou há uns 4 meses, foi piorando aos poucos.",
-      "Detalhe":          "O cansaço é constante, mas fica pior quando subo escadas ou ando rápido. Tenho formigamento nas mãos e nos pés.",
-      "Localizacao":      "O formigamento é nas mãos e nos pés, como se dormissem.",
-      "Irradiacao":       "O formigamento não vai para outro lugar.",
-      "Caracter":         "É um formigamento constante, como agulhadas nas pontas dos dedos.",
-      "Fator_melhora":    "O repouso alivia um pouco o cansaço.",
-      "Fator_piora":      "Qualquer esforço, por menor que seja, me deixa mais cansado.",
+      "nome": "Antônio Ferreira.",
+      "idade": "Tenho 67 anos.",
+      "naturalidade": "Sou de Caruaru, mas moro no Recife há 30 anos.",
+      "QPD": "Estou muito cansado, fico sem fôlego, e minha esposa diz que estou pálido.",
+      "Inicio": "Isso começou há uns 4 meses, foi piorando aos poucos.",
+      "Detalhe": "O cansaço é constante, mas fica pior quando subo escadas ou ando rápido. Tenho formigamento nas mãos e nos pés.",
+      "Localizacao": "O formigamento é nas mãos e nos pés, como se dormissem.",
+      "Irradiacao": "O formigamento não vai para outro lugar.",
+      "Caracter": "É um formigamento constante, como agulhadas nas pontas dos dedos.",
+      "Fator_melhora": "O repouso alivia um pouco o cansaço.",
+      "Fator_piora": "Qualquer esforço, por menor que seja, me deixa mais cansado.",
       "Sintomas_associados": "Minha memória está falhando muito, esqueço coisas simples.",
       "Sintomas_negados": "Não tenho febre, não tive infecções recentes, não perdi muito peso.",
-      "febre":            "Não tenho febre não.",
-      "dor":              "Às vezes sinto formigamento nas mãos e nos pés, como se dormissem.",
-      "alimentacao":      "Sou vegetariano. Como bem pouca carne, praticamente nenhuma.",
-      "Caracterizacao_fadiga":          "Estou exausto doutor, não consigo mais fazer minha caminhada diária.",
-      "antpessoais":        "Nunca tive problema de sangue antes.",
-      "medicamentos":         "Omeprazol 20mg todo dia, há uns 8 anos.",
-      "antfamiliares":          "Meu irmão tem anemia, mas não sei de qual tipo.",
-      "habitos":          "Vou a escola, jogo bola e eu como oque minha mãe faz.",
-      "vacinas":          "Tomo vacina da gripe todo ano. As outras não sei dizer.",
-      "cumprimento":      "Bom dia, doutor. Obrigado por me atender.",
-      "naosei":           "Isso não é assunto para consulta médica, doutor.",
-      "default":          "Estou muito cansado mesmo, doutor. Pode ser algo grave?"
+      "febre": "Não tenho febre não.",
+      "dor": "Às vezes sinto formigamento nas mãos e nos pés, como se dormissem.",
+      "alimentacao": "Sou vegetariano. Como bem pouca carne, praticamente nenhuma.",
+      "Caracterizacao_fadiga": "Estou exausto doutor, não consigo mais fazer minha caminhada diária.",
+      "antpessoais": "Nunca tive problema de sangue antes.",
+      "medicamentos": "Omeprazol 20mg todo dia, há uns 8 anos.",
+      "antfamiliares": "Meu irmão tem anemia, mas não sei de qual tipo.",
+      "habitos": "Vou ao trabalho, não jogo mais nada, mas jogava bola e eu como oque minha esposa faz.",
+      "vacinas": "Tomo vacina da gripe todo ano. As outras não sei dizer.",
+      "cumprimento": "Bom dia, doutor. Obrigado por me atender.",
+      "naosei": "Isso não é assunto para consulta médica, doutor.",
+      "default": "Estou muito cansado mesmo, doutor. Pode ser algo grave?"
     }
   },
   {
@@ -150,65 +265,118 @@
     "disease": "acantocitose",
     "disease_label": "Acantocitose Hereditária",
     "intro": "Minha mãe me trouxe porque o médico do colégio viu umas alterações no meu sangue e pediu que eu viesse ao hematologista.",
-    "signs": ["anemia hemolítica leve", "acantócitos no esfregaço", "neuropatia progressiva", "movimentos involuntários", "fraqueza muscular progressiva"],
+    "signs": [
+      "anemia hemolítica leve",
+      "acantócitos no esfregaço",
+      "neuropatia progressiva",
+      "movimentos involuntários",
+      "fraqueza muscular progressiva"
+    ],
     "lab": {
       "hemograma": "Hb: 10,4 g/dL. VCM: 78 fL. Reticulócitos: 4,8%.",
       "esfregaco": "Acantócitos representando >20% das hemácias (hemácias espiculadas irregularmente).",
       "outros": "LDH elevado. Bilirrubina indireta: 2,1 mg/dL. Ausência de betalipoproteínas no lipidograma."
     },
     "lab_display": [
-      { "categoria": "Hemograma", "exames": [
-        { "nome": "Hemoglobina",   "valor": "10,4 g/dL", "referencia": "13–17 g/dL",    "alterado": true  },
-        { "nome": "VCM",           "valor": "78 fL",      "referencia": "80–100 fL",     "alterado": true  },
-        { "nome": "Reticulócitos", "valor": "4,8%",       "referencia": "0,5–2%",        "alterado": true  }
-      ]},
-      { "categoria": "Bioquímica", "exames": [
-        { "nome": "LDH",                 "valor": "Elevado",    "referencia": "Normal",    "alterado": true  },
-        { "nome": "Bilirrubina indireta","valor": "2,1 mg/dL",  "referencia": "<1,0 mg/dL","alterado": true  }
-      ]},
-      { "categoria": "Lipidograma", "exames": [
-        { "nome": "Betalipoproteínas", "valor": "Ausentes", "referencia": "Presentes", "alterado": true }
-      ]},
-      { "categoria": "Esfregaço", "exames": [
-        { "nome": "Morfologia", "valor": "Acantócitos >20% (hemácias espiculadas)", "referencia": "Normal", "alterado": true }
-      ]}
+      {
+        "categoria": "Hemograma",
+        "exames": [
+          {
+            "nome": "Hemoglobina",
+            "valor": "10,4 g/dL",
+            "referencia": "13–17 g/dL",
+            "alterado": true
+          },
+          {
+            "nome": "VCM",
+            "valor": "78 fL",
+            "referencia": "80–100 fL",
+            "alterado": true
+          },
+          {
+            "nome": "Reticulócitos",
+            "valor": "4,8%",
+            "referencia": "0,5–2%",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Bioquímica",
+        "exames": [
+          {
+            "nome": "LDH",
+            "valor": "Elevado",
+            "referencia": "Normal",
+            "alterado": true
+          },
+          {
+            "nome": "Bilirrubina indireta",
+            "valor": "2,1 mg/dL",
+            "referencia": "<1,0 mg/dL",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Lipidograma",
+        "exames": [
+          {
+            "nome": "Betalipoproteínas",
+            "valor": "Ausentes",
+            "referencia": "Presentes",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Esfregaço",
+        "exames": [
+          {
+            "nome": "Morfologia",
+            "valor": "Acantócitos >20% (hemácias espiculadas)",
+            "referencia": "Normal",
+            "alterado": true
+          }
+        ]
+      }
     ],
     "exam": {
-      "head":    "Disartria leve. Movimentos oculares lentos. Sem linfadenopatia.",
-      "chest":   "Ausculta normal.",
+      "head": "Disartria leve. Movimentos oculares lentos. Sem linfadenopatia.",
+      "chest": "Ausculta normal.",
       "abdomen": "Sem hepatoesplenomegalia.",
-      "arm":     "Fraqueza muscular distal. Reflexos diminuídos.",
-      "knee":    "Arreflexia patelar bilateral.",
-      "ankle":   "Arreflexia aquiliana. Marcha levemente atáxica."
+      "arm": "Fraqueza muscular distal. Reflexos diminuídos.",
+      "knee": "Arreflexia patelar bilateral.",
+      "ankle": "Arreflexia aquiliana. Marcha levemente atáxica."
     },
     "responses": {
-      "nome":             "Rafael Moreira.",
-      "idade":            "Tenho 19 anos.",
-      "naturalidade":     "Nasci em Olinda, moro no Recife.",
-      "QPD":              "O médico do colégio viu que meu sangue estava alterado e me encaminhou.",
-      "Inicio":           "Desde criança sou um pouco anêmico, mas nunca tratei. Os movimentos involuntários começaram há uns 6 meses.",
-      "Detalhe":          "Sou anêmico desde criança. Agora comecei a ter movimentos que não consigo controlar nos braços e dificuldade de falar às vezes.",
-      "Localizacao":      "Os movimentos involuntários são principalmente nos braços. A fraqueza é mais nas pernas.",
-      "Irradiacao":       "Não.",
-      "Caracter":         "São movimentos bruscos que saem do nada, sem dor.",
-      "Fator_melhora":    "Não encontrei nada que melhore.",
-      "Fator_piora":      "Parece piorar quando estou nervoso.",
+      "nome": "Rafael Moreira.",
+      "idade": "Tenho 19 anos.",
+      "naturalidade": "Nasci em Olinda, moro no Recife.",
+      "QPD": "O médico do colégio viu que meu sangue estava alterado e me encaminhou.",
+      "Inicio": "Desde criança sou um pouco anêmico, mas nunca tratei. Os movimentos involuntários começaram há uns 6 meses.",
+      "Detalhe": "Sou anêmico desde criança. Agora comecei a ter movimentos que não consigo controlar nos braços e dificuldade de falar às vezes.",
+      "Localizacao": "Os movimentos involuntários são principalmente nos braços. A fraqueza é mais nas pernas.",
+      "Irradiacao": "Não.",
+      "Caracter": "São movimentos bruscos que saem do nada, sem dor.",
+      "Fator_melhora": "Não encontrei nada que melhore.",
+      "Fator_piora": "Parece piorar quando estou nervoso.",
       "Sintomas_associados": "Às vezes tenho cãibras nas pernas.",
       "Sintomas_negados": "Não tenho febre, não perdi peso.",
-      "febre":            "Não, não tenho febre.",
-      "dor":              "Às vezes tenho cãibras nas pernas.",
-      "movimentos":       "Sim, tenho movimentos involuntários nos braços que não consigo controlar.",
-      "antfamiliares":          "Meu pai tem um problema parecido, sempre foi anêmico e tem dificuldade de andar.",
-      "antpessoais":        "Desde criança sou um pouco anêmico, mas nunca tratei direito.",
-      "neurologico":      "Tenho dificuldade para falar às vezes, as palavras saem embaralhadas.",
-      "medicamentos":         "Não tomo nenhum remédio regularmente.",
-      "alimentacao":      "Como normal, sem restrições.",
-      "habitos":          "Não fumo, não bebo. Jogava futebol mas agora está difícil por causa da fraqueza.",
-      "vacinas":          "Acho que estão em dia, minha mãe cuida disso.",
-      "epidemiologia":    "Sou estudante do ensino médio.",
-      "cumprimento":      "Oi, doutor.",
-      "naosei":           "Não sei falar sobre isso.",
-      "default":          "O médico disse que tem algo diferente nas minhas células do sangue. O que pode ser?"
+      "febre": "Não, não tenho febre.",
+      "dor": "Às vezes tenho cãibras nas pernas.",
+      "movimentos": "Sim, tenho movimentos involuntários nos braços que não consigo controlar.",
+      "antfamiliares": "Meu pai tem um problema parecido, sempre foi anêmico e tem dificuldade de andar.",
+      "antpessoais": "Desde criança sou um pouco anêmico, mas nunca tratei direito.",
+      "neurologico": "Tenho dificuldade para falar às vezes, as palavras saem embaralhadas.",
+      "medicamentos": "Não tomo nenhum remédio regularmente.",
+      "alimentacao": "Como normal, sem restrições.",
+      "habitos": "Não fumo, não bebo. Jogava futebol mas agora está difícil por causa da fraqueza.",
+      "vacinas": "Acho que estão em dia, minha mãe cuida disso.",
+      "epidemiologia": "Sou estudante do ensino médio.",
+      "cumprimento": "Oi, doutor.",
+      "naosei": "Não sei falar sobre isso.",
+      "default": "O médico disse que tem algo diferente nas minhas células do sangue. O que pode ser?"
     }
   },
   {
@@ -221,66 +389,125 @@
     "disease": "hnp",
     "disease_label": "Hemoglobinúria Paroxística Noturna",
     "intro": "Doutor, estou apavorada. Hoje de manhã minha urina estava cor de coca-cola escura. Isso já aconteceu algumas vezes.",
-    "signs": ["hemoglobinúria", "urina escura ao acordar", "fadiga", "trombose venosa", "dor abdominal", "disfagia"],
+    "signs": [
+      "hemoglobinúria",
+      "urina escura ao acordar",
+      "fadiga",
+      "trombose venosa",
+      "dor abdominal",
+      "disfagia"
+    ],
     "lab": {
       "hemograma": "Hb: 8,1 g/dL. Leucopenia leve. Plaquetas: 95.000/µL (pancitopenia leve).",
       "esfregaco": "Sem esquizócitos. Reticulocitose.",
       "outros": "LDH muito elevado: 1.240 U/L. Teste de Ham positivo. Citometria de fluxo: clone GPI-deficiente >50% (CD55 e CD59 ausentes)."
     },
     "lab_display": [
-      { "categoria": "Hemograma", "exames": [
-        { "nome": "Hemoglobina", "valor": "8,1 g/dL",   "referencia": "12–16 g/dL",          "alterado": true  },
-        { "nome": "Leucócitos",  "valor": "2.900/µL",   "referencia": "4.000–11.000/µL",      "alterado": true  },
-        { "nome": "Plaquetas",   "valor": "95.000/µL",  "referencia": "150.000–400.000/µL",   "alterado": true  }
-      ]},
-      { "categoria": "Bioquímica", "exames": [
-        { "nome": "LDH", "valor": "1.240 U/L", "referencia": "<240 U/L", "alterado": true }
-      ]},
-      { "categoria": "Testes Especiais", "exames": [
-        { "nome": "Teste de Ham",         "valor": "Positivo",               "referencia": "Negativo",   "alterado": true },
-        { "nome": "CD55 (Citometria)",    "valor": "Ausente (clone >50%)",   "referencia": "Presente",   "alterado": true },
-        { "nome": "CD59 (Citometria)",    "valor": "Ausente (clone >50%)",   "referencia": "Presente",   "alterado": true }
-      ]},
-      { "categoria": "Esfregaço", "exames": [
-        { "nome": "Morfologia", "valor": "Sem esquizócitos. Reticulocitose.", "referencia": "Normal", "alterado": true }
-      ]}
+      {
+        "categoria": "Hemograma",
+        "exames": [
+          {
+            "nome": "Hemoglobina",
+            "valor": "8,1 g/dL",
+            "referencia": "12–16 g/dL",
+            "alterado": true
+          },
+          {
+            "nome": "Leucócitos",
+            "valor": "2.900/µL",
+            "referencia": "4.000–11.000/µL",
+            "alterado": true
+          },
+          {
+            "nome": "Plaquetas",
+            "valor": "95.000/µL",
+            "referencia": "150.000–400.000/µL",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Bioquímica",
+        "exames": [
+          {
+            "nome": "LDH",
+            "valor": "1.240 U/L",
+            "referencia": "<240 U/L",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Testes Especiais",
+        "exames": [
+          {
+            "nome": "Teste de Ham",
+            "valor": "Positivo",
+            "referencia": "Negativo",
+            "alterado": true
+          },
+          {
+            "nome": "CD55 (Citometria)",
+            "valor": "Ausente (clone >50%)",
+            "referencia": "Presente",
+            "alterado": true
+          },
+          {
+            "nome": "CD59 (Citometria)",
+            "valor": "Ausente (clone >50%)",
+            "referencia": "Presente",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Esfregaço",
+        "exames": [
+          {
+            "nome": "Morfologia",
+            "valor": "Sem esquizócitos. Reticulocitose.",
+            "referencia": "Normal",
+            "alterado": true
+          }
+        ]
+      }
     ],
     "exam": {
-      "head":    "Palidez conjuntival moderada. Escleróticas levemente ictéricas.",
-      "chest":   "Ausculta normal.",
+      "head": "Palidez conjuntival moderada. Escleróticas levemente ictéricas.",
+      "chest": "Ausculta normal.",
       "abdomen": "Dor à palpação em flanco esquerdo (esplenomegalia leve).",
-      "arm":     "Sem alterações cutâneas.",
-      "knee":    "Sem alterações.",
-      "ankle":   "Sem edema."
+      "arm": "Sem alterações cutâneas.",
+      "knee": "Sem alterações.",
+      "ankle": "Sem edema."
     },
     "responses": {
-      "nome":             "Augusto Mendes.",
-      "idade":            "Tenho 42 anos.",
-      "naturalidade":     "Sou do Recife.",
-      "QPD":              "Minha urina está cor de coca-cola escura. Isso já aconteceu algumas vezes.",
-      "Inicio":           "A primeira vez foi há uns 8 meses. Acontece principalmente de manhã.",
-      "Detalhe":          "A urina sai bem escura ao acordar e vai clareando ao longo do dia. Também estou muito cansado e tive uma trombose há 6 meses.",
-      "Localizacao":      "Não tenho dor localizada específica, mas sinto às vezes cólicas abdominais.",
-      "Irradiacao":       "A dor abdominal não irradia.",
-      "Caracter":         "É uma cólica abdominal, em cãibra.",
-      "Fator_melhora":    "Não encontrei nada específico.",
-      "Fator_piora":      "Parece piorar quando estou com infecção ou muito estressado.",
+      "nome": "Augusto Mendes.",
+      "idade": "Tenho 42 anos.",
+      "naturalidade": "Sou do Recife.",
+      "QPD": "Minha urina está cor de coca-cola escura. Isso já aconteceu algumas vezes.",
+      "Inicio": "A primeira vez foi há uns 8 meses. Acontece principalmente de manhã.",
+      "Detalhe": "A urina sai bem escura ao acordar e vai clareando ao longo do dia. Também estou muito cansado e tive uma trombose há 6 meses.",
+      "Localizacao": "Não tenho dor localizada específica, mas sinto às vezes cólicas abdominais.",
+      "Irradiacao": "A dor abdominal não irradia.",
+      "Caracter": "É uma cólica abdominal, em cãibra.",
+      "Fator_melhora": "Não encontrei nada específico.",
+      "Fator_piora": "Parece piorar quando estou com infecção ou muito estressado.",
       "Sintomas_associados": "Tive uma trombose na veia hepática há 6 meses. Às vezes sinto dificuldade de engolir.",
       "Sintomas_negados": "Não tenho febre constante.",
-      "Caracterizacao_urina":            "Acontece principalmente de manhã ao acordar. A urina sai bem escura, quase marrom, e depois clareia ao longo do dia.",
-      "febre":            "Às vezes tenho febre baixa, principalmente quando a urina fica mais escura.",
-      "dor":              "Tenho dores abdominais em cólica às vezes. Uma vez tive muita dor no peito.",
-      "Caracterizacao_fadiga":          "Muito cansado, sem energia pra nada há meses.",
-      "antpessoais":        "Tive uma trombose na veia hepática há 6 meses. Fiz exames mas ninguém chegou a um diagnóstico.",
-      "medicamentos":         "Warfarina por causa da trombose.",
-      "engolir":          "Às vezes sinto dificuldade de engolir, uma sensação estranho na garganta.",
-      "antfamiliares":          "Ninguém na família com problema parecido.",
-      "habitos":          "Não fumo, não bebo. Trabalho muito, às vezes fico estressado.",
-      "vacinas":          "Acredito que estão em dia.",
-      "epidemiologia":    "Sou advogado, trabalho em escritório.",
-      "cumprimento":      "Olá, doutor. Estou apavorado com essa urina.",
-      "naosei":           "Isso não tem relação com o que estou sentindo.",
-      "default":          "Essa urina escura me apavora muito, doutor. O que pode estar causando isso?"
+      "Caracterizacao_urina": "Acontece principalmente de manhã ao acordar. A urina sai bem escura, quase marrom, e depois clareia ao longo do dia.",
+      "febre": "Às vezes tenho febre baixa, principalmente quando a urina fica mais escura.",
+      "dor": "Tenho dores abdominais em cólica às vezes. Uma vez tive muita dor no peito.",
+      "Caracterizacao_fadiga": "Muito cansado, sem energia pra nada há meses.",
+      "antpessoais": "Tive uma trombose na veia hepática há 6 meses. Fiz exames mas ninguém chegou a um diagnóstico.",
+      "medicamentos": "Warfarina por causa da trombose.",
+      "engolir": "Às vezes sinto dificuldade de engolir, uma sensação estranho na garganta.",
+      "antfamiliares": "Ninguém na família com problema parecido.",
+      "habitos": "Não fumo, não bebo. Trabalho muito, às vezes fico estressado.",
+      "vacinas": "Acredito que estão em dia.",
+      "epidemiologia": "Sou advogado, trabalho em escritório.",
+      "cumprimento": "Olá, doutor. Estou apavorado com essa urina.",
+      "naosei": "Isso não tem relação com o que estou sentindo.",
+      "default": "Essa urina escura me apavora muito, doutor. O que pode estar causando isso?"
     }
   },
   {
@@ -293,65 +520,119 @@
     "disease": "anemia_aplasica",
     "disease_label": "Anemia Aplásica Adquirida",
     "intro": "Doutor, estou com muito cansaço, tive febre alta essa semana e apareceram umas manchas roxas no corpo. Está tudo piorando junto.",
-    "signs": ["pancitopenia", "fadiga severa", "febre", "infecções recorrentes", "sangramentos", "sem hepatoesplenomegalia"],
+    "signs": [
+      "pancitopenia",
+      "fadiga severa",
+      "febre",
+      "infecções recorrentes",
+      "sangramentos",
+      "sem hepatoesplenomegalia"
+    ],
     "lab": {
       "hemograma": "Hb: 6,8 g/dL. Leucócitos: 1.200/µL (neutrófilos: 400/µL). Plaquetas: 12.000/µL. Pancitopenia grave.",
       "esfregaco": "Sem blastos. Sem esquizócitos. Células normais em número reduzido.",
       "outros": "Biópsia de medula óssea: hipocelularidade >90% (medula aplásica). Eritropoetina elevada."
     },
     "lab_display": [
-      { "categoria": "Hemograma", "exames": [
-        { "nome": "Hemoglobina",  "valor": "6,8 g/dL",  "referencia": "13–17 g/dL",         "alterado": true  },
-        { "nome": "Leucócitos",   "valor": "1.200/µL",  "referencia": "4.000–11.000/µL",     "alterado": true  },
-        { "nome": "Neutrófilos",  "valor": "400/µL",    "referencia": "1.800–7.500/µL",      "alterado": true  },
-        { "nome": "Plaquetas",    "valor": "12.000/µL", "referencia": "150.000–400.000/µL",  "alterado": true  }
-      ]},
-      { "categoria": "Bioquímica", "exames": [
-        { "nome": "Eritropoetina", "valor": "Muito elevada", "referencia": "Normal", "alterado": true }
-      ]},
-      { "categoria": "Mielograma/Biópsia", "exames": [
-        { "nome": "Celularidade medular", "valor": "Hipocelularidade >90%", "referencia": "Normal", "alterado": true }
-      ]},
-      { "categoria": "Esfregaço", "exames": [
-        { "nome": "Morfologia", "valor": "Sem blastos. Células normais em número muito reduzido.", "referencia": "Normal", "alterado": true }
-      ]}
+      {
+        "categoria": "Hemograma",
+        "exames": [
+          {
+            "nome": "Hemoglobina",
+            "valor": "6,8 g/dL",
+            "referencia": "13–17 g/dL",
+            "alterado": true
+          },
+          {
+            "nome": "Leucócitos",
+            "valor": "1.200/µL",
+            "referencia": "4.000–11.000/µL",
+            "alterado": true
+          },
+          {
+            "nome": "Neutrófilos",
+            "valor": "400/µL",
+            "referencia": "1.800–7.500/µL",
+            "alterado": true
+          },
+          {
+            "nome": "Plaquetas",
+            "valor": "12.000/µL",
+            "referencia": "150.000–400.000/µL",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Bioquímica",
+        "exames": [
+          {
+            "nome": "Eritropoetina",
+            "valor": "Muito elevada",
+            "referencia": "Normal",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Mielograma/Biópsia",
+        "exames": [
+          {
+            "nome": "Celularidade medular",
+            "valor": "Hipocelularidade >90%",
+            "referencia": "Normal",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Esfregaço",
+        "exames": [
+          {
+            "nome": "Morfologia",
+            "valor": "Sem blastos. Células normais em número muito reduzido.",
+            "referencia": "Normal",
+            "alterado": true
+          }
+        ]
+      }
     ],
     "exam": {
-      "head":    "Palidez intensa. Petéquias na mucosa oral.",
-      "chest":   "Foco de crepitação em base direita (infecção pulmonar).",
+      "head": "Palidez intensa. Petéquias na mucosa oral.",
+      "chest": "Foco de crepitação em base direita (infecção pulmonar).",
       "abdomen": "Sem hepatoesplenomegalia. Sem linfadenopatia.",
-      "arm":     "Equimoses e petéquias em membros superiores.",
-      "knee":    "Sem artralgia.",
-      "ankle":   "Sem edema."
+      "arm": "Equimoses e petéquias em membros superiores.",
+      "knee": "Sem artralgia.",
+      "ankle": "Sem edema."
     },
     "responses": {
-      "nome":             "Jorge Nascimento.",
-      "idade":            "Tenho 55 anos.",
-      "naturalidade":     "Sou de Caruaru, moro no Recife há 20 anos.",
-      "QPD":              "Estou com muito cansaço, febre alta e manchas roxas no corpo, tudo piorando junto.",
-      "Inicio":           "Comecei a me sentir mal há uns 2 meses, mas essa semana ficou muito pior.",
-      "Detalhe":          "Estou exausto, tive febre de quase 39 essa semana, aparecem manchas roxas sem motivo e já tive 3 infecções neste mês.",
-      "Localizacao":      "As manchas estão nos braços e pernas. A febre é generalizada.",
-      "Irradiacao":       "Não.",
-      "Caracter":         "É um cansaço profundo, não consigo nem levantar direito da cama.",
-      "Fator_melhora":    "Nada melhora.",
-      "Fator_piora":      "Qualquer esforço piora o cansaço.",
+      "nome": "Jorge Nascimento.",
+      "idade": "Tenho 55 anos.",
+      "naturalidade": "Sou de Caruaru, moro no Recife há 20 anos.",
+      "QPD": "Estou com muito cansaço, febre alta e manchas roxas no corpo, tudo piorando junto.",
+      "Inicio": "Comecei a me sentir mal há uns 2 meses, mas essa semana ficou muito pior.",
+      "Detalhe": "Estou exausto, tive febre de quase 39 essa semana, aparecem manchas roxas sem motivo e já tive 3 infecções neste mês.",
+      "Localizacao": "As manchas estão nos braços e pernas. A febre é generalizada.",
+      "Irradiacao": "Não.",
+      "Caracter": "É um cansaço profundo, não consigo nem levantar direito da cama.",
+      "Fator_melhora": "Nada melhora.",
+      "Fator_piora": "Qualquer esforço piora o cansaço.",
       "Sintomas_associados": "Dor de cabeça forte e dores pelo corpo.",
       "Sintomas_negados": "Não tenho caroços no pescoço nem perda de peso acentuada.",
-      "febre":            "Sim, febre de quase 39 essa semana, com calafrios.",
-      "dor":              "Tenho dor de cabeça forte e dores pelo corpo.",
-      "manchas":          "Apareceram manchas roxas nos braços e pernas sem nenhum motivo.",
+      "febre": "Sim, febre de quase 39 essa semana, com calafrios.",
+      "dor": "Tenho dor de cabeça forte e dores pelo corpo.",
+      "manchas": "Apareceram manchas roxas nos braços e pernas sem nenhum motivo.",
       "Caracterizacao_fadiga": "Estou exausto, doutor. Não consigo nem levantar da cama direito.",
-      "antpessoais":        "Tomei cloranfenicol há 4 meses por um problema reumático. Parei quando comecei a me sentir mal.",
-      "medicamentos":         "Parei todos os remédios. Antes tomava cloranfenicol.",
-      "infeccoes":        "Já tive 3 infecções esse mês: amigdalite, pneumonia leve e agora isso.",
-      "antfamiliares":          "Ninguém com problema parecido.",
-      "habitos":          "Não fumo, bebo socialmente. Não pratiquei exercício desde que fiquei doente.",
-      "vacinas":          "Não sei se estão em dia.",
-      "epidemiologia":    "Sou comerciante, trabalho com venda de materiais de construção.",
-      "cumprimento":      "Bom dia, doutor. Estou muito mal.",
-      "naosei":           "Não sei falar sobre isso agora.",
-      "default":          "Estou muito mal, doutor. Nunca me senti assim tão fraco e doente ao mesmo tempo."
+      "antpessoais": "Tomei cloranfenicol há 4 meses por um problema reumático. Parei quando comecei a me sentir mal.",
+      "medicamentos": "Parei todos os remédios. Antes tomava cloranfenicol.",
+      "infeccoes": "Já tive 3 infecções esse mês: amigdalite, pneumonia leve e agora isso.",
+      "antfamiliares": "Ninguém com problema parecido.",
+      "habitos": "Não fumo, bebo socialmente. Não pratiquei exercício desde que fiquei doente.",
+      "vacinas": "Não sei se estão em dia.",
+      "epidemiologia": "Sou comerciante, trabalho com venda de materiais de construção.",
+      "cumprimento": "Bom dia, doutor. Estou muito mal.",
+      "naosei": "Não sei falar sobre isso agora.",
+      "default": "Estou muito mal, doutor. Nunca me senti assim tão fraco e doente ao mesmo tempo."
     }
   },
   {
@@ -364,7 +645,14 @@
     "disease": "lpa",
     "disease_label": "Leucemia Promielocítica Aguda",
     "intro": "Doutor, comecei a sangrar sem parar de um corte pequeno, estou com hematomas por todo o corpo e me sinto muito mal há uma semana.",
-    "signs": ["sangramentos graves", "equimoses extensas", "CID associada", "febre", "fadiga", "blastos no esfregaço"],
+    "signs": [
+      "sangramentos graves",
+      "equimoses extensas",
+      "CID associada",
+      "febre",
+      "fadiga",
+      "blastos no esfregaço"
+    ],
     "lab": {
       "hemograma": "Hb: 7,4 g/dL. Leucócitos: 2.800/µL com 60% de promielócitos anômalos. Plaquetas: 22.000/µL.",
       "esfregaco": "Promielócitos com grânulos azurófilos abundantes e bastões de Auer. Células de Faggot presentes.",
@@ -372,61 +660,123 @@
       "citogenetica": "t(15;17) confirmada. Fusão PML-RARα positiva."
     },
     "lab_display": [
-      { "categoria": "Hemograma", "exames": [
-        { "nome": "Hemoglobina",     "valor": "7,4 g/dL",  "referencia": "12–16 g/dL",          "alterado": true  },
-        { "nome": "Leucócitos",      "valor": "2.800/µL",  "referencia": "4.000–11.000/µL",      "alterado": true  },
-        { "nome": "Promielócitos",   "valor": "60%",       "referencia": "0%",                   "alterado": true  },
-        { "nome": "Plaquetas",       "valor": "22.000/µL", "referencia": "150.000–400.000/µL",   "alterado": true  }
-      ]},
-      { "categoria": "Coagulograma", "exames": [
-        { "nome": "TP",           "valor": "Alargado",    "referencia": "Normal",          "alterado": true  },
-        { "nome": "Fibrinogênio", "valor": "80 mg/dL",   "referencia": "200–400 mg/dL",   "alterado": true  },
-        { "nome": "D-dímero",     "valor": "Muito elevado","referencia": "<500 ng/mL",     "alterado": true  }
-      ]},
-      { "categoria": "Citogenética", "exames": [
-        { "nome": "t(15;17)",    "valor": "Confirmada",  "referencia": "Ausente", "alterado": true },
-        { "nome": "PML-RARα",   "valor": "Positivo",    "referencia": "Negativo","alterado": true }
-      ]},
-      { "categoria": "Esfregaço", "exames": [
-        { "nome": "Morfologia", "valor": "Promielócitos com bastões de Auer. Células de Faggot.", "referencia": "Normal", "alterado": true }
-      ]}
+      {
+        "categoria": "Hemograma",
+        "exames": [
+          {
+            "nome": "Hemoglobina",
+            "valor": "7,4 g/dL",
+            "referencia": "12–16 g/dL",
+            "alterado": true
+          },
+          {
+            "nome": "Leucócitos",
+            "valor": "2.800/µL",
+            "referencia": "4.000–11.000/µL",
+            "alterado": true
+          },
+          {
+            "nome": "Promielócitos",
+            "valor": "60%",
+            "referencia": "0%",
+            "alterado": true
+          },
+          {
+            "nome": "Plaquetas",
+            "valor": "22.000/µL",
+            "referencia": "150.000–400.000/µL",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Coagulograma",
+        "exames": [
+          {
+            "nome": "TP",
+            "valor": "Alargado",
+            "referencia": "Normal",
+            "alterado": true
+          },
+          {
+            "nome": "Fibrinogênio",
+            "valor": "80 mg/dL",
+            "referencia": "200–400 mg/dL",
+            "alterado": true
+          },
+          {
+            "nome": "D-dímero",
+            "valor": "Muito elevado",
+            "referencia": "<500 ng/mL",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Citogenética",
+        "exames": [
+          {
+            "nome": "t(15;17)",
+            "valor": "Confirmada",
+            "referencia": "Ausente",
+            "alterado": true
+          },
+          {
+            "nome": "PML-RARα",
+            "valor": "Positivo",
+            "referencia": "Negativo",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Esfregaço",
+        "exames": [
+          {
+            "nome": "Morfologia",
+            "valor": "Promielócitos com bastões de Auer. Células de Faggot.",
+            "referencia": "Normal",
+            "alterado": true
+          }
+        ]
+      }
     ],
     "exam": {
-      "head":    "Equimoses periorbitárias. Petéquias no palato. Sangramento gengival ativo.",
-      "chest":   "Hematoma extenso em parede torácica anterior.",
+      "head": "Equimoses periorbitárias. Petéquias no palato. Sangramento gengival ativo.",
+      "chest": "Hematoma extenso em parede torácica anterior.",
       "abdomen": "Dor à palpação difusa. Sem organomegalias.",
-      "arm":     "Equimoses confluentes bilaterais. Sangramento prolongado no local de punção venosa.",
-      "knee":    "Hemartrose leve no joelho direito.",
-      "ankle":   "Petéquias em tornozelos."
+      "arm": "Equimoses confluentes bilaterais. Sangramento prolongado no local de punção venosa.",
+      "knee": "Hemartrose leve no joelho direito.",
+      "ankle": "Petéquias em tornozelos."
     },
     "responses": {
-      "nome":             "Beatriz Cavalcanti.",
-      "idade":            "Tenho 38 anos.",
-      "naturalidade":     "Sou do Recife.",
-      "QPD":              "Comecei a sangrar sem parar de um corte pequeno e tenho hematomas enormes pelo corpo.",
-      "Inicio":           "Há uma semana. Foi rápido, do nada.",
-      "Detalhe":          "Cortei o dedo e sangrei por mais de uma hora. Apareceram hematomas enormes sem me machucar. Estou com febre e me sinto exausta.",
-      "Localizacao":      "Os hematomas estão pelo corpo todo. O sangramento foi no dedo cortado.",
-      "Irradiacao":       "Não.",
-      "Caracter":         "O sangramento não coagula. Os hematomas são extensos.",
-      "Fator_melhora":    "Nada melhorou.",
-      "Fator_piora":      "Qualquer machucado, por menor que seja, sangra muito.",
+      "nome": "Beatriz Cavalcanti.",
+      "idade": "Tenho 38 anos.",
+      "naturalidade": "Sou do Recife.",
+      "QPD": "Comecei a sangrar sem parar de um corte pequeno e tenho hematomas enormes pelo corpo.",
+      "Inicio": "Há uma semana. Foi rápido, do nada.",
+      "Detalhe": "Cortei o dedo e sangrei por mais de uma hora. Apareceram hematomas enormes sem me machucar. Estou com febre e me sinto exausta.",
+      "Localizacao": "Os hematomas estão pelo corpo todo. O sangramento foi no dedo cortado.",
+      "Irradiacao": "Não.",
+      "Caracter": "O sangramento não coagula. Os hematomas são extensos.",
+      "Fator_melhora": "Nada melhorou.",
+      "Fator_piora": "Qualquer machucado, por menor que seja, sangra muito.",
       "Sintomas_associados": "Dor de cabeça intensa e dores nas juntas.",
       "Sintomas_negados": "Não tinha problema de coagulação antes.",
-      "caracterizacao_sangramentos":      "Cortei o dedo lavando louça e sangrei por mais de uma hora, doutor.",
-      "febre":            "Sim, febre de 38,5 há 5 dias.",
-      "dor":              "Dor de cabeça intensa e dores nas juntas.",
-      "manchas":          "Tenho hematomas enormes pelo corpo inteiro, sem me machucar.",
-      "Caracterizacao_fadiga":          "Exausta, sem forças pra nada.",
-      "antpessoais":        "Saudável até há 2 semanas.",
-      "medicamentos":         "Não tomo nenhum remédio.",
-      "antfamiliares":          "Ninguém com leucemia ou problema de sangue.",
-      "habitos":          "Não fumo, não bebo. Faço yoga normalmente.",
-      "vacinas":          "Acredito que estão em dia.",
-      "epidemiologia":    "Sou enfermeira.",
-      "cumprimento":      "Olá, doutor. Estou com muito medo.",
-      "naosei":           "Não sei responder isso.",
-      "default":          "Estou com muito medo, doutor. Esse sangramento não para e estou cada vez mais fraca."
+      "caracterizacao_sangramentos": "Cortei o dedo lavando louça e sangrei por mais de uma hora, doutor.",
+      "febre": "Sim, febre de 38,5 há 5 dias.",
+      "dor": "Dor de cabeça intensa e dores nas juntas.",
+      "manchas": "Tenho hematomas enormes pelo corpo inteiro, sem me machucar.",
+      "Caracterizacao_fadiga": "Exausta, sem forças pra nada.",
+      "antpessoais": "Saudável até há 2 semanas.",
+      "medicamentos": "Não tomo nenhum remédio.",
+      "antfamiliares": "Ninguém com leucemia ou problema de sangue.",
+      "habitos": "Não fumo, não bebo. Faço yoga normalmente.",
+      "vacinas": "Acredito que estão em dia.",
+      "epidemiologia": "Sou enfermeira.",
+      "cumprimento": "Olá, doutor. Estou com muito medo.",
+      "naosei": "Não sei responder isso.",
+      "default": "Estou com muito medo, doutor. Esse sangramento não para e estou cada vez mais fraca."
     }
   },
   {
@@ -439,7 +789,14 @@
     "disease": "poems",
     "disease_label": "Síndrome POEMS",
     "intro": "Doutor, tenho sentido fraqueza progressiva nas pernas, minha barriga inchou muito e apareceram umas manchas escuras na pele.",
-    "signs": ["polineuropatia periférica", "organomegalia", "endocrinopatia", "proteína M", "alterações cutâneas", "edema"],
+    "signs": [
+      "polineuropatia periférica",
+      "organomegalia",
+      "endocrinopatia",
+      "proteína M",
+      "alterações cutâneas",
+      "edema"
+    ],
     "lab": {
       "hemograma": "Hb: 9,8 g/dL. Plaquetas: 620.000/µL (trombocitose). Leucócitos normais.",
       "proteinas": "Proteína M (IgA lambda) em eletroforese. Imunofixação positiva para cadeia leve lambda.",
@@ -447,58 +804,112 @@
       "outros": "VEGF sérico muito elevado. Biópsia de medula: plasmocitose focal."
     },
     "lab_display": [
-      { "categoria": "Hemograma", "exames": [
-        { "nome": "Hemoglobina", "valor": "9,8 g/dL",    "referencia": "13–17 g/dL",          "alterado": true  },
-        { "nome": "Plaquetas",   "valor": "620.000/µL",  "referencia": "150.000–400.000/µL",  "alterado": true  },
-        { "nome": "Leucócitos",  "valor": "7.200/µL",    "referencia": "4.000–11.000/µL",     "alterado": false }
-      ]},
-      { "categoria": "Proteínas", "exames": [
-        { "nome": "Proteína M (Eletroforese)", "valor": "IgA lambda",  "referencia": "Ausente",  "alterado": true },
-        { "nome": "Imunofixação",             "valor": "Cadeia leve lambda positiva", "referencia": "Negativo", "alterado": true }
-      ]},
-      { "categoria": "Hormônios / Metabólico", "exames": [
-        { "nome": "TSH",           "valor": "Elevado",     "referencia": "0,4–4,0 mUI/L", "alterado": true  },
-        { "nome": "Testosterona",  "valor": "Baixa",       "referencia": "Normal",        "alterado": true  },
-        { "nome": "Glicemia",      "valor": "132 mg/dL",  "referencia": "<100 mg/dL",    "alterado": true  },
-        { "nome": "VEGF sérico",   "valor": "Muito elevado","referencia": "Normal",       "alterado": true  }
-      ]}
+      {
+        "categoria": "Hemograma",
+        "exames": [
+          {
+            "nome": "Hemoglobina",
+            "valor": "9,8 g/dL",
+            "referencia": "13–17 g/dL",
+            "alterado": true
+          },
+          {
+            "nome": "Plaquetas",
+            "valor": "620.000/µL",
+            "referencia": "150.000–400.000/µL",
+            "alterado": true
+          },
+          {
+            "nome": "Leucócitos",
+            "valor": "7.200/µL",
+            "referencia": "4.000–11.000/µL",
+            "alterado": false
+          }
+        ]
+      },
+      {
+        "categoria": "Proteínas",
+        "exames": [
+          {
+            "nome": "Proteína M (Eletroforese)",
+            "valor": "IgA lambda",
+            "referencia": "Ausente",
+            "alterado": true
+          },
+          {
+            "nome": "Imunofixação",
+            "valor": "Cadeia leve lambda positiva",
+            "referencia": "Negativo",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Hormônios / Metabólico",
+        "exames": [
+          {
+            "nome": "TSH",
+            "valor": "Elevado",
+            "referencia": "0,4–4,0 mUI/L",
+            "alterado": true
+          },
+          {
+            "nome": "Testosterona",
+            "valor": "Baixa",
+            "referencia": "Normal",
+            "alterado": true
+          },
+          {
+            "nome": "Glicemia",
+            "valor": "132 mg/dL",
+            "referencia": "<100 mg/dL",
+            "alterado": true
+          },
+          {
+            "nome": "VEGF sérico",
+            "valor": "Muito elevado",
+            "referencia": "Normal",
+            "alterado": true
+          }
+        ]
+      }
     ],
     "exam": {
-      "head":    "Papiledema ao fundo de olho. Sem linfadenopatia cervical.",
-      "chest":   "Derrame pleural leve à direita. Linfadenopatia axilar.",
+      "head": "Papiledema ao fundo de olho. Sem linfadenopatia cervical.",
+      "chest": "Derrame pleural leve à direita. Linfadenopatia axilar.",
       "abdomen": "Hepatomegalia e esplenomegalia. Ascite moderada.",
-      "arm":     "Fraqueza muscular distal. Hiperpigmentação cutânea. Hipertricose.",
-      "knee":    "Fraqueza muscular proximal. Reflexos diminuídos.",
-      "ankle":   "Edema maleolar importante bilateral. Hipocratismo digital."
+      "arm": "Fraqueza muscular distal. Hiperpigmentação cutânea. Hipertricose.",
+      "knee": "Fraqueza muscular proximal. Reflexos diminuídos.",
+      "ankle": "Edema maleolar importante bilateral. Hipocratismo digital."
     },
     "responses": {
-      "nome":             "Henrique Barros.",
-      "idade":            "Tenho 61 anos.",
-      "naturalidade":     "Sou do interior da Bahia, moro no Recife há 25 anos.",
-      "QPD":              "Fraqueza progressiva nas pernas, barriga inchada e manchas escuras na pele.",
-      "Inicio":           "A fraqueza começou há 8 meses, foi piorando. A barriga cresceu nos últimos meses.",
-      "Detalhe":          "Comecei com formigamento nos pés, depois veio a fraqueza nas pernas. A barriga foi crescendo, o médico disse que tem líquido. Apareceram manchas escuras e os pelos ficaram mais grossos.",
-      "Localizacao":      "A fraqueza é mais nas pernas. As manchas são pelo corpo todo.",
-      "Irradiacao":       "O formigamento começa nos pés e sobe pelas pernas.",
-      "Caracter":         "É um formigamento constante, como agulhadas. A fraqueza é progressiva.",
-      "Fator_melhora":    "Não encontrei nada.",
-      "Fator_piora":      "Piora com o esforço.",
+      "nome": "Henrique Barros.",
+      "idade": "Tenho 61 anos.",
+      "naturalidade": "Sou do interior da Bahia, moro no Recife há 25 anos.",
+      "QPD": "Fraqueza progressiva nas pernas, barriga inchada e manchas escuras na pele.",
+      "Inicio": "A fraqueza começou há 8 meses, foi piorando. A barriga cresceu nos últimos meses.",
+      "Detalhe": "Comecei com formigamento nos pés, depois veio a fraqueza nas pernas. A barriga foi crescendo, o médico disse que tem líquido. Apareceram manchas escuras e os pelos ficaram mais grossos.",
+      "Localizacao": "A fraqueza é mais nas pernas. As manchas são pelo corpo todo.",
+      "Irradiacao": "O formigamento começa nos pés e sobe pelas pernas.",
+      "Caracter": "É um formigamento constante, como agulhadas. A fraqueza é progressiva.",
+      "Fator_melhora": "Não encontrei nada.",
+      "Fator_piora": "Piora com o esforço.",
       "Sintomas_associados": "Tenho diabetes recém-diagnosticada e minha tireoide está alterada. Visão embaçada.",
       "Sintomas_negados": "Não tenho febre, não perdi peso.",
-      "fraqueza":         "Comecei a sentir fraqueza nas pernas há 8 meses, foi piorando. Agora tenho dificuldade de subir escadas.",
-      "barriga":          "Minha barriga foi crescendo nos últimos meses. O médico disse que tem líquido.",
-      "pele":             "Apareceram manchas escuras no corpo e os pelos ficaram mais grossos e escuros.",
-      "dor":              "Tenho dor e formigamento nos pés e nas mãos, como agulhadas.",
-      "antpessoais":        "Tenho diabetes recém-diagnosticada e minha tireoide está alterada.",
-      "medicamentos":         "Metformina há 3 meses. Levotiroxina há 2 meses.",
-      "visao":            "Minha visão está embaçada ultimamente.",
-      "antfamiliares":          "Ninguém com problema parecido.",
-      "habitos":          "Fumei por 20 anos, parei há 5. Não bebo.",
-      "vacinas":          "Não sei informar.",
-      "epidemiologia":    "Sou empresário, trabalho com comércio.",
-      "cumprimento":      "Bom dia, doutor. Tantas coisas acontecendo ao mesmo tempo.",
-      "naosei":           "Não é assunto para consulta.",
-      "default":          "Tantas coisas acontecendo ao mesmo tempo, doutor. Não entendo o que está me acontecendo."
+      "fraqueza": "Comecei a sentir fraqueza nas pernas há 8 meses, foi piorando. Agora tenho dificuldade de subir escadas.",
+      "barriga": "Minha barriga foi crescendo nos últimos meses. O médico disse que tem líquido.",
+      "pele": "Apareceram manchas escuras no corpo e os pelos ficaram mais grossos e escuros.",
+      "dor": "Tenho dor e formigamento nos pés e nas mãos, como agulhadas.",
+      "antpessoais": "Tenho diabetes recém-diagnosticada e minha tireoide está alterada.",
+      "medicamentos": "Metformina há 3 meses. Levotiroxina há 2 meses.",
+      "visao": "Minha visão está embaçada ultimamente.",
+      "antfamiliares": "Ninguém com problema parecido.",
+      "habitos": "Fumei por 20 anos, parei há 5. Não bebo.",
+      "vacinas": "Não sei informar.",
+      "epidemiologia": "Sou empresário, trabalho com comércio.",
+      "cumprimento": "Bom dia, doutor. Tantas coisas acontecendo ao mesmo tempo.",
+      "naosei": "Não é assunto para consulta.",
+      "default": "Tantas coisas acontecendo ao mesmo tempo, doutor. Não entendo o que está me acontecendo."
     }
   },
   {
@@ -511,7 +922,14 @@
     "disease": "lnh_hiv",
     "disease_label": "Linfoma não Hodgkin associado ao HIV",
     "intro": "Doutor, emagreci 12 kg em 3 meses, tenho suores noturnos absurdos e esse caroço no pescoço que não para de crescer.",
-    "signs": ["linfadenopatia cervical", "perda de peso >10%", "sudorese noturna", "febre vespertina", "imunodeficiência", "hepatoesplenomegalia"],
+    "signs": [
+      "linfadenopatia cervical",
+      "perda de peso >10%",
+      "sudorese noturna",
+      "febre vespertina",
+      "imunodeficiência",
+      "hepatoesplenomegalia"
+    ],
     "lab": {
       "hemograma": "Hb: 9,2 g/dL. Leucócitos: 2.200/µL. Linfócitos CD4: 180 células/µL.",
       "sorologias": "HIV positivo (Western blot confirmado). Carga viral: 85.000 cópias/mL.",
@@ -519,59 +937,111 @@
       "biopsia": "Biópsia do linfonodo: linfoma difuso de grandes células B (DLBCL). EBV positivo."
     },
     "lab_display": [
-      { "categoria": "Hemograma", "exames": [
-        { "nome": "Hemoglobina", "valor": "9,2 g/dL",  "referencia": "13–17 g/dL",        "alterado": true  },
-        { "nome": "Leucócitos",  "valor": "2.200/µL",  "referencia": "4.000–11.000/µL",   "alterado": true  },
-        { "nome": "CD4",         "valor": "180 cél/µL","referencia": ">500 cél/µL",        "alterado": true  }
-      ]},
-      { "categoria": "Sorologia", "exames": [
-        { "nome": "HIV (Western blot)", "valor": "Positivo",             "referencia": "Negativo",     "alterado": true },
-        { "nome": "Carga viral HIV",    "valor": "85.000 cópias/mL",     "referencia": "Indetectável", "alterado": true },
-        { "nome": "EBV (Biópsia)",      "valor": "Positivo",             "referencia": "Negativo",     "alterado": true }
-      ]},
-      { "categoria": "Bioquímica", "exames": [
-        { "nome": "LDH", "valor": "890 U/L", "referencia": "<240 U/L", "alterado": true }
-      ]},
-      { "categoria": "Biópsia linfonodo", "exames": [
-        { "nome": "Histologia", "valor": "DLBCL (Linfoma difuso grandes células B)", "referencia": "Normal", "alterado": true }
-      ]}
+      {
+        "categoria": "Hemograma",
+        "exames": [
+          {
+            "nome": "Hemoglobina",
+            "valor": "9,2 g/dL",
+            "referencia": "13–17 g/dL",
+            "alterado": true
+          },
+          {
+            "nome": "Leucócitos",
+            "valor": "2.200/µL",
+            "referencia": "4.000–11.000/µL",
+            "alterado": true
+          },
+          {
+            "nome": "CD4",
+            "valor": "180 cél/µL",
+            "referencia": ">500 cél/µL",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Sorologia",
+        "exames": [
+          {
+            "nome": "HIV (Western blot)",
+            "valor": "Positivo",
+            "referencia": "Negativo",
+            "alterado": true
+          },
+          {
+            "nome": "Carga viral HIV",
+            "valor": "85.000 cópias/mL",
+            "referencia": "Indetectável",
+            "alterado": true
+          },
+          {
+            "nome": "EBV (Biópsia)",
+            "valor": "Positivo",
+            "referencia": "Negativo",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Bioquímica",
+        "exames": [
+          {
+            "nome": "LDH",
+            "valor": "890 U/L",
+            "referencia": "<240 U/L",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Biópsia linfonodo",
+        "exames": [
+          {
+            "nome": "Histologia",
+            "valor": "DLBCL (Linfoma difuso grandes células B)",
+            "referencia": "Normal",
+            "alterado": true
+          }
+        ]
+      }
     ],
     "exam": {
-      "head":    "Linfadenopatia cervical bilateral, linfonodos endurecidos >3 cm, indolores.",
-      "chest":   "Linfadenopatia mediastinal. Derrame pleural pequeno.",
+      "head": "Linfadenopatia cervical bilateral, linfonodos endurecidos >3 cm, indolores.",
+      "chest": "Linfadenopatia mediastinal. Derrame pleural pequeno.",
       "abdomen": "Hepatoesplenomegalia. Linfadenopatia para-aórtica.",
-      "arm":     "Emagrecimento visível. Lesões de sarcoma de Kaposi em antebraço.",
-      "knee":    "Sem alterações articulares.",
-      "ankle":   "Sem edema."
+      "arm": "Emagrecimento visível. Lesões de sarcoma de Kaposi em antebraço.",
+      "knee": "Sem alterações articulares.",
+      "ankle": "Sem edema."
     },
     "responses": {
-      "nome":             "Carlos Eduardo Lima.",
-      "idade":            "Tenho 34 anos.",
-      "naturalidade":     "Nasci em João Pessoa, moro no Recife.",
-      "QPD":              "Emagreci 12 kg em 3 meses, tenho suores noturnos e esse caroço no pescoço crescendo.",
-      "Inicio":           "O caroço apareceu há 3 meses e foi crescendo. O emagrecimento também foi nesse período.",
-      "Detalhe":          "Caroço no pescoço que cresceu e agora tem um do outro lado. Emagreci 12 kg sem dieta. Febre toda tarde e suores à noite que me deixam encharcado.",
-      "Localizacao":      "O caroço é no pescoço. Agora apareceu um do outro lado também.",
-      "Irradiacao":       "Não.",
-      "Caracter":         "O caroço é duro, indolor.",
-      "Fator_melhora":    "Nada melhora.",
-      "Fator_piora":      "Tudo parece piorar progressivamente.",
+      "nome": "Carlos Eduardo Lima.",
+      "idade": "Tenho 34 anos.",
+      "naturalidade": "Nasci em João Pessoa, moro no Recife.",
+      "QPD": "Emagreci 12 kg em 3 meses, tenho suores noturnos e esse caroço no pescoço crescendo.",
+      "Inicio": "O caroço apareceu há 3 meses e foi crescendo. O emagrecimento também foi nesse período.",
+      "Detalhe": "Caroço no pescoço que cresceu e agora tem um do outro lado. Emagreci 12 kg sem dieta. Febre toda tarde e suores à noite que me deixam encharcado.",
+      "Localizacao": "O caroço é no pescoço. Agora apareceu um do outro lado também.",
+      "Irradiacao": "Não.",
+      "Caracter": "O caroço é duro, indolor.",
+      "Fator_melhora": "Nada melhora.",
+      "Fator_piora": "Tudo parece piorar progressivamente.",
       "Sintomas_associados": "Dores pelo corpo e a barriga está um pouco inchada.",
       "Sintomas_negados": "Não tenho tosse seca.",
-      "carocos":          "Sim, esse caroço no pescoço apareceu há 3 meses e foi crescendo. Agora tem um do outro lado também.",
-      "febre":            "Tenho febre toda tarde, de 37,8 a 38,2. Mas o que me incomoda mesmo são os suores à noite.",
-      "emagrecimento":    "Emagreci 12 quilos em 3 meses sem fazer dieta. Perdi completamente o apetite.",
-      "hiv":              "Sim, sou HIV positivo há 6 anos. Parei o tratamento há 1 ano.",
-      "antpessoais":        "HIV diagnosticado há 6 anos. Fazia uso de antirretroviral mas parei.",
-      "medicamentos":         "Parei os antirretrovirais há um ano.",
-      "dor":              "Tenho dores pelo corpo e a barriga está um pouco inchada.",
-      "antfamiliares":          "Ninguém com linfoma.",
-      "habitos":          "Não fumo. Parei de beber há 2 anos.",
-      "vacinas":          "Não sei dizer, com o HIV sempre fui orientado a manter as vacinas.",
-      "epidemiologia":    "Sou designer gráfico, trabalho em agência.",
-      "cumprimento":      "Olá, doutor. Estou com medo do que pode ser esse caroço.",
-      "naosei":           "Não vem ao caso.",
-      "default":          "Estou com medo do que pode ser esse caroço, doutor. Pode ser câncer?"
+      "carocos": "Sim, esse caroço no pescoço apareceu há 3 meses e foi crescendo. Agora tem um do outro lado também.",
+      "febre": "Tenho febre toda tarde, de 37,8 a 38,2. Mas o que me incomoda mesmo são os suores à noite.",
+      "emagrecimento": "Emagreci 12 quilos em 3 meses sem fazer dieta. Perdi completamente o apetite.",
+      "hiv": "Sim, sou HIV positivo há 6 anos. Parei o tratamento há 1 ano.",
+      "antpessoais": "HIV diagnosticado há 6 anos. Fazia uso de antirretroviral mas parei.",
+      "medicamentos": "Parei os antirretrovirais há um ano.",
+      "dor": "Tenho dores pelo corpo e a barriga está um pouco inchada.",
+      "antfamiliares": "Ninguém com linfoma.",
+      "habitos": "Não fumo. Parei de beber há 2 anos.",
+      "vacinas": "Não sei dizer, com o HIV sempre fui orientado a manter as vacinas.",
+      "epidemiologia": "Sou designer gráfico, trabalho em agência.",
+      "cumprimento": "Olá, doutor. Estou com medo do que pode ser esse caroço.",
+      "naosei": "Não vem ao caso.",
+      "default": "Estou com medo do que pode ser esse caroço, doutor. Pode ser câncer?"
     }
   },
   {
@@ -584,65 +1054,121 @@
     "disease": "rfnh",
     "disease_label": "Reação Febril Não Hemolítica",
     "intro": "Doutor, estive no hospital ontem para receber transfusão de sangue e durante o procedimento comecei a passar muito mal, com febre e calafrios.",
-    "signs": ["febre durante transfusão", "calafrios", "mal-estar", "sem hemólise", "início 1-6h após transfusão", "autolimitada"],
+    "signs": [
+      "febre durante transfusão",
+      "calafrios",
+      "mal-estar",
+      "sem hemólise",
+      "início 1-6h após transfusão",
+      "autolimitada"
+    ],
     "lab": {
       "hemograma": "Hb pré-transfusional: 7,8 g/dL. Sem queda após reação.",
       "outros": "LDH normal. Bilirrubinas normais. Haptoglobina normal. Hemoglobinúria ausente. Teste de Coombs direto negativo.",
       "Caracterizacao_urina": "Urina normal, sem hemoglobinúria."
     },
     "lab_display": [
-      { "categoria": "Hemograma", "exames": [
-        { "nome": "Hemoglobina pré", "valor": "7,8 g/dL",  "referencia": "12–16 g/dL", "alterado": true  },
-        { "nome": "Hemoglobina pós", "valor": "Sem queda", "referencia": "Estável",     "alterado": false }
-      ]},
-      { "categoria": "Hemólise", "exames": [
-        { "nome": "LDH",             "valor": "Normal",   "referencia": "Normal",  "alterado": false },
-        { "nome": "Bilirrubinas",    "valor": "Normais",  "referencia": "Normal",  "alterado": false },
-        { "nome": "Haptoglobina",    "valor": "Normal",   "referencia": "Normal",  "alterado": false },
-        { "nome": "Hemoglobinúria",  "valor": "Ausente",  "referencia": "Ausente", "alterado": false },
-        { "nome": "Coombs direto",   "valor": "Negativo", "referencia": "Negativo","alterado": false }
-      ]},
-      { "categoria": "Urina", "exames": [
-        { "nome": "Urinálise", "valor": "Normal, sem hemoglobinúria", "referencia": "Normal", "alterado": false }
-      ]}
+      {
+        "categoria": "Hemograma",
+        "exames": [
+          {
+            "nome": "Hemoglobina pré",
+            "valor": "7,8 g/dL",
+            "referencia": "12–16 g/dL",
+            "alterado": true
+          },
+          {
+            "nome": "Hemoglobina pós",
+            "valor": "Sem queda",
+            "referencia": "Estável",
+            "alterado": false
+          }
+        ]
+      },
+      {
+        "categoria": "Hemólise",
+        "exames": [
+          {
+            "nome": "LDH",
+            "valor": "Normal",
+            "referencia": "Normal",
+            "alterado": false
+          },
+          {
+            "nome": "Bilirrubinas",
+            "valor": "Normais",
+            "referencia": "Normal",
+            "alterado": false
+          },
+          {
+            "nome": "Haptoglobina",
+            "valor": "Normal",
+            "referencia": "Normal",
+            "alterado": false
+          },
+          {
+            "nome": "Hemoglobinúria",
+            "valor": "Ausente",
+            "referencia": "Ausente",
+            "alterado": false
+          },
+          {
+            "nome": "Coombs direto",
+            "valor": "Negativo",
+            "referencia": "Negativo",
+            "alterado": false
+          }
+        ]
+      },
+      {
+        "categoria": "Urina",
+        "exames": [
+          {
+            "nome": "Urinálise",
+            "valor": "Normal, sem hemoglobinúria",
+            "referencia": "Normal",
+            "alterado": false
+          }
+        ]
+      }
     ],
     "exam": {
-      "head":    "Temperatura: 39,1°C (subiu 1,8°C durante a transfusão). Fácies de desconforto.",
-      "chest":   "Taquicardia: 108 bpm. Sem dispneia. Ausculta limpa.",
+      "head": "Temperatura: 39,1°C (subiu 1,8°C durante a transfusão). Fácies de desconforto.",
+      "chest": "Taquicardia: 108 bpm. Sem dispneia. Ausculta limpa.",
       "abdomen": "Sem alterações.",
-      "arm":     "Local de punção sem sinais de extravasamento.",
-      "knee":    "Sem alterações.",
-      "ankle":   "Sem edema."
+      "arm": "Local de punção sem sinais de extravasamento.",
+      "knee": "Sem alterações.",
+      "ankle": "Sem edema."
     },
     "responses": {
-      "nome":             "Sandra Oliveira.",
-      "idade":            "Tenho 52 anos.",
-      "naturalidade":     "Sou do Recife.",
-      "QPD":              "Passei mal durante a transfusão de sangue, com febre e calafrios.",
-      "Inicio":           "Aconteceu durante a transfusão, depois de umas 2 horas de infusão.",
-      "Detalhe":          "Estava recebendo sangue quando comecei com calafrios, tremores e logo depois febre de 39 graus. Pararam a transfusão e melhorei em 2 horas.",
-      "Localizacao":      "A febre é generalizada. Não sinto dor específica.",
-      "Irradiacao":       "Não.",
-      "Caracter":         "Foi uma febre súbita com calafrios intensos.",
-      "Fator_melhora":    "Melhorou depois que pararam a transfusão e deram dipirona.",
-      "Fator_piora":      "Piorava enquanto a transfusão continuava.",
+      "nome": "Sandra Oliveira.",
+      "idade": "Tenho 52 anos.",
+      "naturalidade": "Sou do Recife.",
+      "QPD": "Passei mal durante a transfusão de sangue, com febre e calafrios.",
+      "Inicio": "Aconteceu durante a transfusão, depois de umas 2 horas de infusão.",
+      "Detalhe": "Estava recebendo sangue quando comecei com calafrios, tremores e logo depois febre de 39 graus. Pararam a transfusão e melhorei em 2 horas.",
+      "Localizacao": "A febre é generalizada. Não sinto dor específica.",
+      "Irradiacao": "Não.",
+      "Caracter": "Foi uma febre súbita com calafrios intensos.",
+      "Fator_melhora": "Melhorou depois que pararam a transfusão e deram dipirona.",
+      "Fator_piora": "Piorava enquanto a transfusão continuava.",
       "Sintomas_associados": "Dor de cabeça leve durante a febre.",
       "Sintomas_negados": "Não tive alteração na urina, não tive dor nas costas, não fiquei ictérica.",
-      "transfusao":       "Estava recebendo a transfusão há cerca de 2 horas quando comecei a sentir calafrios e logo depois febre alta.",
-      "febre":            "A febre foi de 39 graus, veio rápido, junto com muito calafrio e tremores.",
-      "Caracterizacao_urina":            "Não percebi nada diferente na urina, estava normal.",
-      "antpessoais":        "Tenho anemia falciforme e já recebi várias transfusões antes. Isso nunca tinha acontecido assim.",
-      "medicamentos":         "Hidroxiureia e ácido fólico.",
-      "alergia":          "Não tenho alergias conhecidas a medicamentos.",
-      "melhora":          "Depois que pararam a transfusão e me deram dipirona, a febre foi cedendo em umas 2 horas.",
-      "dor":              "Dor de cabeça leve durante a febre, mas passou.",
-      "antfamiliares":          "Minha irmã também tem anemia falciforme.",
-      "habitos":          "Não fumo, não bebo. Tenho hábitos tranquilos.",
-      "vacinas":          "Sou muito cuidadosa com vacinas por causa da anemia falciforme.",
-      "epidemiologia":    "Sou servidora pública, trabalho em cartório.",
-      "cumprimento":      "Boa tarde, doutor. Foi muito assustador o que aconteceu.",
-      "naosei":           "Isso não tem a ver comigo.",
-      "default":          "Foi assustador, doutor. Estava me sentindo bem e de repente fiquei assim durante a transfusão."
+      "transfusao": "Estava recebendo a transfusão há cerca de 2 horas quando comecei a sentir calafrios e logo depois febre alta.",
+      "febre": "A febre foi de 39 graus, veio rápido, junto com muito calafrio e tremores.",
+      "Caracterizacao_urina": "Não percebi nada diferente na urina, estava normal.",
+      "antpessoais": "Tenho anemia falciforme e já recebi várias transfusões antes. Isso nunca tinha acontecido assim.",
+      "medicamentos": "Hidroxiureia e ácido fólico.",
+      "alergia": "Não tenho alergias conhecidas a medicamentos.",
+      "melhora": "Depois que pararam a transfusão e me deram dipirona, a febre foi cedendo em umas 2 horas.",
+      "dor": "Dor de cabeça leve durante a febre, mas passou.",
+      "antfamiliares": "Minha irmã também tem anemia falciforme.",
+      "habitos": "Não fumo, não bebo. Tenho hábitos tranquilos.",
+      "vacinas": "Sou muito cuidadosa com vacinas por causa da anemia falciforme.",
+      "epidemiologia": "Sou servidora pública, trabalho em cartório.",
+      "cumprimento": "Boa tarde, doutor. Foi muito assustador o que aconteceu.",
+      "naosei": "Isso não tem a ver comigo.",
+      "default": "Foi assustador, doutor. Estava me sentindo bem e de repente fiquei assim durante a transfusão."
     }
   },
   {
@@ -655,64 +1181,1237 @@
     "disease": "taco",
     "disease_label": "Sobrecarga Circulatória (TACO)",
     "intro": "Minha esposa me trouxe porque depois de uma transfusão comecei a sentir falta de ar intensa, fiquei agitado e a pressão subiu muito.",
-    "signs": ["dispneia aguda", "hipertensão", "taquicardia", "edema pulmonar", "durante ou até 6h após transfusão", "piora com volume"],
+    "signs": [
+      "dispneia aguda",
+      "hipertensão",
+      "taquicardia",
+      "edema pulmonar",
+      "durante ou até 6h após transfusão",
+      "piora com volume"
+    ],
     "lab": {
       "hemograma": "Sem alterações hemolíticas.",
       "outros": "BNP: 1.840 pg/mL (muito elevado). Radiografia: congestão pulmonar bilateral, cardiomegalia.",
       "gasometria": "PaO2: 58 mmHg. Saturação: 88% em ar ambiente."
     },
     "lab_display": [
-      { "categoria": "Hemograma", "exames": [
-        { "nome": "Sem alterações hemolíticas", "valor": "Normal", "referencia": "Normal", "alterado": false }
-      ]},
-      { "categoria": "Marcadores Cardíacos", "exames": [
-        { "nome": "BNP", "valor": "1.840 pg/mL", "referencia": "<100 pg/mL", "alterado": true }
-      ]},
-      { "categoria": "Gasometria", "exames": [
-        { "nome": "PaO2",      "valor": "58 mmHg", "referencia": "80–100 mmHg", "alterado": true  },
-        { "nome": "Saturação", "valor": "88%",     "referencia": ">95%",        "alterado": true  }
-      ]},
-      { "categoria": "Imagem", "exames": [
-        { "nome": "Radiografia de tórax", "valor": "Congestão pulmonar bilateral. Cardiomegalia.", "referencia": "Normal", "alterado": true }
-      ]}
+      {
+        "categoria": "Hemograma",
+        "exames": [
+          {
+            "nome": "Sem alterações hemolíticas",
+            "valor": "Normal",
+            "referencia": "Normal",
+            "alterado": false
+          }
+        ]
+      },
+      {
+        "categoria": "Marcadores Cardíacos",
+        "exames": [
+          {
+            "nome": "BNP",
+            "valor": "1.840 pg/mL",
+            "referencia": "<100 pg/mL",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Gasometria",
+        "exames": [
+          {
+            "nome": "PaO2",
+            "valor": "58 mmHg",
+            "referencia": "80–100 mmHg",
+            "alterado": true
+          },
+          {
+            "nome": "Saturação",
+            "valor": "88%",
+            "referencia": ">95%",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Imagem",
+        "exames": [
+          {
+            "nome": "Radiografia de tórax",
+            "valor": "Congestão pulmonar bilateral. Cardiomegalia.",
+            "referencia": "Normal",
+            "alterado": true
+          }
+        ]
+      }
     ],
     "exam": {
-      "head":    "Agitação. Sudorese fria. Cianose labial.",
-      "chest":   "Estertores crepitantes bilaterais. Taquicardia: 118 bpm. PA: 178/110 mmHg. SatO2: 88%.",
+      "head": "Agitação. Sudorese fria. Cianose labial.",
+      "chest": "Estertores crepitantes bilaterais. Taquicardia: 118 bpm. PA: 178/110 mmHg. SatO2: 88%.",
       "abdomen": "Sem alterações.",
-      "arm":     "Extremidades frias. Tempo de enchimento capilar aumentado.",
-      "knee":    "Sem alterações.",
-      "ankle":   "Edema importante bilateral, cacifo +++."
+      "arm": "Extremidades frias. Tempo de enchimento capilar aumentado.",
+      "knee": "Sem alterações.",
+      "ankle": "Edema importante bilateral, cacifo +++."
     },
     "responses": {
-      "nome":             "Paulo Roberto Santos.",
-      "idade":            "Tenho 70 anos.",
-      "naturalidade":     "Sou do Recife, nasci e cresci aqui.",
-      "QPD":              "Comecei a sentir falta de ar intensa durante a transfusão. Fiquei agitado e a pressão subiu muito.",
-      "Inicio":           "Aconteceu durante a segunda bolsa de sangue, foi rápido.",
-      "Detalhe":          "Recebi 2 bolsas de sangue seguidas. Durante a segunda comecei com falta de ar desesperadora, fiquei roxo. A pressão estava 178 por 110.",
-      "Localizacao":      "A falta de ar é nos pulmões, a pressão é generalizada.",
-      "Irradiacao":       "A falta de ar não irradia.",
-      "Caracter":         "Foi uma falta de ar súbita, muito intensa, como se estivesse afogando.",
-      "Fator_melhora":    "Melhorou depois que pararam a transfusão e deram furosemida venosa com oxigênio.",
-      "Fator_piora":      "Piorava enquanto a transfusão continuava.",
+      "nome": "Paulo Roberto Santos.",
+      "idade": "Tenho 70 anos.",
+      "naturalidade": "Sou do Recife, nasci e cresci aqui.",
+      "QPD": "Comecei a sentir falta de ar intensa durante a transfusão. Fiquei agitado e a pressão subiu muito.",
+      "Inicio": "Aconteceu durante a segunda bolsa de sangue, foi rápido.",
+      "Detalhe": "Recebi 2 bolsas de sangue seguidas. Durante a segunda comecei com falta de ar desesperadora, fiquei roxo. A pressão estava 178 por 110.",
+      "Localizacao": "A falta de ar é nos pulmões, a pressão é generalizada.",
+      "Irradiacao": "A falta de ar não irradia.",
+      "Caracter": "Foi uma falta de ar súbita, muito intensa, como se estivesse afogando.",
+      "Fator_melhora": "Melhorou depois que pararam a transfusão e deram furosemida venosa com oxigênio.",
+      "Fator_piora": "Piorava enquanto a transfusão continuava.",
       "Sintomas_associados": "Tornozelos inchados, o que já é normal para mim.",
       "Sintomas_negados": "Não tive febre, não tive alteração na urina.",
-      "transfusao":       "Recebi 2 bolsas de sangue seguidas ontem à tarde, sem pausa entre elas.",
-      "falta_ar":         "A falta de ar começou durante a segunda bolsa, foi rápido. Fiquei desesperado, não conseguia respirar.",
-      "pressao":          "Sim, a pressão subiu muito, o médico disse que estava 178 por 110.",
-      "antpessoais":        "Tenho insuficiência cardíaca e hipertensão há anos. Estou sempre com os tornozelos inchados.",
-      "medicamentos":         "Furosemida, carvedilol, enalapril e espironolactona.",
-      "Caracterizacao_urina":            "A urina estava normal, sem cor diferente.",
-      "melhora":          "Melhorei depois que deram furosemida venosa e oxigênio. A transfusão foi interrompida imediatamente.",
-      "febre":            "Não tive febre, só a falta de ar e a pressão alta.",
-      "antfamiliares":          "Minha esposa tem pressão alta também.",
-      "habitos":          "Fumei por 40 anos, parei há 5. Não bebo.",
-      "vacinas":          "Tomo vacina da gripe e pneumococo todo ano.",
-      "epidemiologia":    "Sou aposentado, fui mecânico.",
-      "cumprimento":      "Bom dia, doutor. Minha esposa insistiu para eu vir.",
-      "naosei":           "Isso não tem relação.",
-      "default":          "Foi muito assustador, doutor. Fiquei roxo e sem ar logo após a transfusão."
+      "transfusao": "Recebi 2 bolsas de sangue seguidas ontem à tarde, sem pausa entre elas.",
+      "falta_ar": "A falta de ar começou durante a segunda bolsa, foi rápido. Fiquei desesperado, não conseguia respirar.",
+      "pressao": "Sim, a pressão subiu muito, o médico disse que estava 178 por 110.",
+      "antpessoais": "Tenho insuficiência cardíaca e hipertensão há anos. Estou sempre com os tornozelos inchados.",
+      "medicamentos": "Furosemida, carvedilol, enalapril e espironolactona.",
+      "Caracterizacao_urina": "A urina estava normal, sem cor diferente.",
+      "melhora": "Melhorei depois que deram furosemida venosa e oxigênio. A transfusão foi interrompida imediatamente.",
+      "febre": "Não tive febre, só a falta de ar e a pressão alta.",
+      "antfamiliares": "Minha esposa tem pressão alta também.",
+      "habitos": "Fumei por 40 anos, parei há 5. Não bebo.",
+      "vacinas": "Tomo vacina da gripe e pneumococo todo ano.",
+      "epidemiologia": "Sou aposentado, fui mecânico.",
+      "cumprimento": "Bom dia, doutor. Minha esposa insistiu para eu vir.",
+      "naosei": "Isso não tem relação.",
+      "default": "Foi muito assustador, doutor. Fiquei roxo e sem ar logo após a transfusão."
+    }
+  },
+  {
+    "id": 11,
+    "name": "Arthur Bezerra",
+    "age": 62,
+    "gender": "M",
+    "color": "#EF4444",
+    "emoji": "assets/pct11.png",
+    "disease": "pv",
+    "disease_label": "Policitemia Vera (Fase Inicial)",
+    "intro": "Doutor, meu rosto vive vermelho e sinto uma coceira agoniante no corpo todo logo depois que saio do banho quente.",
+    "signs": [
+      "pletora facial",
+      "prurido aquagênico",
+      "eritromelalgia",
+      "esplenomegalia leve",
+      "cefaleia e tontura",
+      "hematócrito muito elevado"
+    ],
+    "lab": {
+      "hemograma": "Hb: 19,5 g/dL (elevada). Ht: 58% (elevado). Leucócitos: 12.500/µL (leucocitose leve). Plaquetas: 480.000/µL (trombocitose leve).",
+      "outros": "Eritropoetina (EPO) sérica muito baixa. Mutação JAK2 V617F positiva. Saturação de O2 arterial: 95% (descarta hipóxia).",
+      "medula": "Mielograma/biópsia: hiperplasia eritroide (panmielose)."
+    },
+    "lab_display": [
+      {
+        "categoria": "Hemograma",
+        "exames": [
+          {
+            "nome": "Hemoglobina",
+            "valor": "19,5 g/dL",
+            "referencia": "13–17 g/dL",
+            "alterado": true
+          },
+          {
+            "nome": "Hematócrito",
+            "valor": "58%",
+            "referencia": "40–52%",
+            "alterado": true
+          },
+          {
+            "nome": "Leucócitos",
+            "valor": "12.500/µL",
+            "referencia": "4.000–11.000/µL",
+            "alterado": true
+          },
+          {
+            "nome": "Plaquetas",
+            "valor": "480.000/µL",
+            "referencia": "150.000–400.000/µL",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Dosagens e Genética",
+        "exames": [
+          {
+            "nome": "Eritropoetina (EPO)",
+            "valor": "Muito baixa",
+            "referencia": "Normal/elevada em causas secundárias",
+            "alterado": true
+          },
+          {
+            "nome": "Mutação JAK2 V617F",
+            "valor": "Positiva",
+            "referencia": "Negativa",
+            "alterado": true
+          },
+          {
+            "nome": "Saturação O2 arterial",
+            "valor": "95%",
+            "referencia": ">94%",
+            "alterado": false
+          }
+        ]
+      },
+      {
+        "categoria": "Medula Óssea",
+        "exames": [
+          {
+            "nome": "Mielograma",
+            "valor": "Hiperplasia eritroide (panmielose)",
+            "referencia": "Normal",
+            "alterado": true
+          }
+        ]
+      }
+    ],
+    "exam": {
+      "head": "Pletora facial evidente e injeção conjuntival. Sem linfonodomegalias cervicais.",
+      "chest": "Ausculta cardiorrespiratória sem alterações.",
+      "abdomen": "Esplenomegalia palpável a 3 cm do rebordo costal esquerdo.",
+      "arm": "Eritromelalgia (queimação) em mãos. Escoriações leves por prurido.",
+      "knee": "Sem artralgia ou artrite.",
+      "ankle": "Eritema e queimação em pés."
+    },
+    "responses": {
+      "nome": "Arthur Bezerra.",
+      "idade": "Tenho 62 anos.",
+      "naturalidade": "Sou de São Paulo mesmo, nasci e me criei aqui.",
+      "QPD": "Meu rosto vive vermelho e sinto uma coceira agoniante depois do banho quente.",
+      "Inicio": "Isso começou há uns 6 meses, foi piorando aos poucos.",
+      "Detalhe": "A coceira é agoniante, parece que tem formigas andando na pele. Só melhora com água fria.",
+      "Localizacao": "A coceira é pelo corpo todo, mas piora mais no tronco e nos braços.",
+      "Irradiacao": "Não, fica espalhada mesmo, não se move de um lugar para o outro.",
+      "Caracter": "É uma coceira intensa, tipo queimação, não é uma dor comum.",
+      "Fator_melhora": "Melhora com água gelada no banho.",
+      "Fator_piora": "Piora muito depois do banho quente, dura uns 20 a 30 minutos.",
+      "Sintomas_associados": "Sinto uma pressão na cabeça, como se o sangue estivesse grosso, e às vezes a vista fica embaçada por uns minutos.",
+      "Sintomas_negados": "Não tenho febre, não emagreci muito, não tenho tosse nem dor no peito.",
+      "antpessoais": "Tenho pressão alta, uso remédio contínuo. Nunca fumei.",
+      "antfamiliares": "Meu pai tinha um 'sangue forte' também, mas nunca souberam dizer o que era.",
+      "vacinas": "Estão em dia, tomo a da gripe todo ano.",
+      "habitos": "Não fumo, bebo socialmente. Gosto de trabalhar na marcenaria ainda.",
+      "epidemiologia": "Sou marceneiro aposentado.",
+      "medicamentos": "Só o remédio para pressão.",
+      "cumprimento": "Bom dia, doutor.",
+      "naosei": "Isso não tem nada a ver com meu problema, doutor.",
+      "default": "Eu só queria que essa coceira parasse, doutor. Não consigo nem dormir direito depois do banho.",
+      "coceira": "É agoniante, doutor! Saio do banho quente e parece que tem mil formigas andando na minha pele. Só melhora com água gelada.",
+      "pele": "Meu rosto vive vermelho, minha esposa até pergunta se bebi escondido de tão vermelho que fico.",
+      "visao": "Às vezes a vista fica embaçada do nada, uns clarões, dura uns minutos e passa.",
+      "Caracterizacao_fadiga": "Ando meio cansado e suando mais que o normal, perdi um pouco de peso também.",
+      "dor": "Sinto uma dor de cabeça e uma queimação nas mãos e nos pés.",
+      "febre": "Não, não tenho febre."
+    }
+  },
+  {
+    "id": 12,
+    "name": "Mariana Lira",
+    "age": 24,
+    "gender": "F",
+    "color": "#10B981",
+    "emoji": "assets/pct12.png",
+    "disease": "pseudotrombocitopenia",
+    "disease_label": "Pseudotrombocitopenia Induzida por EDTA",
+    "intro": "Vim porque meu exame de rotina deu as plaquetas muito baixas, mas eu me sinto ótima. Não entendi nada.",
+    "signs": [
+      "assintomática",
+      "sem sangramentos ou petéquias",
+      "plaquetopenia isolada no tubo EDTA",
+      "normalização em tubo de citrato"
+    ],
+    "lab": {
+      "hemograma": "Plaquetas em tubo EDTA: 14.000/µL, com agregados plaquetários no histograma.",
+      "esfregaco": "Grandes agrupamentos de plaquetas (clumping).",
+      "confirmacao": "Plaquetas em tubo de citrato: 210.000/µL (normal). TS e coagulograma normais."
+    },
+    "lab_display": [
+      {
+        "categoria": "Hemograma (tubo EDTA)",
+        "exames": [
+          {
+            "nome": "Plaquetas",
+            "valor": "14.000/µL",
+            "referencia": "150.000–400.000/µL",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Confirmação (tubo Citrato)",
+        "exames": [
+          {
+            "nome": "Plaquetas",
+            "valor": "210.000/µL",
+            "referencia": "150.000–400.000/µL",
+            "alterado": false
+          }
+        ]
+      },
+      {
+        "categoria": "Esfregaço",
+        "exames": [
+          {
+            "nome": "Morfologia",
+            "valor": "Grandes agrupamentos de plaquetas (clumping)",
+            "referencia": "Sem agregados",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Coagulograma",
+        "exames": [
+          {
+            "nome": "Tempo de Sangramento",
+            "valor": "Normal",
+            "referencia": "Normal",
+            "alterado": false
+          },
+          {
+            "nome": "TP/TTPA",
+            "valor": "Normais",
+            "referencia": "Normal",
+            "alterado": false
+          }
+        ]
+      }
+    ],
+    "exam": {
+      "head": "Mucosas coradas e úmidas. Ausência de petéquias em palato ou gengivas.",
+      "chest": "Ausculta cardiopulmonar normal.",
+      "abdomen": "Plano, indolor, sem visceromegalias.",
+      "arm": "Pele íntegra, sem equimoses ou petéquias mesmo em áreas de atrito. Punção venosa sem sangramento prolongado.",
+      "knee": "Sem alterações, mesmo praticando Crossfit.",
+      "ankle": "Sem edema ou equimoses."
+    },
+    "responses": {
+      "nome": "Mariana Lira.",
+      "idade": "Tenho 24 anos.",
+      "naturalidade": "Sou de Curitiba mesmo.",
+      "QPD": "Meu exame de sangue de rotina veio com as plaquetas muito baixas.",
+      "Inicio": "Fiz o exame há 3 dias, para um estágio da faculdade de medicina.",
+      "Detalhe": "Não sinto absolutamente nada, doutor. Foi um exame de rotina que pediu um susto.",
+      "Sintomas_associados": "Nenhum, me sinto ótima, treino Crossfit normalmente.",
+      "Sintomas_negados": "Não tenho sangramento gengival, nasal ou menstrual. Nenhuma mancha roxa mesmo com pancada.",
+      "antpessoais": "Tirei o siso mês passado e cicatrizou perfeitamente, sem sangrar demais. Nenhuma doença prévia.",
+      "antfamiliares": "Ninguém na família tem problema de sangue ou plaqueta baixa.",
+      "vacinas": "Em dia.",
+      "habitos": "Pratico Crossfit e não fumo nem bebo.",
+      "epidemiologia": "Sou estudante de medicina.",
+      "medicamentos": "Não tomo nada, só vitamina C às vezes.",
+      "cumprimento": "Oi, doutor, tudo bem?",
+      "naosei": "Acho que não tem nada a ver, doutor.",
+      "default": "Acho que trocaram meu sangue no laboratório, porque eu estou me sentindo ótima! Como eu teria 14 mil plaquetas sem nenhuma mancha?",
+      "sangramento": "Nada, nadinha. Escovo os dentes, uso fio dental e a gengiva não sangra.",
+      "manchas": "Pode olhar, doutor, não tenho um roxo sequer, nem batendo nos equipamentos do Crossfit.",
+      "exame_rotina": "Eu fiz esse exame só por rotina da faculdade. Quando o laboratório me ligou desesperado dizendo que eu precisava de um médico urgente, achei que era trote.",
+      "febre": "Não, nenhuma febre."
+    }
+  },
+  {
+    "id": 13,
+    "name": "Kauan Silvino",
+    "age": 8,
+    "gender": "M",
+    "color": "#F59E0B",
+    "emoji": "assets/pct13.jpg",
+    "disease": "falciforme",
+    "disease_label": "Anemia Falciforme (Crise Vaso-Oclusiva / Dactilite)",
+    "intro": "Tia, meu pé e minha mão estão inchados e doendo muito, não consigo nem andar direito.",
+    "signs": [
+      "dor óssea intensa",
+      "dactilite (mãos e pés)",
+      "icterícia",
+      "gatilho pelo frio",
+      "história de crises recorrentes"
+    ],
+    "lab": {
+      "hemograma": "Hb: 6,8 g/dL (anemia normocítica normocrômica). Reticulócitos: 12% (reticulocitose acentuada).",
+      "hemolise": "Bilirrubina indireta elevada. LDH elevado. Esfregaço: presença de drepanócitos (hemácias em foice).",
+      "genetica": "Eletroforese de hemoglobina: HbS 85%, HbF 12%, HbA1 0% (perfil SS)."
+    },
+    "lab_display": [
+      {
+        "categoria": "Hemograma",
+        "exames": [
+          {
+            "nome": "Hemoglobina",
+            "valor": "6,8 g/dL",
+            "referencia": "11,5–14,5 g/dL (criança)",
+            "alterado": true
+          },
+          {
+            "nome": "Reticulócitos",
+            "valor": "12%",
+            "referencia": "0,5–2%",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Hemólise",
+        "exames": [
+          {
+            "nome": "Bilirrubina Indireta",
+            "valor": "Elevada",
+            "referencia": "Normal",
+            "alterado": true
+          },
+          {
+            "nome": "LDH",
+            "valor": "Elevado",
+            "referencia": "Normal",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Esfregaço",
+        "exames": [
+          {
+            "nome": "Morfologia",
+            "valor": "Drepanócitos (hemácias em foice)",
+            "referencia": "Normal",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Eletroforese de Hemoglobina",
+        "exames": [
+          {
+            "nome": "HbS",
+            "valor": "85%",
+            "referencia": "0%",
+            "alterado": true
+          },
+          {
+            "nome": "HbF",
+            "valor": "12%",
+            "referencia": "<2%",
+            "alterado": true
+          },
+          {
+            "nome": "HbA1",
+            "valor": "0%",
+            "referencia": ">95%",
+            "alterado": true
+          }
+        ]
+      }
+    ],
+    "exam": {
+      "head": "Escleras ictéricas (olhos amarelados). Mucosas hipocoradas (2+/4+).",
+      "chest": "Sopro sistólico funcional (sopro anêmico). Ausculta pulmonar livre.",
+      "abdomen": "Indolor. Baço não palpável (sinal de autoesplenectomia).",
+      "arm": "Dactilite evidente: mão em luva, edema, calor e eritema em dorso das mãos.",
+      "knee": "Sem sinais de artrite, mas refere dor generalizada nos ossos longos.",
+      "ankle": "Dactilite em pés: edema, calor e eritema em dorso dos pés."
+    },
+    "responses": {
+      "nome": "Kauan.",
+      "idade": "Eu tenho 8 anos.",
+      "naturalidade": "Sou daqui de Salvador mesmo.",
+      "QPD": "Meu pé e minha mão estão inchados e doendo muito.",
+      "Inicio": "Começou de noite, faz umas 12 horas.",
+      "Detalhe": "Dói muito, tio! Parece que tem um martelo batendo dentro do meu osso.",
+      "Localizacao": "Dói na minha mão e no meu pé, os dois incharam.",
+      "Caracter": "É uma dor tipo martelada, bem forte, não passa.",
+      "Fator_melhora": "Melhora um pouco quando esquento a mão com uma toalha.",
+      "Fator_piora": "Piora quando pego frio, tomei um banho gelado ontem e a dor veio na hora.",
+      "Sintomas_associados": "Fico cansado rápido quando brinco de bola, meus amigos correm muito mais que eu.",
+      "Sintomas_negados": "Não tenho febre alta, só um pouquinho de calor no corpo.",
+      "antpessoais": "Eu tenho anemia falciforme, já fiquei internado várias vezes com essa dor.",
+      "antfamiliares": "Meu irmãozinho também tem essa doença, mas ele é mais novo.",
+      "vacinas": "Minha mãe leva eu sempre no postinho para tomar as vacinas certinhas.",
+      "habitos": "Eu tomo um remedinho amargo todo dia, a Hidroxiureia, e também vitaminas.",
+      "epidemiologia": "Eu estudo na escola perto de casa, tô na segunda série.",
+      "medicamentos": "Tomo Hidroxiureia e ácido fólico todo dia.",
+      "cumprimento": "Oi, tia.",
+      "naosei": "Não sei não, tio.",
+      "default": "Tio, dá um remédio forte? Eu só queria que essa martelada parasse para eu conseguir dormir.",
+      "dor": "Dói muito, tio! Não consigo nem encostar o pé no chão.",
+      "dactilite": "Acordei com a mão parecendo uma luva de tão inchada. Dói até para mexer os dedinhos.",
+      "manchas": "Minha mãe diz que meus olhos ficam amarelinhos igual limão quando eu fico doente.",
+      "Caracterizacao_fadiga": "Eu queria brincar de bola, mas canso muito rápido.",
+      "febre": "Só um pouquinho de febre, minha testa tava meio quente."
+    }
+  },
+  {
+    "id": 14,
+    "name": "Letícia Botelho",
+    "age": 29,
+    "gender": "F",
+    "color": "#EC4899",
+    "emoji": "assets/pct14.png",
+    "disease": "vwd",
+    "disease_label": "Doença de Von Willebrand (Tipo 1)",
+    "intro": "Doutor, minha menstruação dura 10 dias e é muito forte. Além disso, qualquer batidinha eu fico roxa.",
+    "signs": [
+      "menorragia desde a menarca",
+      "epistaxe frequente",
+      "equimoses fáceis",
+      "sangramento prolongado em procedimentos",
+      "piora com aspirina"
+    ],
+    "lab": {
+      "hemograma": "Hb: 10,2 g/dL (anemia ferropriva secundária). Plaquetas: 180.000/µL (normal).",
+      "coagulograma": "TS prolongado. TTPA discretamente alargado. TP normal.",
+      "especificos": "Atividade do cofator de Ristocetina reduzida. Fator VIII baixo."
+    },
+    "lab_display": [
+      {
+        "categoria": "Hemograma",
+        "exames": [
+          {
+            "nome": "Hemoglobina",
+            "valor": "10,2 g/dL",
+            "referencia": "12–16 g/dL",
+            "alterado": true
+          },
+          {
+            "nome": "Plaquetas",
+            "valor": "180.000/µL",
+            "referencia": "150.000–400.000/µL",
+            "alterado": false
+          }
+        ]
+      },
+      {
+        "categoria": "Coagulograma",
+        "exames": [
+          {
+            "nome": "Tempo de Sangramento",
+            "valor": "Prolongado",
+            "referencia": "Normal",
+            "alterado": true
+          },
+          {
+            "nome": "TTPA",
+            "valor": "Discretamente alargado",
+            "referencia": "Normal",
+            "alterado": true
+          },
+          {
+            "nome": "TP",
+            "valor": "Normal",
+            "referencia": "Normal",
+            "alterado": false
+          }
+        ]
+      },
+      {
+        "categoria": "Testes Específicos",
+        "exames": [
+          {
+            "nome": "Cofator de Ristocetina",
+            "valor": "Reduzido",
+            "referencia": "Normal",
+            "alterado": true
+          },
+          {
+            "nome": "Fator VIII",
+            "valor": "Baixo",
+            "referencia": "Normal",
+            "alterado": true
+          }
+        ]
+      }
+    ],
+    "exam": {
+      "head": "Mucosas levemente descoradas. Sem sangramento gengival ativo no momento.",
+      "chest": "Ausculta rítmica, sem sopros.",
+      "abdomen": "Plano, sem visceromegalias.",
+      "arm": "Equimoses em diferentes estágios de evolução (roxo e amarelado).",
+      "knee": "Sem hemartrose (diferente de hemofilia).",
+      "ankle": "Sem edema."
+    },
+    "responses": {
+      "nome": "Letícia Botelho.",
+      "idade": "Tenho 29 anos.",
+      "naturalidade": "Sou de Belo Horizonte.",
+      "QPD": "Minha menstruação é muito forte e dura muito, e eu fico roxa com facilidade.",
+      "Inicio": "Isso é desde a minha primeira menstruação, lá na adolescência.",
+      "Detalhe": "É desesperador. Preciso trocar o absorvente de hora em hora e uso os noturnos até de dia.",
+      "Localizacao": "O sangramento é menstrual, e as manchas roxas ficam mais nas pernas e braços.",
+      "Fator_piora": "Uma vez tomei aspirina para dor de cabeça e meu nariz jorrou sangue.",
+      "Sintomas_associados": "Tenho fadiga crônica e palpitações que pioram durante a menstruação.",
+      "Sintomas_negados": "Não tenho dor nas juntas nem inchaço nas articulações.",
+      "antpessoais": "Fui tirar uma cárie e o dentista quase infartou porque não parava de sair sangue da gengiva.",
+      "antfamiliares": "Minha mãe e minha tia também sofrem com sangramento menstrual forte, achávamos que era 'coisa de família'.",
+      "vacinas": "Em dia.",
+      "habitos": "Não fumo, bebo raramente.",
+      "epidemiologia": "Sou publicitária.",
+      "medicamentos": "Evito aspirina, uma vez tomei e meu nariz jorrou sangue, foi difícil controlar.",
+      "cumprimento": "Boa tarde, doutor.",
+      "naosei": "Isso não tem nada a ver, doutor.",
+      "default": "Sinto que meu sangue é muito 'ralo'. Qualquer coisinha eu já estou sangrando ou ficando roxa.",
+      "caracterizacao_sangramentos": "Desde pequena meu nariz sangra do nada, principalmente no calor, e demora para parar. Cortei o dedo cozinhando e demorou quase o filme inteiro para estancar.",
+      "manchas": "Se alguém aperta meu braço um pouco mais forte, no dia seguinte já fica uma mancha roxa enorme.",
+      "dor": "Não sinto dor nas articulações, só o incômodo dos sangramentos mesmo."
+    }
+  },
+  {
+    "id": 15,
+    "name": "Thiago Muniz",
+    "age": 45,
+    "gender": "M",
+    "color": "#6366F1",
+    "emoji": "assets/pct15.png",
+    "disease": "fator_v_leiden",
+    "disease_label": "Trombofilia por Fator V de Leiden",
+    "intro": "Cheguei de uma viagem de avião de 12 horas e minha perna esquerda começou a inchar e doer demais.",
+    "signs": [
+      "edema unilateral em perna",
+      "dor tipo cãibra",
+      "sinal de Homans positivo",
+      "fator de risco: viagem longa/sedentarismo",
+      "história familiar de trombose"
+    ],
+    "lab": {
+      "hemograma": "Hb: 14,5 g/dL. Leucócitos: 8.200/µL. Plaquetas: 240.000/µL (todos normais).",
+      "imagem": "Doppler venoso de MMII: Trombose Venosa Profunda em veia femoral esquerda.",
+      "trombofilia": "D-dímero elevado. Resistência à proteína C ativada presente. Mutação G1691A do gene F5 positiva em heterozigose (Fator V de Leiden)."
+    },
+    "lab_display": [
+      {
+        "categoria": "Hemograma",
+        "exames": [
+          {
+            "nome": "Hemoglobina",
+            "valor": "14,5 g/dL",
+            "referencia": "13–17 g/dL",
+            "alterado": false
+          },
+          {
+            "nome": "Plaquetas",
+            "valor": "240.000/µL",
+            "referencia": "150.000–400.000/µL",
+            "alterado": false
+          }
+        ]
+      },
+      {
+        "categoria": "Imagem",
+        "exames": [
+          {
+            "nome": "Doppler Venoso MMII",
+            "valor": "TVP em veia femoral esquerda",
+            "referencia": "Sem trombos",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Rastreio de Trombofilia",
+        "exames": [
+          {
+            "nome": "D-Dímero",
+            "valor": "Elevado",
+            "referencia": "Normal",
+            "alterado": true
+          },
+          {
+            "nome": "Resistência à Proteína C Ativada",
+            "valor": "Presente",
+            "referencia": "Ausente",
+            "alterado": true
+          },
+          {
+            "nome": "Mutação F5 (G1691A)",
+            "valor": "Positiva (heterozigoto)",
+            "referencia": "Negativa",
+            "alterado": true
+          }
+        ]
+      }
+    ],
+    "exam": {
+      "head": "Bom estado geral, eupneico, orientado.",
+      "chest": "Ausculta pulmonar livre, sem ruídos adventícios. Nega dor torácica no momento.",
+      "abdomen": "Sem alterações.",
+      "arm": "Sem alterações nos membros superiores.",
+      "knee": "Empastamento de panturrilha esquerda, dor à palpação.",
+      "ankle": "MIE com edema importante (3+/4+), cianose leve e calor local. Sinal de Homans positivo."
+    },
+    "responses": {
+      "nome": "Thiago Muniz.",
+      "idade": "Tenho 45 anos.",
+      "naturalidade": "Sou do Rio de Janeiro.",
+      "QPD": "Minha perna esquerda inchou e ficou muito dolorida depois de uma viagem longa de avião.",
+      "Inicio": "Comecei a sentir há 24 horas, logo depois que desci do avião.",
+      "Detalhe": "Fiquei preso naquela poltrona apertada por 12 horas. Quando levantei, senti uma fisgada na batata da perna.",
+      "Localizacao": "É só na perna esquerda, a direita está normal.",
+      "Caracter": "Parece uma cãibra que não passa nunca.",
+      "Fator_piora": "Se eu tento esticar o pé para cima, a dor na panturrilha piora muito.",
+      "Sintomas_associados": "Estou ansioso com o risco de o coágulo subir para o pulmão.",
+      "Sintomas_negados": "Não sinto falta de ar nem dor no peito no momento.",
+      "antpessoais": "Trabalho muito tempo sentado como desenvolvedor de software. Nunca fumei.",
+      "antfamiliares": "Meu pai teve uma trombose aos 50 anos e minha irmã teve um problema sério de sangue depois que engravidou.",
+      "vacinas": "Em dia.",
+      "habitos": "Não fumo, sou sedentário por causa do trabalho.",
+      "epidemiologia": "Sou desenvolvedor de software.",
+      "medicamentos": "Não tomo nada regularmente.",
+      "cumprimento": "Boa tarde, doutor.",
+      "naosei": "Isso não tem nada a ver.",
+      "default": "Só quero saber se essa dor vai passar e se eu corro risco de vida com esse sangue parado na perna.",
+      "viagem_perna": "Fiquei preso naquela poltrona apertada do avião por 12 horas. Minha perna está quase o dobro da outra, brilhante e muito quente ao toque.",
+      "respiracao": "Estou com medo de respirar fundo e sentir dor. Ouvi dizer que esse coágulo pode soltar e subir para o pulmão. Pode mesmo?",
+      "dor": "É uma dor de cãibra bem forte, não passa.",
+      "febre": "Não, sem febre."
+    }
+  },
+  {
+    "id": 16,
+    "name": "Mirtes Almeida",
+    "age": 55,
+    "gender": "F",
+    "color": "#8B5CF6",
+    "emoji": "assets/pct16.png",
+    "disease": "lmc",
+    "disease_label": "Leucemia Mieloide Crônica",
+    "intro": "Sinto um peso na barriga do lado esquerdo e ando muito cansada. Minhas roupas estão ficando folgadas.",
+    "signs": [
+      "esplenomegalia gigante",
+      "saciedade precoce",
+      "perda de peso e sudorese noturna",
+      "leucocitose extrema",
+      "cromossomo Philadelphia positivo"
+    ],
+    "lab": {
+      "hemograma": "Leucócitos: 150.000/µL (leucocitose extrema). Diferencial: desvio escalonado com mielócitos e metamielócitos, basofilia e eosinofilia.",
+      "citogenetica": "Cariótipo de medula óssea: t(9;22) - Cromossomo Philadelphia positivo. PCR quantitativo: transcrito BCR-ABL1 detectado.",
+      "bioquimica": "Fosfatase alcalina leucocitária baixa. LDH elevado."
+    },
+    "lab_display": [
+      {
+        "categoria": "Hemograma",
+        "exames": [
+          {
+            "nome": "Leucócitos",
+            "valor": "150.000/µL",
+            "referencia": "4.000–11.000/µL",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Citogenética/Molecular",
+        "exames": [
+          {
+            "nome": "Cariótipo (t9;22)",
+            "valor": "Cromossomo Philadelphia positivo",
+            "referencia": "Ausente",
+            "alterado": true
+          },
+          {
+            "nome": "BCR-ABL1 (PCR)",
+            "valor": "Detectado",
+            "referencia": "Não detectado",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Bioquímica",
+        "exames": [
+          {
+            "nome": "Fosfatase Alcalina Leucocitária",
+            "valor": "Baixa",
+            "referencia": "Normal/alta em reação leucemoide",
+            "alterado": true
+          },
+          {
+            "nome": "LDH",
+            "valor": "Elevado",
+            "referencia": "Normal",
+            "alterado": true
+          }
+        ]
+      }
+    ],
+    "exam": {
+      "head": "Mucosas descoradas (2+/4+). Ausência de linfonodomegalias.",
+      "chest": "Ausculta pulmonar e cardíaca normais. Refere dispneia aos médios esforços.",
+      "abdomen": "Esplenomegalia gigante: baço palpável a 10 cm do rebordo costal esquerdo, ultrapassando a linha média.",
+      "arm": "Membros delgados (perda de massa magra).",
+      "knee": "Dores ósseas ocasionais.",
+      "ankle": "Sem edema."
+    },
+    "responses": {
+      "nome": "Mirtes Almeida.",
+      "idade": "Tenho 55 anos.",
+      "naturalidade": "Sou de Porto Alegre.",
+      "QPD": "Sinto um peso na barriga do lado esquerdo e ando muito cansada.",
+      "Inicio": "Começou há uns 2 meses, foi piorando aos poucos.",
+      "Detalhe": "Sinto um peso, como se tivesse uma pedra do lado esquerdo da barriga que me puxa para baixo.",
+      "Localizacao": "É do lado esquerdo da barriga, embaixo das costelas.",
+      "Sintomas_associados": "Acordo de madrugada com o pijama ensopado de suor, e sinto pontadas na costela esquerda.",
+      "Sintomas_negados": "Não tenho febre, nem manchas roxas ou sangramentos.",
+      "antpessoais": "Tenho diabetes e pressão alta.",
+      "antfamiliares": "Na minha família ninguém nunca teve câncer ou doença no sangue.",
+      "vacinas": "Em dia.",
+      "habitos": "Não fumo, não bebo.",
+      "epidemiologia": "Sou dona de casa.",
+      "medicamentos": "Tomo remédio para diabetes e pressão.",
+      "cumprimento": "Boa tarde, doutor.",
+      "naosei": "Não sei, doutor, isso não tem nada a ver.",
+      "default": "Estou muito preocupada, doutor. Esse cansaço e essa barriga inchada estão me tirando o sossego. O que pode ser isso no meu sangue?",
+      "barriga": "Como três garfadas e já me sinto cheia, parece que a barriga está sempre ocupada.",
+      "emagrecimento": "Minhas calças estão caindo, perdi uns 8 quilos nos últimos dois meses sem fazer dieta nenhuma.",
+      "Caracterizacao_fadiga": "Ando um quarteirão e parece que corri uma maratona, minhas pernas ficam bambas.",
+      "dor": "Sinto umas pontadas na costela esquerda, bem em cima do inchaço da barriga.",
+      "febre": "Não tenho febre, só o suor de madrugada."
+    }
+  },
+  {
+    "id": 17,
+    "name": "Epaminondas Freitas",
+    "age": 50,
+    "gender": "M",
+    "color": "#F97316",
+    "emoji": "assets/pct17.png",
+    "disease": "slt",
+    "disease_label": "Síndrome de Lise Tumoral",
+    "intro": "Iniciei a quimioterapia ontem para um linfoma e hoje quase não urinei. Estou me sentindo muito mal, com o coração acelerado.",
+    "signs": [
+      "oligúria/anúria pós-quimioterapia",
+      "hipercalemia",
+      "hiperuricemia",
+      "hipocalcemia",
+      "linfoma volumoso em tratamento inicial"
+    ],
+    "lab": {
+      "bioquimica": "Ácido úrico: 12 mg/dL (crítico). Potássio: 6,8 mEq/L (hipercalemia grave). Fósforo: 6,5 mg/dL. Cálcio: 6,0 mg/dL (hipocalcemia secundária).",
+      "renal": "Creatinina: 2,8 mg/dL (basal era 0,9 mg/dL) - Insuficiência renal aguda obstrutiva por cristais.",
+      "hemograma": "Leucocitose por lise celular (debris celulares). Plaquetas normais."
+    },
+    "lab_display": [
+      {
+        "categoria": "Bioquímica (Lise Tumoral)",
+        "exames": [
+          {
+            "nome": "Ácido Úrico",
+            "valor": "12 mg/dL",
+            "referencia": "3,5–7,2 mg/dL",
+            "alterado": true
+          },
+          {
+            "nome": "Potássio",
+            "valor": "6,8 mEq/L",
+            "referencia": "3,5–5,0 mEq/L",
+            "alterado": true
+          },
+          {
+            "nome": "Fósforo",
+            "valor": "6,5 mg/dL",
+            "referencia": "2,5–4,5 mg/dL",
+            "alterado": true
+          },
+          {
+            "nome": "Cálcio",
+            "valor": "6,0 mg/dL",
+            "referencia": "8,5–10,5 mg/dL",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Função Renal",
+        "exames": [
+          {
+            "nome": "Creatinina",
+            "valor": "2,8 mg/dL (basal 0,9)",
+            "referencia": "0,6–1,2 mg/dL",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Hemograma",
+        "exames": [
+          {
+            "nome": "Leucócitos",
+            "valor": "Elevados (debris celulares)",
+            "referencia": "4.000–11.000/µL",
+            "alterado": true
+          }
+        ]
+      }
+    ],
+    "exam": {
+      "head": "Lúcido, porém com lentidão psicomotora e desidratação.",
+      "chest": "Arritmia à ausculta cardíaca (extrassístoles). Palpitações referidas.",
+      "abdomen": "Linfonodomegalias volumosas em cadeias axilares. Dor à punho-percussão lombar (Giordano positivo).",
+      "arm": "Sinal de Trousseau positivo (espasmo carpal após insuflação do manguito). Parestesias periorais e em mãos.",
+      "knee": "Cãibras musculares frequentes.",
+      "ankle": "Sem edema no momento."
+    },
+    "responses": {
+      "nome": "Epaminondas Freitas.",
+      "idade": "Tenho 50 anos.",
+      "naturalidade": "Sou de Fortaleza.",
+      "QPD": "Iniciei a quimioterapia ontem e hoje quase não urinei, estou passando muito mal.",
+      "Inicio": "Foi hoje, depois da primeira sessão de quimioterapia de ontem.",
+      "Detalhe": "Não fui ao banheiro nenhuma vez desde hoje cedo. A última vez que saiu foi uma gotinha bem escura.",
+      "Sintomas_associados": "Minhas mãos e a boca começaram a formigar, e sinto os músculos meio travados, como uma cãibra que não solta.",
+      "Sintomas_negados": "Não tenho febre, mas estou com muito enjoo e prostrado.",
+      "antpessoais": "Tenho linfoma não-Hodgkin, comecei o tratamento ontem.",
+      "antfamiliares": "Nada relevante na família.",
+      "vacinas": "Em dia, segundo minha esposa.",
+      "habitos": "Não fumo, não bebo.",
+      "epidemiologia": "Sou comerciante.",
+      "medicamentos": "Só o que fizeram na quimioterapia ontem.",
+      "cumprimento": "Boa tarde, doutor.",
+      "naosei": "Não sei, doutor, estou muito confuso para responder isso.",
+      "default": "Achei que a quimio ia me curar, mas estou me sentindo pior agora do que antes de começar. O que está acontecendo com meus rins?",
+      "urina": "Doutor, não fui ao banheiro nenhuma vez desde hoje cedo. A última vez que saiu foi uma gotinha muito escura.",
+      "confusao": "Me sinto meio tonto, meio zonzo, como se não estivesse raciocinando direito.",
+      "neurologico": "Minhas mãos e em volta da minha boca começaram a formigar, e meus músculos ficam meio travados.",
+      "dor": "Sinto uma dor chata e profunda aqui na região dos rins, nas minhas costas.",
+      "pressao": "Meu coração está esquisito, parece que dá uns pulos ou erra o passo o tempo todo."
+    }
+  },
+  {
+    "id": 18,
+    "name": "Helena da Costa",
+    "age": 68,
+    "gender": "F",
+    "color": "#3B82F6",
+    "emoji": "assets/pct18.png",
+    "disease": "reacao_hemolitica_abo",
+    "disease_label": "Incompatibilidade ABO (Reação Hemolítica Aguda)",
+    "intro": "Doutor, por favor... minhas costas estão doendo muito e estou sentindo um calorão subindo pelo braço onde está entrando o sangue.",
+    "signs": [
+      "dor lombar aguda",
+      "calor no trajeto venoso",
+      "febre alta e hipotensão",
+      "hemoglobinúria",
+      "início minutos após a transfusão"
+    ],
+    "lab": {
+      "hemograma": "Queda rápida da hemoglobina pós-transfusão. Plasma com aspecto rosado (hemoglobinemia).",
+      "imunohematologia": "Coombs Direto positivo. Conferência da bolsa: incompatibilidade ABO confirmada.",
+      "hemolise": "LDH: 3.500 U/L (muito elevado). Haptoglobina indetectável. Urina: hemoglobinúria presente (cor de Coca-Cola/vinho)."
+    },
+    "lab_display": [
+      {
+        "categoria": "Hemograma/Visual",
+        "exames": [
+          {
+            "nome": "Hemoglobina",
+            "valor": "Queda rápida pós-transfusão",
+            "referencia": "Estável",
+            "alterado": true
+          },
+          {
+            "nome": "Plasma",
+            "valor": "Rosado (hemoglobinemia)",
+            "referencia": "Claro",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Imuno-hematologia",
+        "exames": [
+          {
+            "nome": "Coombs Direto",
+            "valor": "Positivo",
+            "referencia": "Negativo",
+            "alterado": true
+          },
+          {
+            "nome": "Conferência da bolsa",
+            "valor": "Incompatibilidade ABO confirmada",
+            "referencia": "Compatível",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Marcadores de Hemólise",
+        "exames": [
+          {
+            "nome": "LDH",
+            "valor": "3.500 U/L",
+            "referencia": "120–246 U/L",
+            "alterado": true
+          },
+          {
+            "nome": "Haptoglobina",
+            "valor": "Indetectável",
+            "referencia": "30–200 mg/dL",
+            "alterado": true
+          },
+          {
+            "nome": "Urina (EAS)",
+            "valor": "Hemoglobinúria (cor de Coca-Cola)",
+            "referencia": "Ausente",
+            "alterado": true
+          }
+        ]
+      }
+    ],
+    "exam": {
+      "head": "Icterícia leve subconjuntival de início súbito. Agitação e angústia intensa.",
+      "chest": "Taquicardia rítmica (125 bpm). Pulmões com estertores finos esparsos. Dispneia.",
+      "abdomen": "Dor severa à palpação e punho-percussão lombar.",
+      "arm": "Queimação no trajeto do acesso venoso. Pulsos finos e rápidos.",
+      "knee": "Sem alterações articulares.",
+      "ankle": "Sem edema."
+    },
+    "responses": {
+      "nome": "Helena da Costa.",
+      "idade": "Tenho 68 anos.",
+      "naturalidade": "Sou de Recife.",
+      "QPD": "Minhas costas estão doendo muito e sinto um calor subindo pelo braço onde entra o sangue.",
+      "Inicio": "Começou de repente, uns 10 minutos depois que começaram a transfusão.",
+      "Detalhe": "Doutor, corre aqui! Sinto um fogo subindo pelo meu braço onde está essa bolsa de sangue!",
+      "Localizacao": "A dor é nas costas, na região dos rins, e o calor é no braço do soro.",
+      "Caracter": "Parece que estão me esfaqueando aqui atrás, dói demais.",
+      "Sintomas_associados": "Sinto que vou morrer, meu peito está apertado, estou sufocando.",
+      "Sintomas_negados": "Nunca senti isso em transfusões anteriores.",
+      "antpessoais": "Já recebi transfusão outras vezes sem problema nenhum.",
+      "antfamiliares": "Nada relevante.",
+      "vacinas": "Em dia.",
+      "habitos": "Não fumo, não bebo.",
+      "epidemiologia": "Sou aposentada.",
+      "medicamentos": "Nenhum regular.",
+      "cumprimento": "Doutor, por favor, me ajuda!",
+      "naosei": "Não consigo pensar em outra coisa agora, doutor, dói muito!",
+      "default": "Para esse sangue agora! Eu não estou aguentando de dor e mal-estar! Eu vou morrer?",
+      "transfusao": "Já recebi sangue outra vez e não senti nada disso. O que está acontecendo agora?",
+      "urina": "Eu pedi a comadre e saiu um pouco de urina vermelha, parece suco de uva ou Coca-Cola.",
+      "dor": "Ai, minhas costas! Parece que estão me esfaqueando aqui atrás, dói demais!",
+      "febre": "Estou batendo o queixo de frio, mesmo com esse calor que sinto no braço.",
+      "melhora": "Só vou melhorar se pararem essa transfusão agora, doutor!"
+    }
+  },
+  {
+    "id": 19,
+    "name": "Jorge (Paciente de UTI)",
+    "age": 42,
+    "gender": "M",
+    "color": "#71717A",
+    "emoji": "assets/pct19.png",
+    "disease": "civd",
+    "disease_label": "Coagulação Intravascular Disseminada (CIVD)",
+    "intro": "Paciente em choque séptico por pneumonia grave, sedado e em ventilação mecânica. A enfermagem relata sangramento ativo em locais de punção e drenos.",
+    "signs": [
+      "choque séptico",
+      "sangramento difuso 'em lençol'",
+      "hematúria macroscópica",
+      "petéquias e equimoses disseminadas",
+      "queda de fibrinogênio e D-dímero muito elevado"
+    ],
+    "lab": {
+      "hemograma": "Plaquetas: 35.000/µL (queda rápida/consumo). Anemia aguda instalada.",
+      "coagulacao": "TP e TTPA muito alargados (consumo de fatores). Fibrinogênio: 60 mg/dL (crítico). D-dímero >10.000 ng/mL.",
+      "esfregaco": "Presença de esquizócitos (hemólise microangiopática por microtrombos)."
+    },
+    "lab_display": [
+      {
+        "categoria": "Hemograma",
+        "exames": [
+          {
+            "nome": "Plaquetas",
+            "valor": "35.000/µL",
+            "referencia": "150.000–400.000/µL",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Coagulação (Consumo)",
+        "exames": [
+          {
+            "nome": "TP/TTPA",
+            "valor": "Muito alargados",
+            "referencia": "Normal",
+            "alterado": true
+          },
+          {
+            "nome": "Fibrinogênio",
+            "valor": "60 mg/dL",
+            "referencia": "200–400 mg/dL",
+            "alterado": true
+          },
+          {
+            "nome": "D-Dímero",
+            "valor": ">10.000 ng/mL",
+            "referencia": "<500 ng/mL",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Esfregaço",
+        "exames": [
+          {
+            "nome": "Morfologia",
+            "valor": "Esquizócitos presentes",
+            "referencia": "Ausentes",
+            "alterado": true
+          }
+        ]
+      }
+    ],
+    "exam": {
+      "head": "Sedado (RASS -5). Sangramento ativo em mucosa oral e local de acesso central jugular.",
+      "chest": "Estertores crepitantes bilaterais. Petéquias e equimoses disseminadas no tórax.",
+      "abdomen": "Petéquias e equimoses disseminadas no abdome. Resíduo hemático em sonda nasogástrica.",
+      "arm": "Grandes hematomas em locais de coleta de exames laboratoriais e punção venosa.",
+      "knee": "Sem avaliação possível (sedação profunda).",
+      "ankle": "Má perfusão periférica, extremidades frias."
+    },
+    "responses": {
+      "nome": "O paciente está sedado e não consegue responder. Sou a enfermeira responsável, posso relatar o quadro.",
+      "idade": "42 anos, segundo o prontuário.",
+      "naturalidade": "Ele é caminhoneiro, de São Paulo.",
+      "QPD": "Ele deu entrada com choque séptico por pneumonia grave e agora está sangrando pelos locais de punção.",
+      "Inicio": "Os sangramentos começaram há cerca de 4 horas, junto com a piora do choque.",
+      "Detalhe": "Trocamos o curativo do acesso central agora e o sangue não para de verter pelos poros da pele.",
+      "Sintomas_associados": "A urina no saco coletor está francamente hemática, parece sangue puro. Apareceram manchas roxas e petéquias no tórax na última hora.",
+      "Sintomas_negados": "A esposa relata que ele era muito saudável antes da pneumonia, nunca teve problemas de sangue.",
+      "antpessoais": "Previamente hígido até o quadro infeccioso atual.",
+      "antfamiliares": "Sem histórico de coagulopatias na família, segundo a esposa.",
+      "vacinas": "Não temos essa informação no momento, doutor.",
+      "habitos": "Não temos essa informação, ele está sedado.",
+      "epidemiologia": "Trabalha como caminhoneiro.",
+      "medicamentos": "Está em uso de noradrenalina em dose máxima e antibioticoterapia de amplo espectro.",
+      "cumprimento": "Boa noite, doutor. O paciente está crítico.",
+      "naosei": "Não consigo responder isso agora, ele está sedado e em estado grave.",
+      "default": "Quadro crítico de coagulopatia de consumo secundária ao foco infeccioso pulmonar.",
+      "sangramento": "O sangue verte pelos poros da pele nos curativos, e o local da gasometria está com um hematoma que continua crescendo.",
+      "urina": "A urina no saco coletor está francamente hemática, parece sangue puro.",
+      "manchas": "Apareceram manchas roxas e muitos pontinhos vermelhos no tórax dele na última hora.",
+      "pressao": "Ele teve uma piora súbita da pressão arterial e agora precisa de doses máximas de noradrenalina.",
+      "febre": "Está com febre de 38,5°C, associada ao quadro séptico."
+    }
+  },
+  {
+    "id": 20,
+    "name": "Vinícius Simões",
+    "age": 22,
+    "gender": "M",
+    "color": "#FBBD23",
+    "emoji": "assets/pct20.png",
+    "disease": "hodgkin",
+    "disease_label": "Linfoma de Hodgkin",
+    "intro": "Doutor, apareceu um caroço no meu pescoço. O estranho é que ele dói sempre que eu bebo uma cerveja no fim de semana.",
+    "signs": [
+      "linfonodo cervical elástico e indolor",
+      "sinal de Hoster (dor ao álcool)",
+      "sintomas B: febre, sudorese noturna, emagrecimento",
+      "massa mediastinal (bulky disease)",
+      "células de Reed-Sternberg na biópsia"
+    ],
+    "lab": {
+      "hemograma": "Hb: 12,8 g/dL. Leucocitose leve com eosinofilia.",
+      "histopatologia": "Biópsia de linfonodo: presença de células de Reed-Sternberg em fundo inflamatório (diagnóstico de Hodgkin).",
+      "marcadores": "VHS elevada. LDH aumentado.",
+      "imagem": "TC de tórax: massa mediastinal volumosa (bulky disease)."
+    },
+    "lab_display": [
+      {
+        "categoria": "Hemograma",
+        "exames": [
+          {
+            "nome": "Hemoglobina",
+            "valor": "12,8 g/dL",
+            "referencia": "13–17 g/dL",
+            "alterado": true
+          },
+          {
+            "nome": "Leucócitos",
+            "valor": "Leucocitose leve com eosinofilia",
+            "referencia": "4.000–11.000/µL",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Histopatologia",
+        "exames": [
+          {
+            "nome": "Biópsia de Linfonodo",
+            "valor": "Células de Reed-Sternberg presentes",
+            "referencia": "Ausentes",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Marcadores",
+        "exames": [
+          {
+            "nome": "VHS",
+            "valor": "Elevada",
+            "referencia": "Normal",
+            "alterado": true
+          },
+          {
+            "nome": "LDH",
+            "valor": "Aumentado",
+            "referencia": "Normal",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Imagem",
+        "exames": [
+          {
+            "nome": "TC de Tórax",
+            "valor": "Massa mediastinal volumosa (bulky disease)",
+            "referencia": "Normal",
+            "alterado": true
+          }
+        ]
+      }
+    ],
+    "exam": {
+      "head": "Linfonodo cervical à direita de 3 cm, consistência elástica (gomosa), móvel e indolor à palpação.",
+      "chest": "Macicez à percussão em região esternal superior, indicando massa em mediastino anterior.",
+      "abdomen": "Sem visceromegalias.",
+      "arm": "Lesões de escoriação por prurido crônico, sem lesões primárias.",
+      "knee": "Sem alterações.",
+      "ankle": "Sem edema."
+    },
+    "responses": {
+      "nome": "Vinícius Simões.",
+      "idade": "Tenho 22 anos.",
+      "naturalidade": "Sou de Campinas.",
+      "QPD": "Apareceu um caroço no meu pescoço há uns 2 meses.",
+      "Inicio": "Notei esse nódulo tem uns dois meses. Achei que fosse íngua de dente, mas não some.",
+      "Detalhe": "Ele é durinho, parece uma borracha, mas não dói quando aperto, só quando bebo álcool mesmo.",
+      "Localizacao": "É do lado direito do pescoço.",
+      "Sintomas_associados": "Tenho acordado de madrugada com a camiseta toda molhada de suor, e sinto uma coceira pelo corpo todo sem manchas.",
+      "Sintomas_negados": "Não tenho dor no caroço em repouso, só depois do álcool.",
+      "antpessoais": "Nega doenças crônicas. Tentei tomar anti-inflamatório por conta própria, não adiantou.",
+      "antfamiliares": "Nega histórico familiar de neoplasias.",
+      "vacinas": "Em dia.",
+      "habitos": "Bebo cerveja socialmente nos fins de semana. Não fumo.",
+      "epidemiologia": "Sou estudante de engenharia.",
+      "medicamentos": "Tentei anti-inflamatório por conta própria, sem melhora.",
+      "cumprimento": "Boa tarde, doutor.",
+      "naosei": "Acho que não tem nada a ver, doutor.",
+      "default": "Eu achei que era só estresse da faculdade, mas esse suor noturno e esse caroço estão me assustando. O que pode ser?",
+      "carocos": "Ele é durinho, parece uma borracha, mas não dói quando aperto, só quando bebo álcool.",
+      "alcool": "Doutor, é bizarro: eu tomo um copo de cerveja e esse caroço no pescoço começa a doer na hora. É uma dor aguda que passa depois de um tempo.",
+      "pele": "Sinto uma coceira pelo corpo todo que não tem mancha nenhuma, mas irrita muito, chego a me machucar de tanto coçar.",
+      "emagrecimento": "Minhas roupas estão ficando largas, perdi uns 5 quilos no último mês sem fazer dieta.",
+      "febre": "No finalzinho da tarde sempre sinto meu corpo quente, uma febre de 37,8 ou 38 graus que some depois."
     }
   }
 ]
