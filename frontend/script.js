@@ -3,7 +3,12 @@
    Consome a API Flask em http://localhost:5050
 */
 
-const API = "http://localhost:5050/api";
+const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+
+// Substitua o link abaixo pela URL real do Hugging Face que está no README do seu colega
+const API = isLocal 
+  ? "http://localhost:5050/api" 
+  : "https://.hf.space/api";
 
 const EXAM_LABELS = {
   head:    "Cabeça / Face",
