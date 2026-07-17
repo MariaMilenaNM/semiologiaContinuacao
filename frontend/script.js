@@ -18,7 +18,8 @@ const EXAM_LABELS = {
 };
 
 let currentPatient = null;
-let patients       = [];       
+let patients       = [];  
+let isFirstMessage = true;     
 
 /* 
    INICIALIZAÇÃO E NAVEGAÇÃO
@@ -68,6 +69,7 @@ function goTo(screenNumber) {
 
 function openChat(patient) {
   currentPatient = patient;
+  isFirstMessage = true;
 
   document.getElementById("chatName").textContent         = patient.name;
   document.getElementById("chatAvatar").innerHTML         = `<img src="${patient.emoji}" alt="${patient.name}">`;
@@ -84,7 +86,7 @@ function openChat(patient) {
   }
 
   document.getElementById("chatArea").innerHTML = "";
-  addMessage("patient", patient.intro);
+ 
   goTo(2);
 }
 
@@ -148,6 +150,18 @@ async function sendMsg() {
   addMessage("student", text);
   input.value = "";
   showTyping();
+
+  if (isFirstMessage) {
+    isFirstMessage = false; // Desativa a trava para as próximas mensagens
+    
+    // Simula um tempinho de digitação para a intro e retorna
+    setTimeout(() => {
+      removeTyping();
+      addMessage("patient", currentPatient.intro);
+    }, 800);
+    
+    return; // Para a execução aqui, não chama a API
+  }
 
   try {
     const res  = await fetch(`${API}/chat`, {
@@ -287,19 +301,20 @@ async function checkDiagnosis() {
     const data = await res.json();
 
     resultDiv.style.display = "block";
-    navToPlan.style.display = "flex";
 
     if (data.correct) {
       resultDiv.innerHTML = `<div style="background:#d4edda; color:#155724; padding:16px; border-radius:12px; border: 1px solid #c3e6cb;">
         <strong>✅ Diagnóstico Correto!</strong><br><br>${data.feedback}
       </div>`;
+      navToPlan.style.display = "flex";
     } else {
       resultDiv.innerHTML = `<div style="background:#f8d7da; color:#721c24; padding:16px; border-radius:12px; border: 1px solid #f5c6cb;">
         <strong>❌ Diagnóstico Incorreto.</strong><br><br>${data.feedback}
       </div>`;
+      navToPlan.style.display = "none";
     }
   } catch (err) {
-    showToast("⚠️ Erro ao verificar diagnóstico.", "");
+    showToast("Erro ao verificar diagnóstico.", "");
   }
 }
 
