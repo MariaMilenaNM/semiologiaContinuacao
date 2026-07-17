@@ -86,11 +86,11 @@ def build_model(input_dim: int, num_classes: int) -> keras.Model:
 
         layers.Dense(64, activation="relu", kernel_regularizer=keras.regularizers.l2(0.005)),
         layers.BatchNormalization(),
-        layers.Dropout(0.5),
+        layers.Dropout(0.3),
 
         layers.Dense(32, activation="relu", kernel_regularizer=keras.regularizers.l2(0.005)),
         layers.BatchNormalization(),
-        layers.Dropout(0.4),
+        layers.Dropout(0.2),
 
         layers.Dense(num_classes, activation="softmax", name="intent_output"),
     ], name="intent_classifier")
@@ -119,7 +119,7 @@ def load_artifacts():
 
 # ── Inferência ─────────────────────────────────────────────────────────
 def predict_intent(text: str, model, vectorizer, label_names: list,
-                   threshold: float = 0.35) -> str:
+                   threshold: float = 0.50) -> str:
     """
     Dado um texto de entrada, retorna a intenção prevista.
 

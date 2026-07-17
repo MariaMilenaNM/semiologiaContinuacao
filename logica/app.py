@@ -57,10 +57,13 @@ except Exception as e:
 
 @app.route("/api/patients", methods=["GET"])
 def get_patients():
-    """Retorna a lista de pacientes (sem dados sensíveis de resposta)."""
-   # Adicione "lab_display" no final da lista
+    """Retorna a lista de pacientes lendo o arquivo em tempo real."""
+    # Movemos a leitura para dentro da rota
+    with open(PATIENTS_PATH, "r", encoding="utf-8") as f:
+        dados_atualizados = json.load(f)
+    
     safe_fields = ["id", "name", "age", "gender", "color", "emoji", "disease_label", "intro", "signs", "lab_display"]
-    result = [{k: p[k] for k in safe_fields} for p in PATIENTS]
+    result = [{k: p[k] for k in safe_fields} for p in dados_atualizados]
     return jsonify(result)
 
 
@@ -165,7 +168,7 @@ def check_diagnosis():
     feedback = (
         f"✅ Correto! O diagnóstico é {disease_label}."
         if correct else
-        "❌ Diagnóstico incorreto. Revise os sintomas e o exame físico."
+        "❌ Revise a anamnese, o exame físico e os exames ccomplementares."
     )
 
     return jsonify({
