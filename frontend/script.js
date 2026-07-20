@@ -303,9 +303,26 @@ async function checkDiagnosis() {
     resultDiv.style.display = "block";
 
     if (data.correct) {
-      resultDiv.innerHTML = `<div style="background:#d4edda; color:#155724; padding:16px; border-radius:12px; border: 1px solid #c3e6cb;">
-        <strong>✅ Diagnóstico Correto!</strong><br><br>${data.feedback}
-      </div>`;
+      // Pega o fechamento que vem do JSON ou usa o feedback da API como fallback
+      const textoFechamento = currentPatient.fechamento || data.feedback;
+
+      resultDiv.innerHTML = `
+        <div style="background:#d4edda; color:#155724; padding:16px; border-radius:12px; border: 1px solid #c3e6cb;">
+          <div style="text-align: center; margin-bottom: 16px; font-size: 16px;">
+            <strong>✅ Diagnóstico Correto!</strong>
+          </div>
+          
+          <div style="display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.6); padding: 12px; border-radius: 8px;">
+            <div style="width: 55px; height: 55px; border-radius: 50%; background: ${currentPatient.color}; flex-shrink: 0; display: flex; justify-content: center; align-items: center; overflow: hidden; border: 2px solid #155724;">
+              <img src="${currentPatient.emoji}" alt="${currentPatient.name}" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div>
+              <strong style="font-size: 14px; display: block; margin-bottom: 4px;">${currentPatient.name}</strong>
+              <p style="margin: 0; font-size: 14px; line-height: 1.4; color: #155724;">"${textoFechamento}"</p>
+            </div>
+          </div>
+        </div>`;
+        
       navToPlan.style.display = "flex";
     } else {
       resultDiv.innerHTML = `<div style="background:#f8d7da; color:#721c24; padding:16px; border-radius:12px; border: 1px solid #f5c6cb;">

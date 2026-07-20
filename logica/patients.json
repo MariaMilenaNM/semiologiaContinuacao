@@ -9,6 +9,7 @@
     "disease": "pti",
     "disease_label": "Púrpura Trombocitopênica Imune (PTI)",
     "intro": "Tioo(a)! Apareceu essas manchas roxas no meu corpo todo e minha gengiva ta sangrando.",
+    "fechamento": "Obrigado, tio(a)! Por cuidar de mim!",
     "signs": [
       "petéquias",
       "equimoses espontâneas",
@@ -112,6 +113,7 @@
     "disease": "anemia_b12",
     "disease_label": "Anemia carencial séc deficiência de B12, ácido fólico e ferro",
     "intro": "Olá! Tenho sentido muito cansaço e falta de ar até para pequenas coisas.",
+    "fechamento": "Muito obrigado, doutor(a). Já estava preocupado, agora entendo o que está acontecendo comigo.",
     "signs": [
       "fadiga progressiva",
       "tontura e palidez",
@@ -245,6 +247,7 @@
     "disease": "acantocitose",
     "disease_label": "Acantocitose Hereditária",
     "intro": "Oie! Tenho fraqueza que foi piorando, cansaço fácil, dificuldade para andar e movimentos que não controlo direito.",
+    "fechamento": "Obrigada, doutor(a). Depois de tanto tempo sem resposta, é um alívio finalmente entender o que eu tenho.",
     "signs": [
       "acantócitos no esfregaço",
       "neuropatia progressiva",
@@ -370,6 +373,7 @@
     "disease": "hnp",
     "disease_label": "Anemia Hemolítica Sec a Hemoglobinúria Paroxística Clássica",
     "intro": "Olá, doutor! Vim porque estou com urina escura pela manhã e muito cansaço.",
+    "fechamento": "Muito obrigado, doutor! Fico mais aliviado sabendo o nome disso, vou poder me cuidar direito agora.",
     "signs": [
       "urina escura ao despertar",
       "fadiga intensa",
@@ -484,6 +488,7 @@
     "disease": "anemia_aplasica",
     "disease_label": "Anemia Aplásica Adquirida",
     "intro": "Olá! Procurei atendimento porque venho sentindo cansaço intenso, tontura frequente e palpitações há cerca de dois meses.",
+    "fechamento": "Obrigado, doutor(a). Não sabia que podia ser algo assim, mas fico agradecido pela atenção.",
     "signs": [
       "pancitopenia",
       "fadiga e palidez progressiva",
@@ -586,6 +591,7 @@
     "disease": "hodgkin",
     "disease_label": "Linfoma de Hodgkin",
     "intro": "Doutor(a), apareceu um caroço no meu pescoço. O estranho é que ele dói sempre que eu bebo uma cerveja no fim de semana.",
+    "fechamento": "Valeu, doutor(a). Confesso que fiquei com medo, mas agradeço por ter descoberto o que é.",
     "signs": [
       "linfonodo cervical elástico e indolor",
       "sinal de Hoster (dor ao álcool)",
@@ -710,6 +716,7 @@
     "disease": "poems",
     "disease_label": "Síndrome POEMS",
     "intro": "Olá, doutor(a). Venho sentindo uma dormência constante nas duas mãos já faz uns 8 meses.",
+    "fechamento": "Agradeço muito, doutor(a). Agora faz sentido.",
     "signs": [
       "polineuropatia sensitivo-motora",
       "hiperpigmentação cutânea",
@@ -831,6 +838,7 @@
     "disease": "lnh_hiv",
     "disease_label": "Linfoma não Hodgkin associado ao HIV",
     "intro": "Olá, doutor(a). Apareceram uns caroços no meu pescoço, tenho tido muita febre à tarde e perdi muito peso.",
+    "fechamento": "Obrigado, doutor(a). Sei que o caminho vai ser difícil, mas agradeço.",
     "signs": [
       "múltiplas adenomegalias aderidas",
       "febre vespertina e sudorese noturna",
@@ -965,6 +973,7 @@
     "disease": "rfnh",
     "disease_label": "Reação Febril Não Hemolítica",
     "intro": "Olá, doutor(a). Apresentei um pico de febre com tremores no meio da transfusão de sangue.",
+    "fechamento": "Ave Maria, doutor(a), que susto! Muito obrigada por explicar.",
     "signs": [
       "pico febril durante transfusão",
       "tremores e calafrios",
@@ -1096,6 +1105,7 @@
     "disease": "taco",
     "disease_label": "Sobrecarga Circulatória (TACO)",
     "intro": "Olá, doutor(a). Comecei a sentir muita falta de ar enquanto estava tomando a segunda bolsa de sangue.",
+    "fechamento": "Obrigado, doutor(a). Agradeço por cuidar tão bem de mim.",
     "signs": [
       "dispneia súbita",
       "transfusão de múltiplas bolsas (sobrecarga)",
@@ -1204,6 +1214,7 @@
     "disease": "pv",
     "disease_label": "Policitemia Vera (Fase Inicial)",
     "intro": "Doutor(a), meu rosto vive vermelho e sinto uma coceira agoniante no corpo todo logo depois que saio do banho quente.",
+    "fechamento": "Muito obrigado, doutor(a), pelo diagnóstico.",
     "signs": [
       "pletora facial",
       "prurido aquagênico",
@@ -1338,6 +1349,7 @@
     "disease": "pseudotrombocitopenia",
     "disease_label": "Pseudotrombocitopenia Induzida por EDTA",
     "intro": "Vim porque meu exame de rotina deu as plaquetas muito baixas, mas eu me sinto ótima. Não entendi nada.",
+    "fechamento": "Obrigada por ter me ajudado doutor(a).",
     "signs": [
       "assintomática",
       "sem sangramentos ou petéquias",
@@ -1451,6 +1463,7 @@
     "disease": "falciforme",
     "disease_label": "Anemia Falciforme (Crise Vaso-Oclusiva / Dactilite)",
     "intro": "Tia, meu pé e minha mão estão inchados e doendo muito, não consigo nem andar direito.",
+    "fechamento": "Valeu, tio(a)! Agora eu entendi por que meu pé e minha mão doem tanto. Obrigado por cuidar de mim!",
     "signs": [
       "dor óssea intensa",
       "dactilite (mãos e pés)",
@@ -1587,6 +1600,7 @@
     "disease": "vwd",
     "disease_label": "Doença de Von Willebrand (Tipo 1)",
     "intro": "Doutor(a), minha menstruação dura 10 dias e é muito forte. Além disso, qualquer batidinha eu fico roxa.",
+    "fechamento": "Muito obrigada, doutor(a). Finalmente faz sentido.",
     "signs": [
       "menorragia desde a menarca",
       "epistaxe frequente",
@@ -1709,6 +1723,7 @@
     "disease": "fator_v_leiden",
     "disease_label": "Trombofilia por Fator V de Leiden",
     "intro": "Cheguei de uma viagem de avião de 12 horas e minha perna esquerda começou a inchar e doer demais.",
+    "fechamento": "Obrigado, doutor(a). Fiquei bem aliviado por ter um diagnóstico agora.",
     "signs": [
       "edema unilateral em perna",
       "dor tipo cãibra",
@@ -1827,6 +1842,7 @@
     "disease": "lmc",
     "disease_label": "Leucemia Mieloide Crônica",
     "intro": "Sinto um peso na barriga do lado esquerdo e ando muito cansada. Minhas roupas estão ficando folgadas.",
+    "fechamento":"Obrigada, doutor(a). Estava muito preocupada com essa barriga e esse cansaço, agora sei o que enfrentar.",
     "signs": [
       "esplenomegalia gigante",
       "saciedade precoce",
@@ -1938,6 +1954,7 @@
     "disease": "slt",
     "disease_label": "Síndrome de Lise Tumoral",
     "intro": "Iniciei a quimioterapia ontem para um linfoma e hoje quase não urinei. Estou me sentindo muito mal, com o coração acelerado.",
+    "fechamento": "Obrigado, doutor(a). Estava com muito medo depois da quimioterapia, mas agradeço por cuidar de mim nesse momento difícil.",
     "signs": [
       "oligúria/anúria pós-quimioterapia",
       "hipercalemia",
@@ -2053,6 +2070,7 @@
     "disease": "reacao_hemolitica_abo",
     "disease_label": "Incompatibilidade ABO (Reação Hemolítica Aguda)",
     "intro": "Doutor(a), por favor... minhas costas estão doendo muito e estou sentindo um calorão subindo pelo braço onde está entrando o sangue.",
+    "fechamento": "Deus te abençoe, doutor(a)! Obrigada por agir tão rápido.",
     "signs": [
       "dor lombar aguda",
       "calor no trajeto venoso",
@@ -2176,6 +2194,7 @@
     "disease": "civd",
     "disease_label": "Coagulação Intravascular Disseminada (CIVD)",
     "intro": "Paciente em choque séptico por pneumonia grave, sedado e em ventilação mecânica. A enfermagem relata sangramento ativo em locais de punção e drenos.",
+    "fechamento": "Obrigada, doutor(a), pela conduta rápida. Vamos seguir acompanhando o quadro dele de perto agora.",
     "signs": [
       "choque séptico",
       "sangramento difuso 'em lençol'",
@@ -2284,6 +2303,7 @@
     "disease": "lpa",
     "disease_label": "Leucemia Promielocítica Aguda",
     "intro": "Doutor, comecei a sangrar sem parar de um corte pequeno, estou com hematomas por todo o corpo e me sinto muito mal há uma semana.",
+    "fechamento": "Muito obrigada, doutor. Agradeço por identificar o que é e já começar o tratamento.",
     "signs": [
       "sangramentos graves",
       "equimoses extensas",

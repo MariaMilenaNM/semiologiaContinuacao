@@ -67,7 +67,7 @@ except Exception as e:
 @app.route("/api/patients", methods=["GET"])
 def get_patients():
     """Retorna a lista de pacientes lendo o arquivo em tempo real."""
-    safe_fields = ["id", "name", "age", "gender", "color", "emoji", "disease_label", "intro", "signs", "lab_display"]
+    safe_fields = ["id", "name", "age", "gender", "color", "emoji", "disease_label", "intro", "signs", "lab_display", "fechamento"]
     result = [{k: p[k] for k in safe_fields} for p in PATIENTS]
     return jsonify(result)
 
