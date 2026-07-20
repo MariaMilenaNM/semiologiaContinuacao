@@ -15,6 +15,7 @@ import pickle
 import numpy as np
 
 from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.pipeline import FeatureUnion
 from sklearn.model_selection import train_test_split
 from sklearn.utils.class_weight import compute_class_weight
 
@@ -44,14 +45,24 @@ print("       Distribuição de exemplos por classe:")
 for idx, name in enumerate(label_names):
     print(f"         {name:35s} → {dist[idx]:3d} exemplos")
 
-# ── 2. Vetorização TF-IDF ───────────────────────────────────────────────
-print("[ 2/5 ] Vetorizando com TF-IDF...")
-vectorizer = TfidfVectorizer(
-    analyzer="char_wb",   # n-gramas de caracteres → lida bem com variações
-    ngram_range=(2, 5),
-    max_features=5000,
-    sublinear_tf=True
-)
+# ── 2. Vetorização TF-IDF (caractere + palavra) ─────────────────────────
+#melhora o modelo no sentido de lidar com contexto
+print("[ 2/5 ] Vetorizando com TF-IDF (char + palavra)...")
+vectorizer = FeatureUnion([
+    ("char", TfidfVectorizer(
+        analyzer="char_wb",
+        ngram_range=(2, 5),
+        max_features=4000,
+        sublinear_tf=True
+    )),
+    ("word", TfidfVectorizer(
+        analyzer="word",
+        ngram_range=(1, 2),
+        max_features=2000,
+        sublinear_tf=True,
+        min_df=1
+    )),
+])
 X = vectorizer.fit_transform(texts).toarray()
 y = np.array(labels)
 print(f"       Shape X: {X.shape}")

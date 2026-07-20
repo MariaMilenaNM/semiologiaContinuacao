@@ -119,7 +119,7 @@ def load_artifacts():
 
 # ── Inferência ─────────────────────────────────────────────────────────
 def predict_intent(text: str, model, vectorizer, label_names: list,
-                   threshold: float = 0.50) -> str:
+                   threshold: float = 0.45) -> str:
     """
     Dado um texto de entrada, retorna a intenção prevista.
 
