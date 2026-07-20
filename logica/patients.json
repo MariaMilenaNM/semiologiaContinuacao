@@ -529,24 +529,27 @@
     }
   },
   {
-    "id": 20,
-    "name": "Icaro",
-    "age": 23,
+    "id": 6,
+    "name": "Vinícius Simões",
+    "age": 22,
     "gender": "M",
-    "color": "#60A5FA",
-    "emoji": "assets/pct6.jpg",
-    "disease": "lpa",
-    "disease_label": "Leucemia Promielocítica Aguda",
-    "intro": "Olá, doutor(a). Estou tendo um sangramento transvaginal forte nas últimas semanas e sinto muito cansaço.",
+    "color": "#FBBD23",
+    "emoji": "assets/pct20.png",
+    "disease": "hodgkin",
+    "disease_label": "Linfoma de Hodgkin",
+    "intro": "Doutor(a), apareceu um caroço no meu pescoço. O estranho é que ele dói sempre que eu bebo uma cerveja no fim de semana.",
     "signs": [
-      "sangramento vaginal (mesmo com supressão)",
-      "fadiga e palidez",
-      "epistaxe e petéquias em MMII",
-      "t(15;17) presente no mielograma"
+      "linfonodo cervical elástico e indolor",
+      "sinal de Hoster (dor ao álcool)",
+      "sintomas B: febre, sudorese noturna, emagrecimento",
+      "massa mediastinal (bulky disease)",
+      "células de Reed-Sternberg na biópsia"
     ],
     "lab": {
-      "hemograma": "Hb: 7,8. Leucócitos: 15.200 (presença de blastos). Plaquetas: 18.000.",
-      "outros": "TP/TTPA prolongados. D-Dímero elevado. Mielograma: promielócitos e blastos, t(15;17) PML/RARa presente."
+      "hemograma": "Hb: 12,8 g/dL. Leucocitose leve com eosinofilia.",
+      "histopatologia": "Biópsia de linfonodo: presença de células de Reed-Sternberg em fundo inflamatório (diagnóstico de Hodgkin).",
+      "marcadores": "VHS elevada. LDH aumentado.",
+      "imagem": "TC de tórax: massa mediastinal volumosa (bulky disease)."
     },
     "lab_display": [
       {
@@ -554,88 +557,90 @@
         "exames": [
           {
             "nome": "Hemoglobina",
-            "valor": "7,8 g/dL",
+            "valor": "12,8 g/dL",
             "referencia": "13–17 g/dL",
             "alterado": true
           },
           {
             "nome": "Leucócitos",
-            "valor": "15.200/µL",
+            "valor": "Leucocitose leve com eosinofilia",
             "referencia": "4.000–11.000/µL",
-            "alterado": true
-          },
-          {
-            "nome": "Plaquetas",
-            "valor": "18.000/µL",
-            "referencia": "150.000–400.000/µL",
-            "alterado": true
-          },
-          {
-            "nome": "Esfregaço",
-            "valor": "Presença de Blastos",
-            "referencia": "Ausente",
             "alterado": true
           }
         ]
       },
       {
-        "categoria": "Coagulograma",
+        "categoria": "Histopatologia",
         "exames": [
           {
-            "nome": "TP e TTPA",
-            "valor": "Prolongados",
+            "nome": "Biópsia de Linfonodo",
+            "valor": "Células de Reed-Sternberg presentes",
+            "referencia": "Ausentes",
+            "alterado": true
+          }
+        ]
+      },
+      {
+        "categoria": "Marcadores",
+        "exames": [
+          {
+            "nome": "VHS",
+            "valor": "Elevada",
             "referencia": "Normal",
             "alterado": true
           },
           {
-            "nome": "D-Dímero",
-            "valor": "Elevado",
-            "referencia": "<500 ng/mL",
+            "nome": "LDH",
+            "valor": "Aumentado",
+            "referencia": "Normal",
             "alterado": true
           }
         ]
       },
       {
-        "categoria": "Medula Óssea",
+        "categoria": "Imagem",
         "exames": [
           {
-            "nome": "Citogenética",
-            "valor": "t(15;17) presente",
-            "referencia": "Ausente",
-            "alterado": true
-          },
-          {
-            "nome": "Biologia Molecular",
-            "valor": "Rearranjo PML/RARa",
-            "referencia": "Ausente",
+            "nome": "TC de Tórax",
+            "valor": "Massa mediastinal volumosa (bulky disease)",
+            "referencia": "Normal",
             "alterado": true
           }
         ]
       }
     ],
     "exam": {
-      "head": "Geral: EGR, hipocorado (+2/+4). Epistaxe referida na história.",
-      "chest": "RCR em 2T, BNF. FC: 98 bpm; PA: 120 x 80 mmHg. MV+ em AHT, S/RA.",
-      "abdomen": "Semigloboso, flácido, indolor a palpação. Presença de sangramento vaginal moderado ativo.",
-      "arm": "Pulsos cheios e simétricos, sem edemas, sem linfonodomegalias.",
-      "knee": "Presença de petéquias difusas em MMII.",
-      "ankle": "Sem edemas."
+      "head": "Linfonodo cervical à direita de 3 cm, consistência elástica (gomosa), móvel e indolor à palpação.",
+      "chest": "Macicez à percussão em região esternal superior, indicando massa em mediastino anterior.",
+      "abdomen": "Sem visceromegalias.",
+      "arm": "Lesões de escoriação por prurido crônico, sem lesões primárias.",
+      "knee": "Sem alterações.",
+      "ankle": "Sem edema."
     },
     "responses": {
-      "nome": "Meu nome é Icaro.",
-      "idade": "Tenho 23 anos.",
-      "QPD": "Estou tendo um sangramento transvaginal forte nas últimas semanas, mesmo sem menstruar faz tempo.",
-      "Inicio": "Começou nas últimas semanas.",
-      "Detalhe": "Eu não menstruava mais por causa da testosterona, mas o sangramento voltou e vem aumentando. Além disso o nariz sangrou.",
-      "Sintomas_associados": "Tenho sentido muita fadiga, cansaço e notei umas manchinhas nas pernas.",
-      "Sintomas_negados": "Não tive febre, perda de peso ou suores à noite.",
-      "caracterizacao_sangramentos": "Sangramento transvaginal e sangramento no nariz (epistaxe).",
-      "manchas": "Apareceram umas petéquias pontilhadinhas nas minhas pernas.",
-      "antpessoais": "Sou um jovem trans masculino e faço terapia hormonal há 2 anos.",
-      "medicamentos": "Uso testosterona para terapia hormonal.",
-      "default": "Desculpe, não entendi. Tente perguntar de outra forma.",
-      "naosei": "Isso não tem nada a ver com o que eu vim resolver, doutor(a).",
-      "cumprimento": "Oi, doutor(a)."
+      "nome": "Vinícius Simões.",
+      "idade": "Tenho 22 anos.",
+      "naturalidade": "Sou de Campinas.",
+      "QPD": "Apareceu um caroço no meu pescoço há uns 2 meses.",
+      "Inicio": "Notei esse nódulo tem uns dois meses. Achei que fosse íngua de dente, mas não some.",
+      "Detalhe": "Ele é durinho, parece uma borracha, mas não dói quando aperto, só quando bebo álcool mesmo.",
+      "Localizacao": "É do lado direito do pescoço.",
+      "Sintomas_associados": "Tenho acordado de madrugada com a camiseta toda molhada de suor, e sinto uma coceira pelo corpo todo sem manchas.",
+      "Sintomas_negados": "Não tenho dor no caroço em repouso, só depois do álcool.",
+      "antpessoais": "Nega doenças crônicas. Tentei tomar anti-inflamatório por conta própria, não adiantou.",
+      "antfamiliares": "Nega histórico familiar de neoplasias.",
+      "vacinas": "Em dia.",
+      "habitos": "Bebo cerveja socialmente nos fins de semana. Não fumo.",
+      "epidemiologia": "Sou estudante de engenharia.",
+      "medicamentos": "Tentei anti-inflamatório por conta própria, sem melhora.",
+      "cumprimento": "Opa, doutor(a).",
+      "naosei": "Acho que não tem nada a ver, doutor(a).",
+      "default": "Eu achei que era só estresse da faculdade, mas esse suor noturno e esse caroço estão me assustando. O que pode ser?",
+      "carocos": "Ele é durinho, parece uma borracha, mas não dói quando aperto, só quando bebo álcool.",
+      "alcool": "Doutor(a), é bizarro: eu tomo um copo de cerveja e esse caroço no pescoço começa a doer na hora. É uma dor aguda que passa depois de um tempo.",
+      "pele": "Sinto uma coceira pelo corpo todo que não tem mancha nenhuma, mas irrita muito, chego a me machucar de tanto coçar.",
+      "emagrecimento": "Minhas roupas estão ficando largas, perdi uns 5 quilos no último mês sem fazer dieta.",
+      "febre": "No finalzinho da tarde sempre sinto meu corpo quente, uma febre de 37,8 ou 38 graus que some depois."
     }
   },
   {
@@ -858,7 +863,7 @@
       "antpessoais": "Descobri o HIV agora. Não uso drogas na veia, mas tive vários parceiros e não usava camisinha.",
       "epidemiologia": "Trabalho como auxiliar de serviços gerais, fico muito em aglomeração no trabalho.",
       "default": "Não entendi sua pergunta, doutor. Pode refazer?",
-      "naosei": "Isso não tem nada a ver com o que eu tô passando, doutor(a).",
+      "naosei": "Isso não tem nada a ver com o que eu tô passando, doutor(a).", 
       "cumprimento": "Oi, doutor(a). Tudo bem?"
     }
   },
@@ -2104,27 +2109,24 @@
     }
   },
   {
-    "id": 6,
-    "name": "Vinícius Simões",
-    "age": 22,
+    "id": 20,
+    "name": "Icaro",
+    "age": 23,
     "gender": "M",
-    "color": "#FBBD23",
-    "emoji": "assets/pct20.png",
-    "disease": "hodgkin",
-    "disease_label": "Linfoma de Hodgkin",
-    "intro": "Doutor(a), apareceu um caroço no meu pescoço. O estranho é que ele dói sempre que eu bebo uma cerveja no fim de semana.",
+    "color": "#60A5FA",
+    "emoji": "assets/pct6.jpg",
+    "disease": "lpa",
+    "disease_label": "Leucemia Promielocítica Aguda",
+    "intro": "Olá, doutor(a). Estou tendo um sangramento transvaginal forte nas últimas semanas e sinto muito cansaço.",
     "signs": [
-      "linfonodo cervical elástico e indolor",
-      "sinal de Hoster (dor ao álcool)",
-      "sintomas B: febre, sudorese noturna, emagrecimento",
-      "massa mediastinal (bulky disease)",
-      "células de Reed-Sternberg na biópsia"
+      "sangramento vaginal (mesmo com supressão)",
+      "fadiga e palidez",
+      "epistaxe e petéquias em MMII",
+      "t(15;17) presente no mielograma"
     ],
     "lab": {
-      "hemograma": "Hb: 12,8 g/dL. Leucocitose leve com eosinofilia.",
-      "histopatologia": "Biópsia de linfonodo: presença de células de Reed-Sternberg em fundo inflamatório (diagnóstico de Hodgkin).",
-      "marcadores": "VHS elevada. LDH aumentado.",
-      "imagem": "TC de tórax: massa mediastinal volumosa (bulky disease)."
+      "hemograma": "Hb: 7,8. Leucócitos: 15.200 (presença de blastos). Plaquetas: 18.000.",
+      "outros": "TP/TTPA prolongados. D-Dímero elevado. Mielograma: promielócitos e blastos, t(15;17) PML/RARa presente."
     },
     "lab_display": [
       {
@@ -2132,90 +2134,88 @@
         "exames": [
           {
             "nome": "Hemoglobina",
-            "valor": "12,8 g/dL",
+            "valor": "7,8 g/dL",
             "referencia": "13–17 g/dL",
             "alterado": true
           },
           {
             "nome": "Leucócitos",
-            "valor": "Leucocitose leve com eosinofilia",
+            "valor": "15.200/µL",
             "referencia": "4.000–11.000/µL",
             "alterado": true
-          }
-        ]
-      },
-      {
-        "categoria": "Histopatologia",
-        "exames": [
+          },
           {
-            "nome": "Biópsia de Linfonodo",
-            "valor": "Células de Reed-Sternberg presentes",
-            "referencia": "Ausentes",
+            "nome": "Plaquetas",
+            "valor": "18.000/µL",
+            "referencia": "150.000–400.000/µL",
+            "alterado": true
+          },
+          {
+            "nome": "Esfregaço",
+            "valor": "Presença de Blastos",
+            "referencia": "Ausente",
             "alterado": true
           }
         ]
       },
       {
-        "categoria": "Marcadores",
+        "categoria": "Coagulograma",
         "exames": [
           {
-            "nome": "VHS",
-            "valor": "Elevada",
+            "nome": "TP e TTPA",
+            "valor": "Prolongados",
             "referencia": "Normal",
             "alterado": true
           },
           {
-            "nome": "LDH",
-            "valor": "Aumentado",
-            "referencia": "Normal",
+            "nome": "D-Dímero",
+            "valor": "Elevado",
+            "referencia": "<500 ng/mL",
             "alterado": true
           }
         ]
       },
       {
-        "categoria": "Imagem",
+        "categoria": "Medula Óssea",
         "exames": [
           {
-            "nome": "TC de Tórax",
-            "valor": "Massa mediastinal volumosa (bulky disease)",
-            "referencia": "Normal",
+            "nome": "Citogenética",
+            "valor": "t(15;17) presente",
+            "referencia": "Ausente",
+            "alterado": true
+          },
+          {
+            "nome": "Biologia Molecular",
+            "valor": "Rearranjo PML/RARa",
+            "referencia": "Ausente",
             "alterado": true
           }
         ]
       }
     ],
     "exam": {
-      "head": "Linfonodo cervical à direita de 3 cm, consistência elástica (gomosa), móvel e indolor à palpação.",
-      "chest": "Macicez à percussão em região esternal superior, indicando massa em mediastino anterior.",
-      "abdomen": "Sem visceromegalias.",
-      "arm": "Lesões de escoriação por prurido crônico, sem lesões primárias.",
-      "knee": "Sem alterações.",
-      "ankle": "Sem edema."
+      "head": "Geral: EGR, hipocorado (+2/+4). Epistaxe referida na história.",
+      "chest": "RCR em 2T, BNF. FC: 98 bpm; PA: 120 x 80 mmHg. MV+ em AHT, S/RA.",
+      "abdomen": "Semigloboso, flácido, indolor a palpação. Presença de sangramento vaginal moderado ativo.",
+      "arm": "Pulsos cheios e simétricos, sem edemas, sem linfonodomegalias.",
+      "knee": "Presença de petéquias difusas em MMII.",
+      "ankle": "Sem edemas."
     },
     "responses": {
-      "nome": "Vinícius Simões.",
-      "idade": "Tenho 22 anos.",
-      "naturalidade": "Sou de Campinas.",
-      "QPD": "Apareceu um caroço no meu pescoço há uns 2 meses.",
-      "Inicio": "Notei esse nódulo tem uns dois meses. Achei que fosse íngua de dente, mas não some.",
-      "Detalhe": "Ele é durinho, parece uma borracha, mas não dói quando aperto, só quando bebo álcool mesmo.",
-      "Localizacao": "É do lado direito do pescoço.",
-      "Sintomas_associados": "Tenho acordado de madrugada com a camiseta toda molhada de suor, e sinto uma coceira pelo corpo todo sem manchas.",
-      "Sintomas_negados": "Não tenho dor no caroço em repouso, só depois do álcool.",
-      "antpessoais": "Nega doenças crônicas. Tentei tomar anti-inflamatório por conta própria, não adiantou.",
-      "antfamiliares": "Nega histórico familiar de neoplasias.",
-      "vacinas": "Em dia.",
-      "habitos": "Bebo cerveja socialmente nos fins de semana. Não fumo.",
-      "epidemiologia": "Sou estudante de engenharia.",
-      "medicamentos": "Tentei anti-inflamatório por conta própria, sem melhora.",
-      "cumprimento": "Opa, doutor(a).",
-      "naosei": "Acho que não tem nada a ver, doutor(a).",
-      "default": "Eu achei que era só estresse da faculdade, mas esse suor noturno e esse caroço estão me assustando. O que pode ser?",
-      "carocos": "Ele é durinho, parece uma borracha, mas não dói quando aperto, só quando bebo álcool.",
-      "alcool": "Doutor(a), é bizarro: eu tomo um copo de cerveja e esse caroço no pescoço começa a doer na hora. É uma dor aguda que passa depois de um tempo.",
-      "pele": "Sinto uma coceira pelo corpo todo que não tem mancha nenhuma, mas irrita muito, chego a me machucar de tanto coçar.",
-      "emagrecimento": "Minhas roupas estão ficando largas, perdi uns 5 quilos no último mês sem fazer dieta.",
-      "febre": "No finalzinho da tarde sempre sinto meu corpo quente, uma febre de 37,8 ou 38 graus que some depois."
+      "nome": "Meu nome é Icaro.",
+      "idade": "Tenho 23 anos.",
+      "QPD": "Estou tendo um sangramento transvaginal forte nas últimas semanas, mesmo sem menstruar faz tempo.",
+      "Inicio": "Começou nas últimas semanas.",
+      "Detalhe": "Eu não menstruava mais por causa da testosterona, mas o sangramento voltou e vem aumentando. Além disso o nariz sangrou.",
+      "Sintomas_associados": "Tenho sentido muita fadiga, cansaço e notei umas manchinhas nas pernas.",
+      "Sintomas_negados": "Não tive febre, perda de peso ou suores à noite.",
+      "caracterizacao_sangramentos": "Sangramento transvaginal e sangramento no nariz (epistaxe).",
+      "manchas": "Apareceram umas petéquias pontilhadinhas nas minhas pernas.",
+      "antpessoais": "Sou um jovem trans masculino e faço terapia hormonal há 2 anos.",
+      "medicamentos": "Uso testosterona para terapia hormonal.",
+      "default": "Desculpe, não entendi. Tente perguntar de outra forma.",
+      "naosei": "Isso não tem nada a ver com o que eu vim resolver, doutor(a).",
+      "cumprimento": "Oi, doutor(a)."
     }
   }
 ]

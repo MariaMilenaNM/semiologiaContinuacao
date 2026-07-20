@@ -15,6 +15,15 @@ Execute:
   python app.py
 """
 
+#ordem das mensagens, sinais e tudo mais pra ficar padronizado e olhar as respostas "naosei" dos pacientes
+#Identificação, 
+# Queixa Principal e Duração, 
+# Interrogatório Sintomatológico, 
+# Antecedentes Pesssoais, 
+# Antecedentes Familiares, Exame Físico, 
+# Exames Complementares, Impressão Diagnóstica.
+# Fechamento
+
 import os
 import json
 
@@ -168,7 +177,7 @@ def check_diagnosis():
     feedback = (
         f"✅ Correto! O diagnóstico é {disease_label}."
         if correct else
-        "❌ Revise a anamnese, o exame físico e os exames ccomplementares."
+        "❌ Revise a anamnese, o exame físico e os exames complementares."
     )
 
     return jsonify({
