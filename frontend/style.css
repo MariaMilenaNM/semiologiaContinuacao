@@ -557,7 +557,7 @@ body {
   border-radius: 24px;
   padding: 10px 16px;
   font-family: 'DM Sans', sans-serif;
-  font-size: 13.5px;
+  font-size: 16px;
   color: var(--text);
   outline: none;
   transition: border .2s;
