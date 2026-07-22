@@ -80,11 +80,12 @@ function openChat(patient) {
   document.getElementById("diagnosisResult").style.display = "none";
   document.getElementById("navToPlan").style.display = "none";
 
+  /*
   const symptomsWrap = document.getElementById("symptomsWrap");
   if (symptomsWrap && patient.signs) {
     symptomsWrap.innerHTML = patient.signs.map((s) => `<span class="symptom-chip">${s}</span>`).join("");
   }
-
+*/
   document.getElementById("chatArea").innerHTML = "";
  
   goTo(2);
