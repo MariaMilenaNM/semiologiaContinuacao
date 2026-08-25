@@ -1,20 +1,8 @@
-"""
-model.py
---------
-Define e expõe o modelo Keras usado para simular respostas do paciente.
-
-Arquitetura:
-  Entrada  → vetor TF-IDF da pergunta do estudante (vocabulário fixo)
-  Camadas  → Dense + Dropout (regularização)
-  Saída    → softmax sobre as categorias de intenção (intent)
-
-As categorias de intenção são lidas do intentsH5.json e mapeiam a pergunta
-do estudante para uma chave de resposta no patients.json.
-"""
-
 import os
 import json
 import pickle
+import re
+import unicodedata
 import numpy as np
 
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -23,19 +11,35 @@ import tensorflow as tf
 from tensorflow import keras
 from keras import layers
 
-# ── Paths ──────────────────────────────────────────────────────────────
+# Paths
 BASE_DIR      = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH    = os.path.join(BASE_DIR, "saved_model", "intent_model.keras")
 VECT_PATH     = os.path.join(BASE_DIR, "saved_model", "vectorizer.pkl")
 LABELS_PATH   = os.path.join(BASE_DIR, "saved_model", "labels.json")
-
-# intentsH5.json deve estar na mesma pasta que model.py (logica/)
 INTENTS_JSON  = os.path.join(BASE_DIR, "intentsH5.json")
 
 
-# ── Carrega intentsH5.json ─────────────────────────────────────────────
+# Normalização de texto
+def _normalize_text(text: str) -> str:
+    """
+    Normaliza a entrada para reduzir variações que confundem o modelo:
+    - minúsculas
+    - remove acentos ('úlcera' -> 'ulcera')
+    - remove pontuação, mantém só letras/números/espaços
+    - colapsa espaços múltiplos
+
+    IMPORTANTE: essa função deve ser usada tanto no treino (train.py /
+    build_training_data) quanto na inferência (predict_intent), senão o
+    vetorizador vê tokens diferentes em cada etapa.
+    """
+    text = text.lower().strip()
+    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("utf-8")
+    text = re.sub(r"[^a-z0-9\s]", " ", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
+
+
 def _load_intents_json() -> dict:
-    """Lê o intentsH5.json e retorna um dict {tag: [patterns]}."""
     if not os.path.exists(INTENTS_JSON):
         raise FileNotFoundError(
             f"Arquivo de intenções não encontrado: {INTENTS_JSON}\n"
@@ -43,11 +47,9 @@ def _load_intents_json() -> dict:
         )
     with open(INTENTS_JSON, "r", encoding="utf-8") as f:
         data = json.load(f)
-
     return {item["tag"]: item["patterns"] for item in data["intents"]}
 
 
-# Cache para não reler o arquivo a cada chamada
 _INTENTS_CACHE: dict | None = None
 
 def get_intents() -> dict:
@@ -57,9 +59,8 @@ def get_intents() -> dict:
     return _INTENTS_CACHE
 
 
-# ── Dados de treino ────────────────────────────────────────────────────
 def build_training_data():
-    """Constrói X (textos) e y (índices de intent) lendo do intentsH5.json."""
+    """Constrói X (textos normalizados) e y (índices de intent)."""
     intents     = get_intents()
     texts       = []
     labels      = []
@@ -67,31 +68,21 @@ def build_training_data():
 
     for idx, (tag, patterns) in enumerate(intents.items()):
         for pattern in patterns:
-            texts.append(pattern.lower().strip())
+            texts.append(_normalize_text(pattern))   # <-- usa a normalização
             labels.append(idx)
 
     return texts, labels, label_names
 
-
-# ── Modelo ─────────────────────────────────────────────────────────────
+#Modelo
 def build_model(input_dim: int, num_classes: int) -> keras.Model:
-    """
-    Cria e compila o modelo de classificação de intenção.
-
-    Arquitetura enxuta (128→64) para evitar overfitting com ~1000 exemplos.
-    Dropout maior na primeira camada para regularização mais forte.
-    """
     model = keras.Sequential([
         layers.Input(shape=(input_dim,), name="tfidf_input"),
-
         layers.Dense(64, activation="relu", kernel_regularizer=keras.regularizers.l2(0.005)),
         layers.BatchNormalization(),
         layers.Dropout(0.3),
-
         layers.Dense(32, activation="relu", kernel_regularizer=keras.regularizers.l2(0.005)),
         layers.BatchNormalization(),
         layers.Dropout(0.2),
-
         layers.Dense(num_classes, activation="softmax", name="intent_output"),
     ], name="intent_classifier")
 
@@ -103,36 +94,38 @@ def build_model(input_dim: int, num_classes: int) -> keras.Model:
     return model
 
 
-# ── Artefatos salvos ───────────────────────────────────────────────────
 def load_artifacts():
-    """Carrega modelo, vetorizador e labels salvos em disco."""
     model = keras.models.load_model(MODEL_PATH)
-
     with open(VECT_PATH, "rb") as f:
         vectorizer = pickle.load(f)
-
     with open(LABELS_PATH, "r", encoding="utf-8") as f:
         label_names = json.load(f)
-
     return model, vectorizer, label_names
 
 
-# ── Inferência ─────────────────────────────────────────────────────────
+# ── Inferência (ALTERADA) ────────────────────────────────────────────────
 def predict_intent(text: str, model, vectorizer, label_names: list,
-                   threshold: float = 0.45) -> str:
+                    threshold: float = 0.68, margin: float = 0.12) -> str:
     """
-    Dado um texto de entrada, retorna a intenção prevista.
-
-    Se a confiança máxima for menor que `threshold`, retorna "naosei"
-    (ou a última classe do label_names como fallback).
+    threshold: confiança mínima da classe vencedora (era 0.45, agora 0.68).
+    margin:    diferença mínima entre a 1ª e a 2ª intent mais prováveis.
+               Se as duas estiverem "empatadas" (< margin), o modelo está
+               em dúvida entre duas intents parecidas — uma das principais
+               causas de resposta "alucinada" — e cai no fallback "naosei".
     """
-    vec   = vectorizer.transform([text.lower().strip()]).toarray()
+    vec   = vectorizer.transform([_normalize_text(text)]).toarray()
     probs = model.predict(vec, verbose=0)[0]
-    idx   = int(np.argmax(probs))
 
-    if probs[idx] < threshold:
+    ordered = np.argsort(probs)[::-1]
+    top_idx, second_idx = ordered[0], ordered[1]
+    top_prob, second_prob = probs[top_idx], probs[second_idx]
+
+    is_confident   = top_prob >= threshold
+    is_clear_winner = (top_prob - second_prob) >= margin
+
+    if not (is_confident and is_clear_winner):
         if "naosei" in label_names:
             return "naosei"
         return label_names[-1]
 
-    return label_names[idx]
+    return label_names[top_idx]

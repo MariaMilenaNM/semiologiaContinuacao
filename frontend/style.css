@@ -785,7 +785,7 @@ body {
 }
 
 /* ══════════════════════════════════════
-   Navegação Inferior Linear (Novidade)
+   Navegação Inferior Linear 
 ══════════════════════════════════════ */
 .bottom-nav {
   padding: 16px;
@@ -794,6 +794,65 @@ body {
   display: flex;
   flex-shrink: 0;
   box-shadow: 0 -4px 10px rgba(0,0,0,0.02);
+}
+
+/* Screen 4 – Lista Clicável / Accordion de Exames */
+.exam-category-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 8px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.exam-category-btn:hover { background: var(--surface2); }
+
+.exam-category-btn.open {
+  border-color: var(--primary);
+  background: var(--surface2);
+}
+
+.exam-toggle-icon {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  transition: transform 0.25s ease;
+}
+
+/* + gira 45° e vira "x", indicando que pode recolher */
+.exam-category-btn.open .exam-toggle-icon {
+  transform: rotate(45deg);
+}
+
+.exam-alert-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.exam-collapse {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  padding: 0 4px;
+}
+
+.exam-collapse.open {
+  margin-bottom: 16px;
 }
 
 /* ══════════════════════════════════════
@@ -860,6 +919,99 @@ body {
 .portal-link:hover {
   background: var(--border);
 }
+
+/*      tutorial            */
+/* Botão de ajuda no topbar */
+.help-btn {
+  margin-left: auto;
+  background: rgba(255,255,255,0.22);
+  border: none;
+  border-radius: 20px;
+  padding: 6px 12px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.help-btn:hover { background: rgba(255,255,255,0.35); }
+
+/* Tutorial / Onboarding */
+.tutorial-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  pointer-events: none;
+}
+.tutorial-overlay.active { display: block; }
+
+.tutorial-spotlight {
+  position: absolute;
+  border-radius: 12px;
+  box-shadow: 0 0 0 9999px rgba(10, 25, 30, 0.65);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.tutorial-tooltip {
+  position: absolute;
+  max-width: 260px;
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  pointer-events: all;
+  transition: all 0.3s ease;
+}
+
+.tutorial-tooltip-title {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.tutorial-tooltip-text {
+  color: var(--text2);
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.tutorial-tooltip-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tutorial-skip {
+  background: none;
+  border: none;
+  color: var(--text2);
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.tutorial-nav { display: flex; align-items: center; gap: 8px; }
+
+.tutorial-prev, .tutorial-next {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.tutorial-prev:disabled { opacity: 0.4; cursor: not-allowed; }
+.tutorial-step-count { font-size: 12px; color: var(--text2); }
+
 
 /* ══════════════════════════════════════
    RESPONSIVIDADE

@@ -3558,6 +3558,14 @@
     {
       "tag": "febre",
       "patterns": [
+        "ele tá com febre?",
+        "bateu febre nele?",
+        "teve pico febril?",
+        "tá quente assim, é febre?",
+        "tem hipertermia?",
+        "chegou a aferir a temperatura?",
+        "deu febre alta em algum momento?",
+        "teve calafrio junto com a febre?",
         "teve febre?",
         "qual a temperatura?",
         "sentiu o corpo quente?",
@@ -4075,6 +4083,12 @@
     {
       "tag": "manchas",
       "patterns": [
+        "as manchas são roxas ou vermelhas?",
+        "são petéquias ou equimoses essas manchas?",
+        "a pele tá com manchas arroxeadas?",
+        "onde apareceram essas manchas primeiro?",
+        "as manchas somem quando aperta?",
+        "tem manchas espalhadas pelo corpo?",
         "e essas manchas no corpo?",
         "como sao as manchas?",
         "as manchas coçam?",
@@ -4333,6 +4347,14 @@
     {
       "tag": "sangramento",
       "patterns": [
+        "tem sangrado fácil?",
+        "sangra à toa?",
+        "apresenta diátese hemorrágica?",
+        "sangrou pelo nariz, epistaxe?",
+        "teve gengivorragia?",
+        "aparece hematoma sem motivo?",
+        "sangramento é espontâneo ou só quando se machuca?",
+        "tem petéquias ou equimoses?",
         "tem sangramento ativo?",
         "sangrou por quanto tempo?",
         "o sangramento nao para?",
@@ -4642,6 +4664,12 @@
     {
       "tag": "urina",
       "patterns": [
+        "a urina tá com cor diferente?",
+        "notou colúria?",
+        "a urina tá escura tipo coca-cola?",
+        "tem hematúria?",
+        "dói para urinar?",
+        "mudou o cheiro ou a cor do xixi?",
         "como esta a urina?",
         "urina escura?",
         "qual a cor da urina?",
@@ -5229,6 +5257,12 @@
     {
       "tag": "antpessoais",
       "patterns": [
+        "já teve alguma doença antes dessa?",
+        "tem comorbidades?",
+        "já foi internado alguma vez?",
+        "tem histórico de cirurgia?",
+        "já fez alguma transfusão antes?",
+        "tem doença crônica diagnosticada?",
         "voce ja teve alguma doenca importante?",
         "tem algum problema de saude conhecido?",
         "quais doencas voce ja teve?",
@@ -5801,6 +5835,11 @@
     {
       "tag": "medicamentos",
       "patterns": [
+        "toma algum remédio contínuo?",
+        "faz uso de anticoagulante?",
+        "tomou algum medicamento novo recentemente?",
+        "usa corticoide?",
+        "tá tomando alguma coisa por conta própria?",
         "voce toma algum medicamento?",
         "usa remedios todos os dias?",
         "faz uso continuo de algum remedio?",
@@ -6065,6 +6104,11 @@
     {
       "tag": "habitos",
       "patterns": [
+        "fuma ou bebe?",
+        "tem hábito de fumar?",
+        "pratica atividade física?",
+        "como é a alimentação, é balanceada?",
+        "tem algum vício, uso de substância?",
         "quais os seus habitos?",
         "voce fuma?",
         "ja fumou?",
@@ -7166,6 +7210,11 @@
     {
       "tag": "neurologico",
       "patterns": [
+        "teve convulsão?",
+        "tem alguma alteração neurológica?",
+        "sentiu formigamento ou perda de força?",
+        "teve desmaio ou síncope?",
+        "notou confusão mental?",
         "tem dificuldade para falar?",
         "fala enrolada as vezes?",
         "sente formigamento nas maos ou pes?",
@@ -10124,6 +10173,11 @@
       "tag": "falta_ar",
       "patterns": [
         "sente falta de ar?",
+        "tem dispneia?",
+        "cansa fácil ao fazer esforço?",
+        "sente-se ofegante em repouso?",
+        "a falta de ar piora deitado?",
+        "sente falta de ar?",
         "cansaco para respirar?",
         "dispneia intensa?",
         "ficou sufocado?",
@@ -11997,6 +12051,9 @@
     {
       "tag": "cumprimento",
       "patterns": [
+        "oi, tudo bem?",
+        "e aí, como você tá?",
+        "olá, posso te fazer umas perguntas?",
         "oi",
         "bom dia",
         "boa tarde",
@@ -12261,6 +12318,12 @@
     {
       "tag": "naosei",
       "patterns": [
+        "sei lá",
+        "não faço ideia",
+        "talvez, não sei explicar direito",
+        "acho que sim mas não tenho certeza",
+        "nunca prestei atenção nisso",
+        "me pergunta outra coisa",
         "torce para qual time",
         "futebol",
         "qual o melhor time",

@@ -226,63 +226,89 @@ function goToLabScreen() {
     return;
   }
 
-  const contentDiv = document.getElementById("labScreenContent");
-  
+  const container = document.getElementById("examListContainer");
+  container.innerHTML = "";
+
   if (!currentPatient.lab_display || currentPatient.lab_display.length === 0) {
-    contentDiv.innerHTML = "<div class='welcome-card'><p>Nenhum exame laboratorial disponível para este paciente.</p></div>";
-  } else {
-    let html = "";
-    
-    // Define o peso (ordem) de cada categoria
-    const getOrdemCategoria = (nome) => {
-      const n = nome.toLowerCase();
-      if (n.includes("hemograma")) return 1;
-      if (n.includes("esfregaço")) return 2;
-      if (n.includes("coagulograma")) return 3;
-      if (n.includes("imunologia")) return 4;
-      return 5; // Outras categorias ficam por último
-    };
-
-    // Cria uma cópia do array e o ordena com base nos pesos definidos
-    const examesOrdenados = [...currentPatient.lab_display].sort((a, b) => {
-      return getOrdemCategoria(a.categoria) - getOrdemCategoria(b.categoria);
-    });
-
-    examesOrdenados.forEach(categoria => {
-      html += `
-        <div class="lab-category">
-          <h4>${categoria.categoria}</h4>
-          <table class="lab-table">
-            <thead>
-              <tr>
-                <th>Exame</th>
-                <th>Resultado</th>
-                <th>Referência</th>
-              </tr>
-            </thead>
-            <tbody>
-      `;
-      categoria.exames.forEach(exame => {
-        const valorClass = exame.alterado ? "lab-alert" : "";
-        html += `
-              <tr>
-                <td>${exame.nome}</td>
-                <td class="${valorClass}">${exame.valor}</td>
-                <td><small>${exame.referencia}</small></td>
-              </tr>
-        `;
-      });
-      html += `
-            </tbody>
-          </table>
-        </div>
-      `;
-    });
-    contentDiv.innerHTML = html;
+    container.innerHTML = "<div class='welcome-card'><p>Nenhum exame laboratorial disponível para este paciente.</p></div>";
+    goTo(4);
+    return;
   }
+
+  const getOrdemCategoria = (nome) => {
+    const n = nome.toLowerCase();
+    if (n.includes("hemograma")) return 1;
+    if (n.includes("esfregaço")) return 2;
+    if (n.includes("coagulograma")) return 3;
+    if (n.includes("imunologia")) return 4;
+    return 5;
+  };
+
+  const examesOrdenados = [...currentPatient.lab_display].sort(
+    (a, b) => getOrdemCategoria(a.categoria) - getOrdemCategoria(b.categoria)
+  );
+
+  examesOrdenados.forEach((categoria, idx) => {
+    const hasAlert = categoria.exames.some((e) => e.alterado);
+
+    // Botão clicável da categoria
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "exam-category-btn" + (hasAlert ? " has-alert" : "");
+    btn.setAttribute("aria-expanded", "false");
+    btn.innerHTML = `
+      <span>${categoria.categoria}${hasAlert ? ' <span class="exam-alert-dot"></span>' : ""}</span>
+      <span class="exam-toggle-icon">+</span>
+    `;
+
+    // Tabela (inicialmente oculta via max-height:0 no CSS)
+    const wrapper = document.createElement("div");
+    wrapper.className = "exam-collapse";
+    wrapper.id = `examCat${idx}`;
+
+    let tableHtml = `
+      <table class="lab-table">
+        <thead>
+          <tr><th>Exame</th><th>Resultado</th><th>Referência</th></tr>
+        </thead>
+        <tbody>
+    `;
+    categoria.exames.forEach((exame) => {
+      const valorClass = exame.alterado ? "lab-alert" : "";
+      tableHtml += `
+        <tr>
+          <td>${exame.nome}</td>
+          <td class="${valorClass}">${exame.valor}</td>
+          <td><small>${exame.referencia}</small></td>
+        </tr>`;
+    });
+    tableHtml += `</tbody></table>`;
+    wrapper.innerHTML = tableHtml;
+
+    btn.onclick = () => toggleExamCategory(btn, wrapper);
+
+    container.appendChild(btn);
+    container.appendChild(wrapper);
+  });
+
   goTo(4);
 }
 
+function toggleExamCategory(btn, wrapper) {
+  const isOpen = wrapper.classList.contains("open");
+
+  if (isOpen) {
+    wrapper.style.maxHeight = null;
+    wrapper.classList.remove("open");
+    btn.classList.remove("open");
+    btn.setAttribute("aria-expanded", "false");
+  } else {
+    wrapper.classList.add("open");
+    btn.classList.add("open");
+    btn.setAttribute("aria-expanded", "true");
+    wrapper.style.maxHeight = wrapper.scrollHeight + "px";
+  }
+}
 
 //   SCREEN 5 – Verificação do Diagnóstico
 
@@ -355,6 +381,127 @@ function showToast(message, type) {
 
 function openAboutModal() { document.getElementById("aboutModal").classList.add("active"); }
 function closeAboutModal() { document.getElementById("aboutModal").classList.remove("active"); }
+
+//Tutorial  
+/* ═══════════════════════════════════════
+   TUTORIAL / ONBOARDING SOB DEMANDA
+═══════════════════════════════════════ */
+const TUTORIAL_STEPS = [
+  {
+    screen: 1,
+    selector: "#patientsGrid",
+    title: "1. Escolha um paciente",
+    text: "Toque em um dos cards para iniciar o atendimento simulado.",
+  },
+  {
+    screen: 2,
+    selector: "#chatInput",
+    title: "2. Faça a anamnese",
+    text: "Digite perguntas para o paciente, como em uma consulta real. Ex.: \"Qual o motivo da consulta?\"",
+    beforeShow: () => { if (!currentPatient) fakeOpenChatForTutorial(); },
+  },
+  {
+    screen: 2,
+    selector: "#screen2 .btn-primary-large",
+    title: "3. Avance para o Exame Físico",
+    text: "Depois de conversar com o paciente, toque aqui para examiná-lo.",
+  },
+  {
+    screen: 3,
+    selector: "#bodyContainer",
+    title: "4. Exame Físico",
+    text: "Toque nas regiões destacadas do corpo para ver os achados do exame físico daquela área.",
+  },
+  {
+    screen: 4,
+    selector: "#examListContainer",
+    title: "6. Análise de Exames",
+    text: "Nesta tela ficam os exames. Toque nas categorias para abrir e fechar a tabela com os resultados detalhados.",
+    beforeShow: () => { goToLabScreen(); }
+  },
+  {
+    screen: 4,
+    selector: "#screen4 .btn-primary-large",
+    title: "7. Ir para Diagnóstico",
+    text: "Com as informações da anamnese, exame físico e laboratorial em mãos, avance para a etapa final.",
+  },
+  {
+    screen: 5,
+    selector: "#diagnosisSelect",
+    title: "8. Hipótese Diagnóstica",
+    text: "Selecione a doença correspondente ao quadro do paciente e confirme para ver o resultado da simulação!",
+  }
+];
+
+let tutorialIndex = 0;
+
+function startTutorial() {
+  tutorialIndex = 0;
+  document.getElementById("tutorialOverlay").classList.add("active");
+  showTutorialStep();
+}
+
+function endTutorial() {
+  document.getElementById("tutorialOverlay").classList.remove("active");
+}
+
+function tutorialNext() {
+  if (tutorialIndex < TUTORIAL_STEPS.length - 1) {
+    tutorialIndex++;
+    showTutorialStep();
+  } else {
+    endTutorial();
+  }
+}
+
+function tutorialPrev() {
+  if (tutorialIndex > 0) {
+    tutorialIndex--;
+    showTutorialStep();
+  }
+}
+
+function fakeOpenChatForTutorial() {
+  // Só para o tutorial poder destacar visualmente o input do chat,
+  // sem exigir que o usuário já tenha escolhido um paciente de verdade.
+  if (patients.length > 0) openChat(patients[0]);
+}
+
+function showTutorialStep() {
+  const step = TUTORIAL_STEPS[tutorialIndex];
+  if (step.beforeShow) step.beforeShow();
+
+  goTo(step.screen);
+
+  // Espera a troca de tela renderizar antes de medir a posição do elemento
+  requestAnimationFrame(() => {
+    const target = document.querySelector(step.selector);
+    if (!target) { tutorialNext(); return; }
+
+    const rect = target.getBoundingClientRect();
+    const spotlight = document.getElementById("tutorialSpotlight");
+    const tooltip   = document.getElementById("tutorialTooltip");
+    const pad = 8;
+
+    spotlight.style.top    = (rect.top - pad) + "px";
+    spotlight.style.left   = (rect.left - pad) + "px";
+    spotlight.style.width  = (rect.width + pad * 2) + "px";
+    spotlight.style.height = (rect.height + pad * 2) + "px";
+
+    document.getElementById("tutorialTitle").textContent = step.title;
+    document.getElementById("tutorialText").textContent  = step.text;
+    document.getElementById("tutorialStepCount").textContent =
+      `${tutorialIndex + 1}/${TUTORIAL_STEPS.length}`;
+    document.getElementById("tutorialPrev").disabled = tutorialIndex === 0;
+    document.getElementById("tutorialNext").textContent =
+      tutorialIndex === TUTORIAL_STEPS.length - 1 ? "Concluir" : "Próximo ▶";
+
+    let top = rect.bottom + pad + 12;
+    if (top + 160 > window.innerHeight) top = rect.top - 180;
+    tooltip.style.top  = Math.max(12, top) + "px";
+    tooltip.style.left = Math.min(Math.max(12, rect.left), window.innerWidth - 280) + "px";
+  });
+}
 
 /* Start */
 init();

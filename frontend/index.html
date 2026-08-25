@@ -32,6 +32,7 @@
     <div class="topbar">
       <button class="back-btn" onclick="goTo(0)">←</button>
       <span class="topbar-title">Sala de Espera</span>
+      <button class="help-btn" onclick="startTutorial()" title="Ver tutorial">Tutorial</button>
     </div>
     <div class="content">
       <div class="welcome-card">
@@ -130,18 +131,18 @@
     </div>
   </div>
 
-  <div id="screen4" class="screen">
-    <div class="topbar">
-      <button class="back-btn" onclick="goTo(3)">←</button>
-      <span class="topbar-title">Exames Complementares</span>
-    </div>
-    <div class="content" style="padding: 16px;" id="labScreenContent">
-      </div>
-    
-    <div class="bottom-nav">
-      <button class="btn-primary-large" onclick="goTo(5)">Diagnóstico ➔</button>
-    </div>
+<div id="screen4" class="screen">
+  <div class="topbar">
+    <button class="back-btn" onclick="goTo(3)">←</button>
+    <span class="topbar-title">Exames Complementares</span>
   </div>
+  <div class="content" style="padding: 16px;" id="examListContainer">
+  </div>
+
+  <div class="bottom-nav">
+    <button class="btn-primary-large" onclick="goTo(5)">Diagnóstico ➔</button>
+  </div>
+</div>
 
   <div id="screen5" class="screen">
     <div class="topbar">
@@ -240,6 +241,22 @@
 </div>
 
 <div class="toast" id="toast"></div>
+
+<div id="tutorialOverlay" class="tutorial-overlay">
+  <div class="tutorial-spotlight" id="tutorialSpotlight"></div>
+  <div class="tutorial-tooltip" id="tutorialTooltip">
+    <div class="tutorial-tooltip-title" id="tutorialTitle"></div>
+    <div class="tutorial-tooltip-text" id="tutorialText"></div>
+    <div class="tutorial-tooltip-actions">
+      <button class="tutorial-skip" onclick="endTutorial()">Pular</button>
+      <div class="tutorial-nav">
+        <button class="tutorial-prev" id="tutorialPrev" onclick="tutorialPrev()">◀</button>
+        <span class="tutorial-step-count" id="tutorialStepCount"></span>
+        <button class="tutorial-next" id="tutorialNext" onclick="tutorialNext()">Próximo ▶</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
