@@ -11,7 +11,8 @@ Rotas:
   GET  /api/exam/<patient_id>/<region> → retorna achados do exame físico
 
 Execute:
-  python train.py   (apenas na primeira vez)
+  export GEMINI_API_KEY="sua-chave"     (obrigatório)
+  export GEMINI_MODEL="gemini-2.5-flash" (opcional)
   python app.py
 """
 
@@ -30,7 +31,7 @@ import json
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
-from model import load_artifacts, predict_intent
+from llm import generate_patient_reply, is_ready, GEMINI_MODEL
 
 # ── App ─────────────────────────────────────────────────────────────────
 app = Flask(__name__)
@@ -49,15 +50,11 @@ with open(PATIENTS_PATH, "r", encoding="utf-8") as f:
 
 PATIENTS_BY_ID: dict[int, dict] = {p["id"]: p for p in PATIENTS}
 
-print("Carregando modelo de ML...")
-try:
-    ml_model, vectorizer, label_names = load_artifacts()
-    ML_READY = True
-    print("✅ Modelo carregado com sucesso.")
-except Exception as e:
-    ML_READY = False
-    print(f"⚠️  Modelo não encontrado: {e}")
-    print("   Execute `python train.py` para treinar o modelo antes de usar o chat.")
+LLM_READY = is_ready()
+if LLM_READY:
+    print(f"✅ Gemini configurado (modelo: {GEMINI_MODEL}).")
+else:
+    print("⚠️  GEMINI_API_KEY não definida. O chat ficará indisponível.")
 
 
 # ════════════════════════════════════════════════════════════════════════
@@ -87,51 +84,44 @@ def get_patient(patient_id: int):
 @app.route("/api/chat", methods=["POST"])
 def chat():
     """
-    Recebe a mensagem do estudante e retorna a resposta do paciente.
+    Recebe a mensagem do estudante e retorna a resposta do paciente (Gemini).
 
     Body JSON:
         {
           "patient_id": 1,
-          "message": "O paciente tem febre?"
+          "message": "O paciente tem febre?",
+          "history": [                       # opcional, últimas mensagens
+            {"role": "student", "text": "Qual seu nome?"},
+            {"role": "patient", "text": "Meu nome é Arthur."}
+          ]
         }
 
     Retorna:
-        {
-          "intent": "febre",
-          "response": "Não tenho febre, só essas manchas e o sangramento.",
-          "confidence": 0.87
-        }
+        { "response": "Não tenho febre, só essas manchas e o sangramento." }
     """
-    if not ML_READY:
-        return jsonify({
-            "error": "Modelo de ML não treinado. Execute `python train.py`."
-        }), 503
+    if not LLM_READY:
+        return jsonify({"error": "GEMINI_API_KEY não configurada no servidor."}), 503
 
     data = request.get_json(silent=True)
     if not data:
         return jsonify({"error": "Corpo da requisição inválido."}), 400
 
-    patient_id: int = data.get("patient_id")
-    message: str    = data.get("message", "").strip()
+    patient_id = data.get("patient_id")
+    message    = (data.get("message") or "").strip()
+    history    = data.get("history")
 
     if not patient_id or not message:
         return jsonify({"error": "Campos 'patient_id' e 'message' são obrigatórios."}), 400
+    if history is not None and not isinstance(history, list):
+        return jsonify({"error": "'history' deve ser uma lista."}), 400
 
     patient = PATIENTS_BY_ID.get(patient_id)
     if not patient:
         return jsonify({"error": "Paciente não encontrado."}), 404
 
-    # ── Classificação da intenção via Keras ─────────────────────────────
-    intent = predict_intent(message, ml_model, vectorizer, label_names)
+    response_text = generate_patient_reply(patient, message, history)
 
-    # ── Busca a resposta no JSON do paciente ────────────────────────────
-    responses: dict = patient.get("responses", {})
-    response_text   = responses.get(intent) or responses.get("default", "...")
-
-    return jsonify({
-        "intent":   intent,
-        "response": response_text,
-    })
+    return jsonify({"response": response_text})
 
 
 @app.route("/api/diagnosis", methods=["POST"])

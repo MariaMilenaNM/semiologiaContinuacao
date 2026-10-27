@@ -20,7 +20,9 @@ const EXAM_LABELS = {
 
 let currentPatient = null;
 let patients       = [];  
-let isFirstMessage = true;     
+let isFirstMessage = true;
+let chatHistory    = [];   // contexto enviado ao Gemini (role: "student" | "patient")
+let isSending      = false; // evita enviar duas perguntas ao mesmo tempo
 
 /* 
    INICIALIZAÇÃO E NAVEGAÇÃO
@@ -35,7 +37,7 @@ async function init() {
     document.getElementById("patientsGrid").innerHTML =
       `<p style="color:var(--accent);grid-column:1/-1;text-align:center;padding:20px">
         ⚠️ Não foi possível conectar ao servidor.<br>
-        <small>Certifique-se de que o Flask está rodando em localhost:5000</small>
+        <small>Certifique-se de que o Flask está rodando em localhost:5050</small>
       </p>`;
   } finally {
     showLoading(false);
@@ -71,6 +73,8 @@ function goTo(screenNumber) {
 function openChat(patient) {
   currentPatient = patient;
   isFirstMessage = true;
+  chatHistory    = [];
+  isSending      = false;
 
   document.getElementById("chatName").textContent         = patient.name;
   document.getElementById("chatAvatar").innerHTML         = `<img src="${patient.emoji}" alt="${patient.name}">`;
@@ -147,7 +151,7 @@ function removeTyping() {
 async function sendMsg() {
   const input = document.getElementById("chatInput");
   const text  = input.value.trim();
-  if (!text || !currentPatient) return;
+  if (!text || !currentPatient || isSending) return;
 
   addMessage("student", text);
   input.value = "";
@@ -155,28 +159,47 @@ async function sendMsg() {
 
   if (isFirstMessage) {
     isFirstMessage = false; // Desativa a trava para as próximas mensagens
-    
-    // Simula um tempinho de digitação para a intro e retorna
+
+    // A primeira mensagem do estudante só dispara a fala de abertura (sem chamar a API)
     setTimeout(() => {
       removeTyping();
       addMessage("patient", currentPatient.intro);
+      chatHistory.push({ role: "student", text });
+      chatHistory.push({ role: "patient", text: currentPatient.intro });
     }, 800);
-    
-    return; // Para a execução aqui, não chama a API
+
+    return;
   }
 
+  isSending = true;
   try {
-    const res  = await fetch(`${API}/chat`, {
+    const res = await fetch(`${API}/chat`, {
       method:  "POST",
       headers: { "Content-Type": "application/json" },
-      body:    JSON.stringify({ patient_id: currentPatient.id, message: text }),
+      body:    JSON.stringify({
+        patient_id: currentPatient.id,
+        message:    text,
+        history:    chatHistory.slice(-10),   // últimas mensagens, para dar contexto
+      }),
     });
     const data = await res.json();
     removeTyping();
-    addMessage("patient", data.response || "...");
+
+    if (!res.ok) {
+      addMessage("patient", "Desculpe, não consegui responder agora. Tente de novo.");
+      console.error("Erro da API:", data.error);
+      return;
+    }
+
+    const reply = data.response || "...";
+    addMessage("patient", reply);
+    chatHistory.push({ role: "student", text });
+    chatHistory.push({ role: "patient", text: reply });
   } catch (err) {
     removeTyping();
     addMessage("patient", "Erro ao conectar com o servidor.");
+  } finally {
+    isSending = false;
   }
 }
 

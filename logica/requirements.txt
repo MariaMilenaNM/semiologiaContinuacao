@@ -1,6 +1,4 @@
-flask>=3.0,<4.0
+﻿flask>=3.0,<4.0
 flask-cors>=4.0
-tensorflow>=2.16,<2.20
-scikit-learn>=1.3
-numpy>=1.24
+google-genai
 gunicorn>=21.0

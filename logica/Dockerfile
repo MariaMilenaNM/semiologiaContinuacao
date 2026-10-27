@@ -19,8 +19,6 @@ RUN pip install --no-cache-dir --user -r requirements.txt
 
 COPY --chown=user . /app
 
-RUN python train.py
-
 EXPOSE 7860
 
 CMD ["gunicorn", "--bind", "0.0.0.0:7860", "--workers", "1", "--threads", "4", "--timeout", "120", "app:app"]
