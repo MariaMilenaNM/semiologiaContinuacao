@@ -20,11 +20,11 @@ from google import genai
 from google.genai import types
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
-GEMINI_MODEL   = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+GEMINI_MODEL   = os.getenv("GEMINI_MODEL", "gemini-3.5-flash")
 # Modelo reserva, usado se o principal continuar indisponível (opcional)
-GEMINI_FALLBACK_MODEL = os.getenv("GEMINI_FALLBACK_MODEL", "")
+GEMINI_FALLBACK_MODEL = os.getenv("GEMINI_FALLBACK_MODEL", "gemini-3.1-flash-lite")
 
-MAX_RETRIES = 3          # tentativas por modelo
+MAX_RETRIES = 2          # tentativas por modelo
 RETRY_BASE_DELAY = 1.0   # segundos (1s, 2s, 4s...)
 
 MAX_HISTORY_TURNS = 10   # nº de mensagens anteriores enviadas ao modelo
@@ -33,12 +33,18 @@ MAX_MESSAGE_CHARS = 500  # limite da pergunta do estudante
 _client: genai.Client | None = None
 
 
+class LLMUnavailable(Exception):
+    """Nenhum modelo conseguiu responder (sobrecarga, cota, erro de API)."""
+
+
 def get_client() -> genai.Client:
     global _client
     if _client is None:
         if not GEMINI_API_KEY:
             raise RuntimeError("Variável de ambiente GEMINI_API_KEY não definida.")
-        _client = genai.Client(api_key=GEMINI_API_KEY)
+        _client = genai.Client(api_key=GEMINI_API_KEY, 
+                               http_options=types.HttpOptions(timeout=20000),
+                               )
     return _client
 
 
@@ -153,8 +159,10 @@ def _call_model(model: str, patient: dict, message: str, history: list[dict] | N
 
 def generate_patient_reply(patient: dict, message: str, history: list[dict] | None = None) -> str:
     """
-    Gera a fala do paciente. Nunca levanta exceção.
-    Tenta o modelo principal com retry (503/429), depois o reserva; no fim, usa o fallback da ficha.
+    Gera a fala do paciente.
+    Tenta o modelo principal com retry (503/429), depois o reserva.
+    Se nada funcionar, levanta LLMUnavailable (o app responde 503), em vez de
+    inventar um "não sei" que o estudante poderia interpretar como dado clínico.
     """
     models = [GEMINI_MODEL] + ([GEMINI_FALLBACK_MODEL] if GEMINI_FALLBACK_MODEL else [])
 
@@ -164,11 +172,12 @@ def generate_patient_reply(patient: dict, message: str, history: list[dict] | No
                 text = _call_model(model, patient, message, history)
                 if text:
                     return text
-                break  # resposta vazia/bloqueada: não adianta repetir
+                print(f"⚠️  Resposta vazia/bloqueada ({model}).")
+                break  # não adianta repetir; tenta o próximo modelo
             except Exception as e:
                 print(f"⚠️  Erro no Gemini ({model}, tentativa {attempt + 1}/{MAX_RETRIES}): {e}")
                 if not _is_retryable(e):
                     break  # erro permanente (chave, modelo inexistente...): troca de modelo
                 time.sleep(RETRY_BASE_DELAY * (2 ** attempt))
 
-    return _fallback(patient)
+    raise LLMUnavailable("Nenhum modelo respondeu.")

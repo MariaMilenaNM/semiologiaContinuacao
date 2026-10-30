@@ -31,7 +31,7 @@ import json
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
-from llm import generate_patient_reply, is_ready, GEMINI_MODEL
+from llm import generate_patient_reply, is_ready, GEMINI_MODEL, LLMUnavailable
 
 # ── App ─────────────────────────────────────────────────────────────────
 app = Flask(__name__)
@@ -119,7 +119,12 @@ def chat():
     if not patient:
         return jsonify({"error": "Paciente não encontrado."}), 404
 
-    response_text = generate_patient_reply(patient, message, history)
+    try:
+        response_text = generate_patient_reply(patient, message, history)
+    except LLMUnavailable:
+        return jsonify({
+            "error": "O serviço de IA está ocupado no momento. Tente novamente em instantes."
+        }), 503
 
     return jsonify({"response": response_text})
 
